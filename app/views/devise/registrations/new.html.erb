@@ -1,5 +1,4 @@
-<div class="container">
-<<<<<<< HEAD
+<div class="container text-center">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
@@ -8,30 +7,42 @@
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs">
-          <%= f.input :first_name,
-                      required: true %>
-          <%= f.input :last_name,
-                      required: true %>
+        <div class="form-inputs justify-content-between mx-2">
+          <div class="d-flex">
+            <div class="mr-1">
+              <%= f.input :first_name,
+                          label: false,
+                          placeholder: "First name" %>
+            </div>
+            <div>
+              <%= f.input :last_name,
+                          label: false,
+                          placeholder: "Last name" %>
+            </div>
+          </div>
           <%= f.input :nickname,
-                      required: true %>
-          <%= f.input :age,
-                      required: true %>
+                      required: true,
+                      label: false,
+                      placeholder: "Username" %>
           <%= f.input :email,
                       required: true,
+                      label: false,
+                      placeholder: "Bob@example.com",
                       autofocus: true,
-                      input_html: { autocomplete: "email" }%>
+                      input_html: { autocomplete: "email" } %>
           <%= f.input :password,
                       required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      label: false,
+                      placeholder: "Password",
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
                       required: true,
+                      label: false,
+                      placeholder: "Confirm password",
                       input_html: { autocomplete: "new-password" } %>
-        </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Send", class: "btn btn-success text-white bold w-100 mb-2" %>
         </div>
       <% end %>
 
@@ -39,31 +50,4 @@
 
     </div>
   </div>
-=======
-  <h2>Sign up</h2>
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
->>>>>>> 0dbb80b1b89a42b273e402749b7b1b136a09ffa0
 </div>
