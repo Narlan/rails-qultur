@@ -9,6 +9,14 @@ class MonumentsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { monument: monument }),
       }
     end
+
+
+    @monuments = Monument.near(params[:query][:address], 30)
+    @marker = markers
+    if @marker.empty?
+      @monuments = Monument.all
+      @marker = markers
+    end
   end
 
   def show
