@@ -9,3 +9,10 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 initMapbox();
 initAutocomplete();
 openQRCamera()
+
+// Il semble qu'il fasse ajouter des listener pour pouvoir utiliser cette structure...
+// Le script du lecteur qr est actuellement dans la view...
+// import { openQRCamera } from "./scan.js"
+// import { showQRIntro } from "./scan.js"
+// openQRCamera();
+// showQRIntro();
