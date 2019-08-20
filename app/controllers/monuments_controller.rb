@@ -5,7 +5,8 @@ class MonumentsController < ApplicationController
     @markers = @monuments.map do |monument|
       {
         lat: monument.latitude,
-        lng: monument.longitude
+        lng: monument.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { monument: monument }),
       }
     end
 
