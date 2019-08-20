@@ -1,12 +1,16 @@
 class MonumentsController < ApplicationController
   def index
-    @flats = Flat.geocoded # returns monuments with coordinates
+    @monuments = Monument.geocoded # returns monuments with coordinates
 
-    @markers = @flats.map do |flat|
+    @markers = @monuments.map do |monument|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: monument.latitude,
+        lng: monument.longitude
       }
     end
+  end
+
+  def show
+    @monument = Monument.find(params[:id])
   end
 end
