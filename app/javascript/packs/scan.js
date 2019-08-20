@@ -1,7 +1,5 @@
-console.log("scan.js had been accessed...")
-
 function openQRCamera(node) {
-  var reader = new FileReader();
+  let reader = new FileReader();
   reader.onload = function() {
     node.value = "";
     qrcode.callback = function(res) {
