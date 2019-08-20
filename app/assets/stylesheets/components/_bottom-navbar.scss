@@ -1,0 +1,36 @@
+@font-face {
+ font-family: "Juicy Culture";
+ src: url("../../fonts/JuicyCultureDT.ttf");
+}
+
+/* Place the navbar at the bottom of the page, and make it stick */
+.bottom-navbar {
+  background-color: white;
+  // overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+}
+
+/* Style the links inside the navigation bar */
+.bottom-navbar a {
+  color: #202020;
+  font-size: 32px;
+  padding: 4px;
+}
+
+.bottom-navbar a:active {
+  border-top: 4px solid #77C360;
+}
+
+.qr-button {
+  font-family: "Juicy Culture";
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  border: 2px solid #202020;
+  box-shadow: 0px 0px 8px #777777;
+  text-align: center;
+  padding-top: 4px;
+}
