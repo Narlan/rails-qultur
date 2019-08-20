@@ -1,53 +1,51 @@
 <div class="container text-center">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+  <div class="signin">
+    <div class="mb-2">
+      <%= image_tag('Q.png', width: 60) %>
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-      <h2>Sign up</h2>
-
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-
-        <div class="form-inputs justify-content-between mx-2">
-          <div class="d-flex">
-            <div class="mr-1">
-              <%= f.input :first_name,
-                          label: false,
-                          placeholder: "First name" %>
-            </div>
-            <div>
-              <%= f.input :last_name,
-                          label: false,
-                          placeholder: "Last name" %>
-            </div>
+      <div class="form-inputs justify-content-between mx-2">
+        <div class="d-flex">
+          <div class="mr-1">
+            <%= f.input :first_name,
+                        label: false,
+                        placeholder: "First name" %>
           </div>
-          <%= f.input :nickname,
-                      required: true,
-                      label: false,
-                      placeholder: "Username" %>
-          <%= f.input :email,
-                      required: true,
-                      label: false,
-                      placeholder: "Bob@example.com",
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
-                      required: true,
-                      label: false,
-                      placeholder: "Password",
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-                      required: true,
-                      label: false,
-                      placeholder: "Confirm password",
-                      input_html: { autocomplete: "new-password" } %>
+          <div>
+            <%= f.input :last_name,
+                        label: false,
+                        placeholder: "Last name" %>
+          </div>
+        </div>
+        <%= f.input :nickname,
+                    required: true,
+                    label: false,
+                    placeholder: "Username" %>
+        <%= f.input :email,
+                    required: true,
+                    label: false,
+                    placeholder: "Bob@example.com",
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: true,
+                    label: false,
+                    placeholder: "Password",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    label: false,
+                    placeholder: "Confirm password",
+                    input_html: { autocomplete: "new-password" } %>
 
         <div class="form-actions">
-          <%= f.button :submit, "Send", class: "btn btn-success text-white bold w-100 mb-2" %>
+          <%= f.button :submit, "Sign Up", class: "btn btn-green text-white font-weight-bolder w-100 mb-2" %>
+          <p>Already a member?</p>
+          <%= render "devise/shared/links" %>
         </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
-
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
