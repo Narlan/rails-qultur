@@ -6,10 +6,9 @@ class MonumentsController < ApplicationController
       {
         lat: monument.latitude,
         lng: monument.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { monument: monument }),
+        infoWindow: render_to_string(partial: "info_window", locals: { monument: monument })
       }
     end
-
 
     @monuments = Monument.near(params[:query][:address], 30)
     @marker = markers
