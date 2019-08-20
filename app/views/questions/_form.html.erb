@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+
+      <h2>Add a question to <%= @monument.name %></h2>
+
+      <%= simple_form_for [@monument, @question] do |f| %>
+        <div class="form-inputs">
+          <%= f.input :title,
+                      autofocus: true,
+                      required: true %>
+          <%= f.input :position,
+                      required: true %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Submit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
