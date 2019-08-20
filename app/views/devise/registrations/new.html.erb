@@ -10,6 +10,7 @@
           <div class="mr-1">
             <%= f.input :first_name,
                         label: false,
+                        autofocus: true,
                         placeholder: "First name" %>
           </div>
           <div>
@@ -26,7 +27,6 @@
                     required: true,
                     label: false,
                     placeholder: "Bob@example.com",
-                    autofocus: true,
                     input_html: { autocomplete: "email" } %>
         <%= f.input :password,
                     required: true,
