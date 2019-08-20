@@ -7,12 +7,12 @@ class MonumentsController < ApplicationController
         lng: monument.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { cat: monument }),
         image_url: helpers.asset_url('coin.png')
+
       }
     end
   end
 
   def index
-
   end
 
   def show

@@ -1,25 +1,11 @@
 <div class="container">
 
   <div class="d-flex justify-content-center mt-3">
-
-    <form>
-      <div class="form-row align-items-center">
-        <div class="col-auto">
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><i class="fas fa-city"></i></div>
-            </div>
-              <%= simple_form_for :query, url: root_path, method: "GET", :html => {:class => "form-inline"} do |f| %>
-                <%= f.input :address, collection: Monument::CITY, label: false, placeholder: 'Search for a city' %>
-                <%= f.submit "Search", class: "btn btn-dark px-4" %>
-              <% end %>
-          </div>
-        </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-success text-white font-weight-bold mb-2">Hunt!</button>
-        </div>
-      </div>
-    </form>
+      <%= simple_form_for :query, url: monuments_path, method: "GET", :html => {:class => "form-inline"} do |f| %>
+        <div class="input-group-text"><i class="fas fa-city"></i></div>
+        <%= f.input :address, collection: Monument::CITY, label: false, placeholder: 'Search for a city' %>
+        <%= f.submit "Search", class: "btn btn-green" %>
+      <% end %>
   </div>
 
 </div>
