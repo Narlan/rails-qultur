@@ -1,3 +1,13 @@
+
+<%= cl_image_tag @user.photo, width: 100%>
+
 <%= @user.nickname %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-<%= link_to "Login", new_user_session_path, class: "nav-link" %>
+<%= @user.first_name %>
+<%= @user.last_name %>
+<%= @user.age %>
+
+<% if user_signed_in? %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Edit", edit_user_registration_path %>
+<% end %>
+
