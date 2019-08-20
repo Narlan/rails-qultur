@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_093832) do
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.boolean "success"
+    t.boolean "success", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "content"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2019_08_20_093832) do
   end
 
   create_table "hunts", force: :cascade do |t|
-    t.boolean "current_hunt"
+    t.boolean "current_hunt", default: false
     t.integer "score"
-    t.string "progress"
+    t.string "progress", default: "pending"
     t.bigint "monument_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
