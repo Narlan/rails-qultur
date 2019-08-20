@@ -3,6 +3,13 @@
   <div class="card-monument">
     <%= image_tag @monument.photo %>
     <h1><%= @monument.name %></h1>
+    <p><%= @monument.description %></p>
 
+    <!-- Test if monument is already captured by current_user -->
+    <% if true %>
+      <%= link_to 'Start the quizz', '#', class: 'btn btn-block btn-green' %>
+    <% else %>
+      <%= link_to 'Back to your collection', '#', class: 'btn btn-block btn-green' %>
+    <% end %>
   </div>
 </div>
