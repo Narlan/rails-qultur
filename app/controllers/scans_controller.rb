@@ -1,6 +1,6 @@
 class ScansController < ApplicationController
 
-  def show
+  def index
 
   end
 
