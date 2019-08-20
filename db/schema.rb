@@ -10,27 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_070054) do
+
+ActiveRecord::Schema.define(version: 2019_08_20_093832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.bigint "hunt_id"
-    t.bigint "proposal_id"
-    t.string "content"
-    t.bigint "question_id"
+    t.boolean "success", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["hunt_id"], name: "index_answers_on_hunt_id"
-    t.index ["proposal_id"], name: "index_answers_on_proposal_id"
+    t.string "content"
+    t.bigint "question_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "choices", force: :cascade do |t|
+    t.bigint "hunt_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "answer_id"
+    t.index ["answer_id"], name: "index_choices_on_answer_id"
+    t.index ["hunt_id"], name: "index_choices_on_hunt_id"
+  end
+
   create_table "hunts", force: :cascade do |t|
-    t.boolean "current_hunt"
+    t.boolean "current_hunt", default: false
     t.integer "score"
-    t.string "progress"
+    t.string "progress", default: "pending"
     t.bigint "monument_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -47,12 +54,6 @@ ActiveRecord::Schema.define(version: 2019_08_20_070054) do
     t.string "qrcode"
     t.float "longitude"
     t.float "latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "proposals", force: :cascade do |t|
-    t.boolean "success"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -85,9 +86,9 @@ ActiveRecord::Schema.define(version: 2019_08_20_070054) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "answers", "hunts"
-  add_foreign_key "answers", "proposals"
   add_foreign_key "answers", "questions"
+  add_foreign_key "choices", "answers"
+  add_foreign_key "choices", "hunts"
   add_foreign_key "hunts", "monuments"
   add_foreign_key "hunts", "users"
   add_foreign_key "questions", "monuments"
