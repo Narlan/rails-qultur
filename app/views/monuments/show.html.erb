@@ -1,8 +1,21 @@
-<h1> <%= @monument.name %> </h1>
-<h2> <%= @monument.description %> </h2>
-<% @monument.questions.each do |question| %>
-<p><%= question.title %></p>
-<p><%= question.position %></p>
-<% end %>
+<div class="container">
 
-<%= link_to 'Add question to the Monument', new_monument_question_path(@monument) %>
+  <div class="card-monument">
+    <%= image_tag @monument.photo %>
+    <h1><%= @monument.name %></h1>
+    <h2> <%= @monument.description %> </h2>
+    <% @monument.questions.each do |question| %>
+    <p><%= question.title %></p>
+    <p><%= question.position %></p>
+    <% end %>
+
+    <!-- Test if monument is already captured by current_user -->
+    <% if true %>
+      <%= link_to 'Start the quizz', '#', class: 'btn btn-block btn-green' %>
+    <% else %>
+      <%= link_to 'Back to your collection', '#', class: 'btn btn-block btn-green' %>
+    <% end %>
+  </div>
+  <%= link_to 'Add question to the Monument', new_monument_question_path(@monument) %>
+</div>
+
