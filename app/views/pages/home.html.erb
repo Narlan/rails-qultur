@@ -9,7 +9,10 @@
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-city"></i></div>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Choose your city">
+              <%= simple_form_for :query, url: monuments_path, method: "GET", :html => {:class => "form-inline"} do |f| %>
+                <%= f.input :address, collection: Monument::CITY, label: false, placeholder: 'Search for a city' %>
+                <%= f.submit "Search", class: "btn btn-dark px-4" %>
+              <% end %>
           </div>
         </div>
         <div class="col-auto">

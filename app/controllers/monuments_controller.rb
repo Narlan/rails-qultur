@@ -8,6 +8,14 @@ class MonumentsController < ApplicationController
         lng: monument.longitude
       }
     end
+
+
+    @monuments = Monument.near(params[:query][:address], 30)
+    @marker = markers
+    if @marker.empty?
+      @monuments = Monument.all
+      @marker = markers
+    end
   end
 
   def show
