@@ -3,4 +3,6 @@ class Hunt < ApplicationRecord
   belongs_to :user
 
   has_many :answers
+
+  validates :user, :monument, presence: true
 end
