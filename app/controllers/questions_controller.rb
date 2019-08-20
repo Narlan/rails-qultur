@@ -1,12 +1,8 @@
 class QuestionsController < ApplicationController
-  def index
-    @questions = Question.all.where(monument_id: params[:monument_id])
-  end
+  before_action :set_monument, only: %i[new create]
 
-  def show
-    @questions.each do |question|
-      @question = question
-    end
+  def index
+    @questions = Question.all.where(monument: params[:monument_id])
   end
 
   def new
@@ -14,17 +10,20 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @monument = Monument.find(params[:monument_id])
     @question = Question.new(question_params)
     @question.monument = @monument
     if @question.save
-      redirect_to question_path(@question)
+      redirect_to monument_questions_path
     else
       render :new
     end
   end
 
   private
+
+  def set_monument
+    @monument = Monument.find(params[:monument_id])
+  end
 
   def question_params
     params.require(:question).permit(:title, :position)

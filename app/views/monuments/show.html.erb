@@ -1,0 +1,8 @@
+<h1> <%= @monument.name %> </h1>
+<h2> <%= @monument.description %> </h2>
+<% @monument.questions.each do |question| %>
+<p><%= question.title %></p>
+<p><%= question.position %></p>
+<% end %>
+
+<%= link_to 'Add question to the Monument', new_monument_question_path(@monument) %>
