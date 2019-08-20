@@ -1,4 +1,4 @@
 import "bootstrap";
-import { openQRCamera } from "./scan.js"
+// import { openQRCamera } from "./scan.js"
 
-openQRCamera()
+// openQRCamera()
