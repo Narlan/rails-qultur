@@ -1,17 +1,42 @@
-.form-login {
-  background: white;
-  padding: 10px 20px;
-  margin-top: 50px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  h2 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .btn {
-    width: 100%;
-    margin-bottom: 20px
-  }
+.signin {
+  border-radius: 10px;
+  background-color: lightgray;
+  padding: 2px 3px 10px 3px;
+}
+
+.signin p {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.form-inputs input {
+  border-radius: 8px;
+}
+
+.form-inputs input::placeholder {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.form-actions {
+  color: white;
+}
+
+.signup {
+  border-radius: 10px;
+  background-color: lightgray;
+  padding: 2px 3px 15px 3px;
+}
+
+.signup p {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.form-check-label {
+  opacity: 0.7;
+}
+
+.btn.btn-green {
+  background-color: $green;
 }

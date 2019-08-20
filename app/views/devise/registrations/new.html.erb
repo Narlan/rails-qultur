@@ -1,41 +1,50 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-
-      <h2>Sign up</h2>
-
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-
-        <div class="form-inputs">
-          <%= f.input :first_name,
-                      autofocus: true,
-                      required: true %>
-          <%= f.input :last_name,
-                      required: true %>
-          <%= f.input :nickname,
-                      required: true %>
-          <%= f.input :age,
-                      required: true %>
-          <%= f.input :email,
-                      required: true,
-                      input_html: { autocomplete: "email" }%>
-          <%= f.input :password,
-                      required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-                      required: true,
-                      input_html: { autocomplete: "new-password" } %>
+<div class="container text-center">
+  <div class="signin">
+    <div class="mb-2">
+      <%= image_tag('Q.png', width: 60) %>
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs justify-content-between mx-2">
+        <div class="d-flex">
+          <div class="mr-1">
+            <%= f.input :first_name,
+                        label: false,
+                        autofocus: true,
+                        placeholder: "First name" %>
+          </div>
+          <div>
+            <%= f.input :last_name,
+                        label: false,
+                        placeholder: "Last name" %>
+          </div>
         </div>
+        <%= f.input :nickname,
+                    required: true,
+                    label: false,
+                    placeholder: "Username" %>
+        <%= f.input :email,
+                    required: true,
+                    label: false,
+                    placeholder: "Bob@example.com",
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: true,
+                    label: false,
+                    placeholder: "Password",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    label: false,
+                    placeholder: "Confirm password",
+                    input_html: { autocomplete: "new-password" } %>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign Up", class: "btn btn-green text-white font-weight-bolder w-100 mb-2" %>
+          <p>Already a member?</p>
+          <%= render "devise/shared/links" %>
         </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
-
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
