@@ -1,6 +1,12 @@
 class QuestionsController < ApplicationController
+  def index
+    @questions = Question.all.where(monument_id: params[:monument_id])
+  end
+
   def show
-    @question = Question.find(params[:monument_id])
+    @questions.each do |question|
+      @question = question
+    end
   end
 
   def new
