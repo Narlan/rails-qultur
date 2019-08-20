@@ -1,3 +1,3 @@
-class Proposal < ApplicationRecord
+class Answer < ApplicationRecord
   has_many :answers
 end
