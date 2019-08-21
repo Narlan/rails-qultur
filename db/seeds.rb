@@ -9,7 +9,7 @@ monuments = {
     name: "Arc de Triomphe",
     description: "Napoléon Ier, au lendemain de la bataille d'Austerlitz, déclare aux soldats français : « Vous ne rentrerez dans vos foyers que sous des arcs de triomphe. » L'Empereur s'est référé aux arcs de triomphe érigés sous l’Empire romain afin de commémorer un général vainqueur défilant à la tête de ses troupes.",
     photo:"https://upload.wikimedia.org/wikipedia/commons/7/79/Arc_de_Triomphe%2C_Paris_21_October_2010.jpg",
-    address: "Avenue des Champs Elysées, 75008 Paris"
+    address: "Place Charles de Gaulle, 75008 Paris"
   },
   monument_003: {
     name: "Musée des Invalides",
