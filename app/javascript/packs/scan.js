@@ -10,8 +10,10 @@ const qrCodeActivated = () => {
       field.value = "";
       qrcode.callback = function(res) {
         if(res instanceof Error) {
+          console.log("no");
           alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
         } else {
+          console.log("yes");
           field.parentNode.previousElementSibling.value = res;
           to_send.value = res;
           document.querySelectorAll(".qr-code-form")[0].submit();
