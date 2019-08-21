@@ -3,7 +3,7 @@
   <div class="card-monument">
     <%= image_tag @monument.photo %>
     <h1><%= @monument.name %></h1>
-    <h2> <%= @monument.description %> </h2>
+    <p> <%= @monument.description %> </p>
     <% @monument.questions.each do |question| %>
     <p><%= question.title %></p>
     <p><%= question.position %></p>
