@@ -1,12 +1,11 @@
 <div class="container">
 
   <div class="d-flex justify-content-center mt-3">
-
     <form>
       <div class="d-flex justify-content-between">
           <div>
               <%= simple_form_for :query, url: root_path, method: "GET", :html => {:class => "form-inline"} do |f| %>
-                <%= f.input :address, collection: Monument::CITY, label: false, placeholder: 'Search for a city' %>
+                <%= f.input :address, collection: Monument::CITY, label: false %>
           </div>
           <div class="col-auto">
             <button type="submit" class="btn btn-success text-white font-weight-bold mb-2">Chassons!</button>

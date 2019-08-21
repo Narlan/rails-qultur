@@ -5,9 +5,19 @@
   <%= link_to '#monuments' do %>
     <i class="fas fa-landmark"></i>
   <% end %>
-  <%= link_to 'scans#index', class: 'qr-button' do %>
-    <i class="fas fa-qrcode"></i>
+
+
+  <%= form_with(url: scanned_path, method: "post", class: "qr-code-form") do |f| %>
+    <%= f.hidden_field :url, hidden: true, id: "field-to-send" %>
+    <form action="<%= scanned_path %>">
+      <label class=qr-button>
+        <!-- <i class="fas fa-qrcode"></i> -->
+        <input type=file accept="image/*" capture=environment id="qr-field" tabindex=-1>
+      </label>
+    </form>
   <% end %>
+
+
   <%= link_to '#community' do %>
     <i class="fas fa-users"></i>
   <% end %>

@@ -26,7 +26,8 @@ const initMapbox = () => {
       style: 'mapbox://styles/keshra/cjzjxxqrg1fdw1crzmhl8yhus',
       touchZoomRotate: true,
       center: [2.213749, 46.227638],
-      zoom: 4
+      zoom: 4,
+      pitch: 45
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
