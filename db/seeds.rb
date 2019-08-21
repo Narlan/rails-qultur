@@ -51,4 +51,3 @@ print_the_final_QR
 create_user
 create_datas
 print_user_informations
-print_dancers
