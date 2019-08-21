@@ -3,9 +3,9 @@ class PagesController < ApplicationController
 
   def home
     @monuments = Monument.all
-    # if params[:query] && params[:query][:address]
-    #   @monuments = @monuments.near(params[:query][:address], 30)
-    # end
+    if params[:query] && params[:query][:address]
+      @monuments = @monuments.near(params[:query][:address], 30)
+    end
     @markers = @monuments.map do |monument|
       {
         lat: monument.latitude,

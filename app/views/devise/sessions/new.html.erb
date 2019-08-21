@@ -1,7 +1,7 @@
 <div class="container text-center">
   <div class="signup">
     <div class="mb-2">
-      <%= image_tag('Q.png', width: 60) %>
+      <%= image_tag('Q.png', width: 80) %>
     </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -10,30 +10,30 @@
                       required: false,
                       autofocus: true,
                       label: false,
-                      placeholder: "Bob@example.com",
+                      placeholder: "Bob@exemple.com",
                       input_html: { autocomplete: "email" } %>
           <%= f.input :password,
                       required: false,
                       label: false,
-                      placeholder: "Password",
+                      placeholder: "Mot de passe",
                       input_html: { autocomplete: "current-password" } %>
             <div class="d-flex justify-content-between font-weight-lighter">
-              <small><%= f.input :remember_me, label: "Keep me signed in", as: :boolean if devise_mapping.rememberable? %></small>
+              <small><%= f.input :remember_me, label: "Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %></small>
               <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-                <small><%= link_to "Forgot Password?", new_password_path(resource_name) %></small><br />
+                <small class="forget-password"><%= link_to "Mot de passe oublié?", new_password_path(resource_name) %></small><br />
               <% end %>
             </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Log In", class: "btn btn-green text-white font-weight-bolder w-100 mb-2" %>
+            <%= f.button :submit, "Se connecter", class: "btn btn-green text-white font-weight-bolder w-100 mt-4 mb-2" %>
             <table width="100%">
               <tr>
                 <td><hr /></td>
-                <td style="width:1px; white-space: nowrap;">OR</td>
+                <td style="width:1px; white-space: nowrap;">OU</td>
                 <td><hr /></td>
               </tr>
             </table>​
-            <p>Not yet a member?</p>
+            <p>Pas encore inscrit?</p>
             <%= render "devise/shared/links" %>
           </div>
         </div>
