@@ -1,31 +1,10 @@
 <h1>Coucou</h1>
 
-<%= form_with(url: scanned_path, method: "patch", id: "qr-code-form") do %>
-    <input type=text size=16 placeholder="Tracking Code" class=qrcode-text>
+<%= form_with(url: scanned_path, method: "post", id: "qr-code-form") do |f| %>
+  <%= f.hidden_field :url, hidden: true, id: "field-to-send" %>
+  <form action="<%= scanned_path %>">
     <label class=qrcode-text-btn>
-      <input type=file accept="image/*" capture=environment id="qr-field" tabindex=-1> <!-- onchange="openQRCamera(this);" -->
+      <input type=file accept="image/*" capture=environment id="qr-field" tabindex=-1>
     </label>
-    <input type=button value="Go" disabled>
+  </form>
 <% end %>
-
-<!-- Ce script doit rester là tant que le onchange là haut ne sont pas adapté sous forme de listener dans le javascript...-->
-<!-- <script>
-function openQRCamera(node) {
-  console.log(node)
-  const reader = new FileReader();
-  reader.onload = function() {
-    node.value = "";
-    qrcode.callback = function(res) {
-      if(res instanceof Error) {
-        alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
-      } else {
-        node.parentNode.previousElementSibling.value = res;
-        document.getElementById("qr-code-form").submit();
-      }
-    };
-    qrcode.decode(reader.result);
-  };
-  reader.readAsDataURL(node.files[0]);
-}
-</script>
- -->

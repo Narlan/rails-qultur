@@ -1,5 +1,5 @@
 const qrCodeActivated = () => {
-  const btn = document.querySelectorAll(".qrcode-text-btn")[0].click();
+  const to_send = document.getElementById("field-to-send")
   const field = document.getElementById("qr-field");
   field.addEventListener("change", (node) => {
 
@@ -13,7 +13,8 @@ const qrCodeActivated = () => {
           alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
         } else {
           field.parentNode.previousElementSibling.value = res;
-          document.getElementById("qr-code-form").submit();
+          to_send.value = res;
+          document.querySelectorAll(".qr-code-form")[0].submit();
         };
       };
       qrcode.decode(reader.result);
