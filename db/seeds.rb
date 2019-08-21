@@ -4,47 +4,51 @@ require_relative 'seeds_auxiliary_ui.rb'
 def create_monuments(monuments)
   monuments.each_value do |value|
     Monument.create!(value)
-    puts "created #{value[:name]}"
   end
 end
 
 def create_questions(questions)
   questions.each_value do |value|
     Question.create!(value)
-    puts "created #{value[:title]}"
   end
 end
 
 def create_answers(answers)
   answers.each_value do |value|
     Answer.create!(value)
-    puts "created #{value[:content]}"
   end
 end
-print "Creating a user... "
-user = User.create!(first_name: "John", last_name: "Doe", nickname: "Jedi", age: 30,
-                   email: "user@example.com", password: "password",
-                   photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg(5 ko)
-https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg
-")
-puts "done!"
 
-puts "Creating #{monuments.length} monument(s)..."
-create_monuments(monuments)
-puts "... done!"
+def create_user
+  print "Creating a user.............. "
+  user = User.create!(
+    first_name: "John",
+    last_name: "Doe",
+    nickname: "Jedi",
+    age: 30,
+    email: "user@example.com",
+    password: "password",
+    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
+  print "done!\n".green
+end
 
-puts "Creating #{questions.length} question(s)..."
-create_questions(questions)
-puts "... done!"
+def create_datas
+  print_adaptative_info("#{monuments.length} monument(s)", "start")
+  create_monuments(monuments)
+  print_adaptative_info()
 
-puts "Creating #{answers.length} answer(s)..."
-create_answers(answers)
-puts "... done!"
+  print_adaptative_info("#{questions.length} question(s)", "start")
+  create_questions(questions)
+  print_adaptative_info()
 
+  print_adaptative_info("#{answers.length} answers(s)", "start")
+  create_answers(answers)
+  print_adaptative_info()
+end
 
-system "clear"
-
-puts "email: user@example.com"
-puts "password: password"
-
+clear
 print_the_final_QR
+create_user
+create_datas
+print_user_informations
+print_dancers
