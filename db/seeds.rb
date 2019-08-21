@@ -3,7 +3,8 @@ monuments = {
     name: "Tour Eiffel",
     description: "La tour Eiffel est une tour de fer puddlé de 324 mètres de hauteur (avec antennes) située à Paris, à l’extrémité nord-ouest du parc du Champ-de-Mars en bordure de la Seine dans le 7e arrondissement.",
     photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tour_eiffel_de_nuit.jpg/1024px-Tour_eiffel_de_nuit.jpg",
-    address: "Avenue Gustave Eiffel, 75007 Paris"
+    address: "Avenue Gustave Eiffel, 75007 Paris",
+    qrcode: "http://www.qultur.xyz"
   },
   monument_002: {
     name: "Arc de Triomphe",
