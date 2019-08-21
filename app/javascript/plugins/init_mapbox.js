@@ -23,7 +23,8 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/keshra/cjzjxxqrg1fdw1crzmhl8yhus'
+      style: 'mapbox://styles/keshra/cjzjxxqrg1fdw1crzmhl8yhus',
+      touchZoomRotate: true
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {

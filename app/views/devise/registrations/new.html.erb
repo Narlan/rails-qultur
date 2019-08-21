@@ -1,7 +1,7 @@
 <div class="container text-center">
   <div class="signin">
     <div class="mb-2">
-      <%= image_tag('Q.png', width: 60) %>
+      <%= image_tag('Q.png', width: 80) %>
     </div>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -11,37 +11,37 @@
             <%= f.input :first_name,
                         label: false,
                         autofocus: true,
-                        placeholder: "First name" %>
+                        placeholder: "Prenom" %>
           </div>
           <div>
             <%= f.input :last_name,
                         label: false,
-                        placeholder: "Last name" %>
+                        placeholder: "Nom" %>
           </div>
         </div>
         <%= f.input :nickname,
                     required: true,
                     label: false,
-                    placeholder: "Username" %>
+                    placeholder: "Nom d'utilisateur" %>
         <%= f.input :email,
                     required: true,
                     label: false,
-                    placeholder: "Bob@example.com",
+                    placeholder: "Bob@exemple.com",
                     input_html: { autocomplete: "email" } %>
         <%= f.input :password,
                     required: true,
                     label: false,
-                    placeholder: "Password",
+                    placeholder: "Mot de passe",
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
                     required: true,
                     label: false,
-                    placeholder: "Confirm password",
+                    placeholder: "Confirmez votre mot de passe",
                     input_html: { autocomplete: "new-password" } %>
 
         <div class="form-actions">
           <%= f.button :submit, "Sign Up", class: "btn btn-green text-white font-weight-bolder w-100 mb-2" %>
-          <p>Already a member?</p>
+          <p>Deja inscrit?</p>
           <%= render "devise/shared/links" %>
         </div>
       </div>
