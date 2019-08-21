@@ -3,7 +3,7 @@
   <div class="d-flex justify-content-center mt-4">
     <%= simple_form_for :query, url: monuments_path, method: "GET", :html => {:class => "form-inline"} do |f| %>
       <%= f.input :address, collection: Monument::CITY, label: false %>
-      <%= f.submit "Search", class: "btn btn-green ml-3 mb-3" %>
+      <%= f.submit "Visiter!", class: "btn btn-green ml-3 mb-3" %>
     <% end %>
   </div>
 
