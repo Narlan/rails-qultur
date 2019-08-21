@@ -1,2 +1,4 @@
-<h2><%= monument.name %></h2>
-<p><%= monument.address %></p>
+<%= image_tag monument.photo, class: 'image-bubble' %>
+<h2 class="mb-0"><%= monument.name %></h2>
+<p><small><%= monument.address %></small></p>
+<%= link_to 'En chasse', monuments_path, class: 'btn btn-green' %>
