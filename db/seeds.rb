@@ -1,21 +1,22 @@
-require_relative 'seeds_auxiliary.rb'
+require_relative 'seeds_auxiliary_data.rb'
+require_relative 'seeds_auxiliary_ui.rb'
 
 def create_monuments(monuments)
-  monuments.each do |key, value|
+  monuments.each_value do |value|
     Monument.create!(value)
     puts "created #{value[:name]}"
   end
 end
 
 def create_questions(questions)
-  questions.each do |key, value|
+  questions.each_value do |value|
     Question.create!(value)
     puts "created #{value[:title]}"
   end
 end
 
 def create_answers(answers)
-  answers.each do |key, value|
+  answers.each_value do |value|
     Answer.create!(value)
     puts "created #{value[:content]}"
   end
@@ -46,21 +47,4 @@ system "clear"
 puts "email: user@example.com"
 puts "password: password"
 
-puts "
- ▄▄▄▄▄▄▄  ▄  ▄▄  ▄ ▄▄  ▄▄▄ ▄▄▄▄▄▄▄
- █ ▄▄▄ █ ▄▄█▀█▄█▀█ ██▀▀▄▀  █ ▄▄▄ █
- █ ███ █  ▀█▀ ▀█▀  ▄▄  █▄▄ █ ███ █
- █▄▄▄▄▄█ ▄▀▄ ▄▀▄ ▄▀▄▀▄▀▄▀█ █▄▄▄▄▄█
- ▄▄▄ ▄▄▄▄█▀█▄▀▀█▄▀█ ▀▄█▀██▄▄   ▄
- ▄▄ ▄▀ ▄▀▀▄▀▀ ▄▀▀ ▀▀ ▄   ▀▄█ ▄▄▀██
- ▀ ▀▀▀█▄▀█  ▀▄  ▀▄█   ██▀▄▄▄▄    █
- ▄██  ▄▄▀█▀ ██▀▄██ ▄ ▀▀▄ █ ▄ ▄▄███
-  ██▀█ ▄▀ █ ▄▀▀█▄██ ▀██ ▀█▀█ ▀  █
- ▄▀▄ █ ▄ ▀█▀▀ ▄▀▀ ▀  █▀▀ ▀▀█▄▄▄▄██
- ▀▀▀█  ▄▄▀ █▀▄  ▀▄██▀▀█ ▀▄ ▄▄ ▀ ▄▄
- ▄ ▀  █▄▀▄▀ ██▀▄ ▄▀▄ ▀ ▄▀█▀█▄▄▀▄██
- ▄▀▀▄▀▀▄█▄ ▀▄▀▀█▀██   █ ▀▄█▄█▄  ▄█
- ▄▄▄▄▄▄▄ ██ ▀ ▄▀ ██▀ ▀▀ ██ ▄ █▄▀▄▄
- █ ▄▄▄ █ █▀ ▀▄  ███▀▀▄██▀█▄▄▄█  ▄█
- █ ███ █ ▄▀▀██▀▄ █▄  ▀▀▄█  ▄▄▄ ▀ █
- █▄▄▄▄▄█ █▄▀▄▀▀█  █▀███ ▀███▀▄▀ █▄"
+print_the_final_QR
