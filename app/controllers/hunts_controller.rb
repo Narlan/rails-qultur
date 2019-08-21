@@ -6,7 +6,12 @@ class HuntsController < ApplicationController
   end
 
   def scanned
-    raise
+    monuments = Monument.where("qrcode = '#{params[:url]}'")
+    if monuments.length > 0
+      raise
+    else
+      raise
+    end
   end
 
 end
