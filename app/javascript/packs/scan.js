@@ -1,4 +1,5 @@
 const qrCodeActivated = () => {
+  alert("test");
   const to_send = document.getElementById("field-to-send")
   const field = document.getElementById("qr-field");
   field.addEventListener("change", (node) => {
