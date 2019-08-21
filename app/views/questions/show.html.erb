@@ -1,0 +1,23 @@
+<div class="container text-center">
+    <%# @questions.each do |question| %>
+    <div class="question">
+        <p class="mt-4">
+            <%= @questions.first.position %> -
+            <%= @questions.first.title %>
+        </p>
+        <div class="row">
+            <% @questions.first.answers.each do |answer| %>
+            <% while answer.content != [] %>
+            <div class="answer col-6">
+                <% proposal = answer.content.sample %>
+                <p> <%= proposal %> </p>
+                <% index = answer.content.find_index(proposal) %>
+                <% answer.content.delete_at(index) %>
+            </div>
+            <% end %>
+            <% end %>
+        </div>
+    </div>
+    <%= link_to 'Question suivante', '#', class: 'btn btn-block btn-green mt-4' %>
+    <%# end %>
+</div>

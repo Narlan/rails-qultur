@@ -1,0 +1,17 @@
+.question {
+  font-weight: bold;
+}
+
+.answer {
+  background-color: #404040;
+  border-radius: 8px;
+  color: white;
+  font-weight: normal;
+  height: 160px;
+  margin: 8px;
+  max-width: 45.5%;
+  vertical-align: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

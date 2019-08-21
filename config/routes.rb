@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :scans, only: [:index]
   resources :monuments, only: [:index, :show] do
-    resources :questions, only: [:index, :new, :create]
+    resources :questions, only: [:index, :show, :new, :create]
   end
 
-post "/hunts/scanned", to: "hunts#scanned", as: "scanned"
+  post "/hunts/scanned", to: "hunts#scanned", as: "scanned"
 
 end

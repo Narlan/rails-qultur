@@ -11,7 +11,7 @@
 
     <!-- Test if monument is already captured by current_user -->
     <% if true %>
-      <%= link_to 'Start the quizz', '#', class: 'btn btn-block btn-green' %>
+      <%= link_to 'Start the quizz', monument_question_path(@monument), class: 'btn btn-block btn-green' %>
     <% else %>
       <%= link_to 'Back to your collection', '#', class: 'btn btn-block btn-green' %>
     <% end %>
