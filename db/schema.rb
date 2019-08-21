@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_092018) do
     t.boolean "success", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "content"
+    t.string "content", array: true
     t.bigint "question_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
