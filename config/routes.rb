@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :monuments, only: [:index, :show] do
     resources :questions, only: [:index, :new, :create]
   end
+
+post "/hunts/scanned", to: "hunts#scanned", as: "scanned"
+
 end
