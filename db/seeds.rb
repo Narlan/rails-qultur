@@ -4,31 +4,35 @@ monuments = {
     description: "La tour Eiffel est une tour de fer puddlé de 324 mètres de hauteur (avec antennes) située à Paris, à l’extrémité nord-ouest du parc du Champ-de-Mars en bordure de la Seine dans le 7e arrondissement.",
     photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tour_eiffel_de_nuit.jpg/1024px-Tour_eiffel_de_nuit.jpg",
     address: "Avenue Gustave Eiffel, 75007 Paris",
-    qrcode: "http://www.qultur.xyz"
+    qrcode: "monument_001_test"
   },
   monument_002: {
     name: "Arc de Triomphe",
     description: "Napoléon Ier, au lendemain de la bataille d'Austerlitz, déclare aux soldats français : « Vous ne rentrerez dans vos foyers que sous des arcs de triomphe. » L'Empereur s'est référé aux arcs de triomphe érigés sous l’Empire romain afin de commémorer un général vainqueur défilant à la tête de ses troupes.",
     photo:"https://upload.wikimedia.org/wikipedia/commons/7/79/Arc_de_Triomphe%2C_Paris_21_October_2010.jpg",
-    address: "Place Charles de Gaulle, 75008 Paris"
+    address: "Place Charles de Gaulle, 75008 Paris",
+    qrcode: "monument_002_test"
   },
   monument_003: {
     name: "Musée des Invalides",
     description: "L’hôtel des Invalides est un monument parisien dont la construction fut ordonnée par Louis XIV par l'édit royal du 24 février 16702, pour abriter les invalides de ses armées. Aujourd'hui, il accueille toujours des invalides, mais également la cathédrale Saint-Louis des Invalides, plusieurs musées et une nécropole militaire avec notamment le tombeau de Napoléon Ier.",
     photo:"https://upload.wikimedia.org/wikipedia/commons/8/8d/Invalides_aerial_view.jpg",
-    address: "129 Rue de Grenelle, 75007 Paris"
+    address: "129 Rue de Grenelle, 75007 Paris",
+    qrcode: "monument_003_test"
   },
   monument_004: {
     name: "Sacré Coeur",
     description: "La basilique du Sacré-Cœur de Montmartre, dite du Vœu national, située au sommet de la butte Montmartre, dans le quartier de Clignancourt du 18e arrondissement de Paris, est un édifice religieux parisien majeur, « sanctuaire de l'adoration eucharistique et de la miséricorde divine » et propriété de l'archidiocèse de Paris.",
     photo:"https://upload.wikimedia.org/wikipedia/commons/c/c5/Le_sacre_coeur.jpg?uselang=fr",
-    address: "35 Rue du Chevalier de la Barre, 75018 Paris"
+    address: "35 Rue du Chevalier de la Barre, 75018 Paris",
+    qrcode: "monument_004_test"
   },
   monument_005: {
     name: "Musée d'Orsay",
     description: "Le musée d’Orsay est un musée national inauguré en 1986, situé dans le 7e arrondissement de Paris le long de la rive gauche de la Seine. Il est installé dans l’ancienne gare d'Orsay, construite par Victor Laloux de 1898 à 1900 et réaménagée en musée sur décision du Président de la République Valéry Giscard d'Estaing.",
     photo:"https://upload.wikimedia.org/wikipedia/commons/7/7c/Musée_d'Orsay%2C_North-West_view%2C_Paris_7e_140402.jpg",
-    address: "1 Rue de la Légion d'Honneur, 75007 Paris"
+    address: "1 Rue de la Légion d'Honneur, 75007 Paris",
+    qrcode: "monument_005_test"
   }
 }
 
