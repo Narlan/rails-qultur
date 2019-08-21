@@ -6,7 +6,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { qrCodeActivated } from "./scan.js";
 $(document).ready(qrCodeActivated());
 
-
 initMapbox();
 openQRCamera()
 

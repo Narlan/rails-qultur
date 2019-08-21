@@ -5,6 +5,10 @@ class QuestionsController < ApplicationController
     @questions = Question.all.where(monument: params[:monument_id])
   end
 
+  def show
+    @questions = Question.all.where(monument: params[:monument_id])
+  end
+
   def new
     @question = Question.new
   end
