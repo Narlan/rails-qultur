@@ -1,4 +1,4 @@
-require 'seeds_auxiliary.rb'
+require_relative 'seeds_auxiliary.rb'
 
 def create_monuments(monuments)
   monuments.each do |key, value|
