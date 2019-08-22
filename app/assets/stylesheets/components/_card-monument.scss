@@ -18,3 +18,51 @@
   object-fit: cover;
   border-radius: 8px;
 }
+
+.card-captured-monument {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: #202020;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.card-captured-monument a {
+  color: #202020;
+}
+.card-captured-monument a:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-decoration: none;
+  color: #202020;
+}
+
+.card-captured-monument a:active {
+  text-decoration: none;
+  color: #F0F0F0;
+}
+
+.card-captured-monument > img {
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-captured-monument h2 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-captured-monument p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-captured-monument .card-captured-monument-infos {
+  position: relative;
+  padding: 6px;
+  padding-top: 12px;
+}
