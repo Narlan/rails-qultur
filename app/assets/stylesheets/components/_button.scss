@@ -1,5 +1,19 @@
 .btn-green {
   color: white;
   font-weight: bold;
-  background-color: $green;
+  background-color: #1cad43;
+  border-radius: 3px;
+  padding: 16px 32px 16px 32px;
+}
+
+.btn-green p {
+  padding: 0 auto;
+}
+
+.btn-green-disable {
+  color: white;
+  font-weight: bold;
+  background-color: #b3d4b2;
+  border-radius: 3px;
+  padding: 16px 32px 16px 32px;
 }

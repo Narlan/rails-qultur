@@ -1,17 +1,36 @@
-.question {
-  font-weight: bold;
+#quizz {
+ font-weight: bold;
 }
 
 .answer {
-  background-color: #404040;
-  border-radius: 8px;
-  color: white;
-  font-weight: normal;
-  height: 160px;
-  margin: 8px;
-  max-width: 45.5%;
-  vertical-align: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ background-color: #404040;
+ border-radius: 8px;
+ color: white;
+ font-weight: normal;
+ height: 160px;
+ margin: 8px;
+ max-width: 45.5%;
+ vertical-align: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+#button-next.disabled {
+ pointer-events: none;
+ cursor: default;
+}
+
+.answer.disabled {
+ pointer-events: none;
+ cursor: default;
+ opacity: 0.7;
+}
+
+.choice-good {
+ background-color: $green;
+}
+
+.choice-bad {
+ background-color: $red;
 }
