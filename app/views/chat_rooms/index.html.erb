@@ -1,7 +1,14 @@
 <div class="container">
   <ul>
     <% @chat_rooms.each do |chat_room| %>
-      <li><%= link_to "Parler", "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", class: "btn btn-success", style: " margin-top: 15px" %></li>
+      <li>
+        <div class="d-flex justify-content-between">
+          <%= link_to "#{chat_room.user.nickname}", "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", class: "btn btn-success", style: " margin-top: 15px" %>
+          <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", method: :delete do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </li>
     <% end %>
   </ul>
 
