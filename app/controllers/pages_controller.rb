@@ -3,15 +3,14 @@ class PagesController < ApplicationController
 
   def home
     @monuments = Monument.all
-    if params[:query] && params[:query][:address]
-      @monuments = @monuments.near(params[:query][:address], 30)
-    end
+      if params[:query] && params[:query][:address]
+        @monuments = @monuments.near(params[:query][:address], 30)
+      end
     @markers = @monuments.map do |monument|
       {
         lat: monument.latitude,
         lng: monument.longitude,
-        infoWindow: render_to_string(partial: "monuments/info_window", locals: { monument: monument }),
-        image_url: helpers.asset_url('coin.png')
+        infoWindow: render_to_string(partial: "monuments/info_window", locals: { monument: monument })
       }
     end
   end
