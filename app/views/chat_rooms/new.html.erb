@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center mt-3">
+  <form>
+    <div class="d-flex justify-content-between">
+        <div>
+            <%= simple_form_for :query, url: user_chat_rooms_path(@current_user), method: :post, :html => {:class => "form-inline"} do |f| %>
+              <%= f.input :name, collection: @users, label: false %>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-success text-white font-weight-bold mb-2">Parlons!</button>
+        </div>
+        <% end %>
+    </div>
+  </form>
+</div>
