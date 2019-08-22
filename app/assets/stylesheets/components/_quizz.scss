@@ -34,16 +34,3 @@
 .choice-bad {
  background-color: $red;
 }
-
-#button-next.disabled {
-  pointer-events: none;
-  cursor: default;
-}
-
-.choice-good {
-  background-color: $green;
-}
-
-.choice-bad {
-  background-color: $red;
-}
