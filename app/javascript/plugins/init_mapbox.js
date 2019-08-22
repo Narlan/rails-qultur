@@ -27,8 +27,13 @@ const initMapbox = () => {
       touchZoomRotate: true,
       center: [2.213749, 46.227638],
       zoom: 4,
-      pitch: 45
     });
+    map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+    enableHighAccuracy: true
+  },
+    trackUserLocation: true
+  }));
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       new mapboxgl.Marker()
@@ -40,5 +45,7 @@ const initMapbox = () => {
     console.log("Not detected: map div")
   }
 };
+
+
 
 export { initMapbox };
