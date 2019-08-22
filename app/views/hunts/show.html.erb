@@ -1,3 +1,16 @@
-<div class="container">
-  <%= render "/report" %>
+<div>
+  <div class="card-monument">
+    <%= image_tag @hunt.monument.photo %>
+    <h1><%= @hunt.monument.name %></h1>
+  </div>
+
+  <div class="signin">
+    <div class="report">
+      <h2> <%= render "hunts/report" %> </h2>
+    </div>
+    <hr>
+    <div class="question-section">
+      <%= render "hunts/questions_section" %>
+    </div>
+  </div>
 </div>

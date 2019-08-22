@@ -1,1 +1,17 @@
-<% if  %>
+<h2>
+  <% if @hunt.progress == "pending" %>
+    Vous n'avez pas encore scanné le monument ;)
+  <% elsif @hunt.progress == "scanned" %>
+    Félicitation, vous avez atteint <%=@hunt.monument.name%>. Vous pouvez désormais répondre au quizzz!
+  <% elsif @hunt.progress == "aswering" %>
+    Vous avez débuté le questionnaire, bonne chance
+  <% elsif @hunt.progress == "finish" %>
+
+    <% if @hunt.score > 5%>
+      Vous n'êtes pas parvenu à capturer le monument :(... mais ne soyez pas triste, il y a encore de nombreux monuments à capturer !
+    <% else %>
+      Vous avez capturé ce momument ! Félicitation !
+    <% end %>
+
+  <% end %>
+</h2>
