@@ -13,6 +13,9 @@ class MonumentsController < ApplicationController
   # end
 
   def index
+    hunts = current_user.hunts
+    @monuments = []
+    hunts.each { |hunt| @monuments << hunt.monument if hunt.score > 4 }
   end
 
   def show
