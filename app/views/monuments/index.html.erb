@@ -1,8 +1,15 @@
 <div class="container">
   <% @monuments.each do |monument| %>
-    <div class="card-monument">
-      <%= image_tag monument.photo %>
-      <h1><%= monument.name %></h1>
-    </div>
+    <%= link_to monument_path(monument) do %>
+      <div class="card-captured-monument">
+        <%= image_tag monument.photo %>
+
+          <div class="card-captured-monument-infos">
+            <h2><%= monument.name %></h2>
+            <p><%= monument.address %></p>
+          </div>
+
+        </div>
+    <% end %>
   <% end %>
 </div>
