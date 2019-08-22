@@ -1,18 +1,17 @@
 <div class="container text-center">
-    <%# @questions.each do |question| %>
-    <div id="quizz">
-        <p class="mt-4">
-            <%= @questions.first.position %> -
-            <%= @questions.first.title %>
-        </p>
-        <div class="row">
-          <% @questions.first.answers.first.content.each_with_index do |content, index| %>
-            <div class="answer col-6" style="order: <%= @randoms[index] %>" id="choice" data-index="<%= index %>">
-              <%= content %>
-            </div>
-          <% end %>
-        </div>
-    </div>
-    <%= link_to 'Question suivante', "#", class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
-    <%# end %>
+ <% position = 0 %>
+   <div id="quizz" data-position='<%= position %>'>
+       <p class="mt-4">
+           <%= @questions[position].position %> -
+           <%= @questions[position].title %>
+       </p>
+       <div class="row">
+         <% @questions[position].answers[0].content.each_with_index do |content, index| %>
+           <div class="answer col-6" style="order: <%= @randoms[index] %>" id="choice" data-index="<%= index %>">
+             <%= content %>
+           </div>
+         <% end %>
+       </div>
+   </div>
+   <%= link_to 'Question suivante', Question.find_by(position: @questions.position +1,monument: @question.monument), , class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
 </div>

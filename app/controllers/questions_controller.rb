@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @questions = Question.all.where(monument: params[:monument_id])
+    @question = Question.find(params[:id])
     @randoms = [0, 1, 2, 3].shuffle
   end
 
