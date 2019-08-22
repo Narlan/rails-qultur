@@ -5,6 +5,9 @@ class PagesController < ApplicationController
     @monuments = Monument.all
     if params[:query] && params[:query][:address]
       @monuments = @monuments.near(params[:query][:address], 30)
+      if @monuments.length == 0
+        @monuments = Monument.all
+      end
     end
     @markers = @monuments.map do |monument|
       {
