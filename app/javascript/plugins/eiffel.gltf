@@ -1,0 +1,155 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v0.9.36",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Lamp.001",
+      "rotation": [
+        0.16907575726509094,
+        0.7558803558349609,
+        -0.27217137813568115,
+        0.570947527885437
+      ],
+      "translation": [
+        -4.0364789962768555,
+        5.903861999511719,
+        2.1087851524353027
+      ]
+    },
+    {
+      "mesh": 0,
+      "name": "Tour Eiffel",
+      "scale": [
+        0.02554231882095337,
+        0.005284798797219992,
+        0.005284798797219992
+      ],
+      "translation": [
+        -0.28296270966529846,
+        0.4781862497329712,
+        0.5602344274520874
+      ]
+    },
+    {
+      "name": "Lamp",
+      "rotation": [
+        0.16907575726509094,
+        0.7558803558349609,
+        -0.27217137813568115,
+        0.570947527885437
+      ],
+      "translation": [
+        4.076245307922363,
+        5.903861999511719,
+        -1.0054539442062378
+      ]
+    },
+    {
+      "name": "Camera",
+      "rotation": [
+        0.483536034822464,
+        0.33687159419059753,
+        -0.20870360732078552,
+        0.7804827094078064
+      ],
+      "translation": [
+        11.660116195678711,
+        6.289953708648682,
+        9.508539199829102
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Cube.008",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 32980,
+      "max": [
+        32.362091064453125,
+        413.5502014160156,
+        -2.61334228515625
+      ],
+      "min": [
+        -9.568037986755371,
+        -88.16313171386719,
+        -207.70042419433594
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 32980,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 32980,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 49470,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 395760,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 395760,
+      "byteOffset": 395760
+    },
+    {
+      "buffer": 0,
+      "byteLength": 263840,
+      "byteOffset": 791520
+    },
+    {
+      "buffer": 0,
+      "byteLength": 98940,
+      "byteOffset": 1055360
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "eiffel_data.bin",
+      "byteLength": 1154300
+    }
+  ]
+}
