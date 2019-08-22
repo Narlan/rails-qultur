@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   resources :monuments, only: [:index, :show] do
     resources :questions, only: [:index, :show, :new, :create]
   end
-  resources :hunts, only: [:create]
+  resources :hunts, only: [:create] do
+    collection do
+      get :results
+    end
+  end
 
 
-post "/hunts/scanned", to: "hunts#scanned", as: "scanned"
+  post "/hunts/scanned", to: "hunts#scanned", as: "scanned"
 
 end

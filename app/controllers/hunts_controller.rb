@@ -21,4 +21,8 @@ class HuntsController < ApplicationController
     Hunt.create(current_hunt: true, score: 0, progress: "scanned", monument: monuments[0], user: current_user) unless monuments.empty?
     redirect_to monument_path(monuments[0])
   end
+
+  def results
+  end
+
 end
