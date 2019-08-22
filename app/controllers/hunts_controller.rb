@@ -18,6 +18,7 @@ class HuntsController < ApplicationController
   end
 
   def scanned
+    actual_hunt = nil
     hunt_already_exist = false
     monuments = Monument.where("qrcode = '#{params[:url]}'")
     if monuments.length > 0
@@ -28,10 +29,11 @@ class HuntsController < ApplicationController
           hunt.current_hunt = true
           hunt_already_exist = true
           hunt.progress = 'scanned'
+          actual_hunt = hunt
         end
         hunt.save
       end
-      Hunt.create(current_hunt: true, score: 0, progress: "pending", monument: monument, user: current_user) unless hunt_already_exist
+      actual_hunt = Hunt.create(current_hunt: true, score: 0, progress: "pending", monument: monument, user: current_user) unless hunt_already_exist
       redirect_to monument_path(monuments[0])
     end
   end
