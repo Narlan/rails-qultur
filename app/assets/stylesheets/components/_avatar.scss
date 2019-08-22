@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+.avatar-small {
+  width: 56px;
+  height: 56px;
+  
 .avatar-large {
   width: 120px;
   height: 120px;
@@ -15,6 +19,8 @@
   object-position: center;
   border: 3px solid $green;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 .avatar-bordered {
   width: 40px;
