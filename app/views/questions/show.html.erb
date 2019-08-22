@@ -1,23 +1,18 @@
 <div class="container text-center">
     <%# @questions.each do |question| %>
-    <div class="question">
+    <div id="quizz">
         <p class="mt-4">
             <%= @questions.first.position %> -
             <%= @questions.first.title %>
         </p>
         <div class="row">
-            <% @questions.first.answers.each do |answer| %>
-            <% while answer.content != [] %>
-            <div class="answer col-6">
-                <% proposal = answer.content.sample %>
-                <p> <%= proposal %> </p>
-                <% index = answer.content.find_index(proposal) %>
-                <% answer.content.delete_at(index) %>
+          <% @questions.first.answers.first.content.each_with_index do |content, index| %>
+            <div class="answer col-6" style="order: <%= @randoms[index] %>" id="choice" data-index="<%= index %>">
+              <%= content %>
             </div>
-            <% end %>
-            <% end %>
+          <% end %>
         </div>
     </div>
-    <%= link_to 'Question suivante', '#', class: 'btn btn-block btn-green mt-4' %>
+    <%= link_to 'Question suivante', "#", class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
     <%# end %>
 </div>
