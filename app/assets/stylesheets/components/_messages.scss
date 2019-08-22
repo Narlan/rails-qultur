@@ -95,6 +95,7 @@ input.form-control {
   border: 2px solid $green;
   margin-top: 8px;
   border-radius: 8px;
+  width: 345px;
 }
 
 .notification .notification-content {
@@ -116,16 +117,13 @@ input.form-control {
   height: 85vh;
 }
 
-.notification .notification-actions {
-  opacity: 1;
-  display: flex;
-  transition: ease .3s;
-  color: #555555;
-}
-
 
 .notification .notification-actions a {
   color: #999999;
   margin-left: 16px;
   font-size: 14px;
+}
+
+.chatbox {
+  position: relative;;
 }

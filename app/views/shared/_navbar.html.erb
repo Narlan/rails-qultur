@@ -1,20 +1,19 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-md-between">
-  <div>
-    <%= image_tag ('logo.png'), class: 'logo' %>
-  </div>
-  <div class="information d-flex">
-      <% if user_signed_in? %>
-        <div>
-          <%= image_tag("coin.png", width: 20) %>
-        </div>
-        <div>
-          <p>200</p>
-        </div>
-        <%= link_to "/users/#{current_user.id}/chat_rooms" do %>
-          <i class="far fa-comments" style="font-size: 32px"></i>
-        <% end %>
-      <% end %>
+<% if user_signed_in? %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-md-between">
+    <div>
+      <%= image_tag ('logo.png'), class: 'logo' %>
     </div>
-</div>
-
+    <div class="information d-flex">
+          <div>
+            <%= image_tag ('coin.png'), class: 'logo-coin' %>
+          </div>
+          <div>
+            <p>200</p>
+          </div>
+          <%= link_to "/users/#{current_user.id}/chat_rooms" do %>
+            <i class="far fa-comments" style="font-size: 32px"></i>
+          <% end %>
+      </div>
+  </div>
+<% end %>
 
