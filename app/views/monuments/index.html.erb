@@ -1,15 +1,15 @@
 <div class="container">
+  <% @monuments.each do |monument| %>
+    <%= link_to monument_path(monument) do %>
+      <div class="card-captured-monument">
+        <%= image_tag monument.photo %>
 
-  <div class="d-flex justify-content-center mt-3">
-    <%= simple_form_for :query, url: monuments_path, method: "GET", :html => {:class => "form-inline"} do |f| %>
-      <%= f.input :address, collection: Monument::CITY, label: false %>
-      <%= f.submit "Visiter!", class: "btn btn-green ml-3 mb-3" %>
+          <div class="card-captured-monument-infos">
+            <h2><%= monument.name %></h2>
+            <p><%= monument.address %></p>
+          </div>
+
+        </div>
     <% end %>
-  </div>
-
-</div>
-
-<div id="map"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <% end %>
 </div>

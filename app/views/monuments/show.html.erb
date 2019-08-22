@@ -6,8 +6,8 @@
     <p> <%= @monument.description %> </p>
 
     <!-- Test if monument is already captured by current_user -->
-    <% if true %>
-      <%= link_to 'Commencer le quiz', monument_question_path(@monument), class: 'btn btn-block btn-green' %>
+    <% if @monument.questions.present? %>
+      <%= link_to 'Commencer le quiz', monument_question_path(@monument, @monument.questions.find_by(position: 1)), class: 'btn btn-block btn-green' %>
     <% else %>
       <%= link_to 'Retour à la collection', root_path, class: 'btn btn-block btn-green' %>
     <% end %>
