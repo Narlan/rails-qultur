@@ -11,6 +11,9 @@
 .avatar-small {
   width: 56px;
   height: 56px;
+   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .avatar-large {
@@ -20,8 +23,7 @@
   object-position: center;
   border: 3px solid $green;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+
 }
 
 .avatar-bordered {
@@ -39,5 +41,14 @@
 }
 
 .logo {
-  width: 24px;
+  width: 45px;
+  position: absolute;
+  top: 2px;
+}
+
+.logo-coin {
+  right: 115px;
+  width: 27px;
+  position: absolute;
+  top: 14px;
 }

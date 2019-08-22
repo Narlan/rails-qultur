@@ -2,15 +2,16 @@
   <div class="">
     <div class="d-flex justify-content-start align-items-end">
     <%= cl_image_tag @user.photo, class: 'avatar-large my-3' %>
-    <div class="ml-4">
+    <div class="ml-4 mb-3">
       <h2><%= @user.nickname %></h2>
-      <p><%= @user.first_name %> <%= @user.last_name %> <em><small><%= @user.age %> ans</small></em></p>
+      <p class="m-0"><%= @user.first_name %> <%= @user.last_name %></p>
+      <em><small><%= @user.age %> ans</small></em>
     </div>
     </div>
       <p><%= @user.description %></p>
     </div>
   </div>
-  <div class="my-5 mx-2">
+  <div class="button-profile my-5 mx-2">
     <% if user_signed_in? %>
       <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-block btn-green' %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-red' %>

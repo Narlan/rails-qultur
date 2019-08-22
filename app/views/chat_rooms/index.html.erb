@@ -1,23 +1,28 @@
 <div class="container">
   <div class="chatroom">
     <% @chat_rooms.each do |chat_room| %>
-      <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}" do %>
-          <div class="notification d-flex">
+      <div class="chatbox d-flex">
+        <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}" do %>
+          <div class="notification">
             <%= cl_image_tag chat_room.user.photo, class: "avatar-small" %>
             <div class="notification-content">
               <p><%= chat_room.user.nickname %></p>
             </div>
-
-            <div class="notification-actions">
-              <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", method: :delete do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            </div>
           </div>
         <% end %>
-      <% end %>
-  </div>
-  <div class="poubelle">
+        <div class="notification-actions">
+          <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", method: :delete do %>
+            <i class="far fa-trash-alt"
+            style="position: absolute; right: 17px; bottom: 33px;"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+
+
+  <div class="new-chatroom">
     <%= link_to new_user_chat_room_path(current_user.id) do %>
         <i class="fas fa-plus-square"
         style="
@@ -30,3 +35,5 @@
     <% end %>
   </div>
 </div>
+
+
