@@ -22,13 +22,3 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
-<script>
-// Add geolocate control to the map.
-map.addControl(new mapboxgl.GeolocateControl({
-positionOptions: {
-enableHighAccuracy: true
-},
-trackUserLocation: true
-}));
-</script>
