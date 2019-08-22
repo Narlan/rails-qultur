@@ -1,8 +1,3 @@
-// const quizz = document.getElementById('quizz');
-//   quizz.addEventListener('click', (event) => {
-//     event
-//   })
-
 const answers = document.querySelectorAll('.answer');
 answers.forEach((answer) => {
   answer.addEventListener("click", (event) => {
