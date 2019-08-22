@@ -41,7 +41,7 @@ def print_adaptative_info(feed = nil, state = "done")
     statement = "Creating #{feed}"
     print statement
     count = statement.length
-    while count < 29
+    while count < 34
       print(".")
       count += 1
     end
