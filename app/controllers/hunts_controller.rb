@@ -33,7 +33,7 @@ class HuntsController < ApplicationController
         end
         hunt.save
       end
-      actual_hunt = Hunt.create(current_hunt: true, score: 0, progress: "pending", monument: monument, user: current_user) unless hunt_already_exist
+      actual_hunt = Hunt.create(current_hunt: true, score: 0, progress: "pending", monument: monuments[0], user: current_user) unless hunt_already_exist
       redirect_to monument_path(monuments[0])
     end
   end
