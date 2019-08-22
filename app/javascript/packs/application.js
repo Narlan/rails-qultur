@@ -4,9 +4,11 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { qrCodeActivated } from "./scan.js";
 $(document).ready(qrCodeActivated());
+import "./question.js";
+
 
 initMapbox();
-openQRCamera()
+// openQRCamera()
 
 // Il semble qu'il fasse ajouter des listener pour pouvoir utiliser cette structure...
 // Le script du lecteur qr est actuellement dans la view...

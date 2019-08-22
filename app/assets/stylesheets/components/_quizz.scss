@@ -1,4 +1,4 @@
-.question {
+#quizz {
   font-weight: bold;
 }
 
@@ -14,4 +14,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#button-next.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.choice-good {
+  background-color: $green;
+}
+
+.choice-bad {
+  background-color: $red;
 }
