@@ -28,7 +28,8 @@ def create_user
     age: 30,
     email: "user@example.com",
     password: "password",
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
+    description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
+    remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
   print_adaptative_info()
 end
 

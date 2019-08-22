@@ -14,35 +14,35 @@
             <% end %>
             <%= f.input :first_name,
                         label: false,
-                        placeholder: "First name" %>
+                        placeholder: "Prénom" %>
           </div>
           <div>
             <%= f.input :last_name,
                         label: false,
-                        placeholder: "Last name" %>
+                        placeholder: "Nom" %>
           </div>
         </div>
             <%= f.input :nickname,
                         required: true,
                         label: false,
-                        placeholder: "Username" %>
+                        placeholder: "Nom d'utilisateur" %>
             <%= f.input :photo,
                         label: false %>
             <%= f.input :description,
                         label: false,
-                        placeholder: "Tell us about you" %>
+                        placeholder: "Décris-toi" %>
             <%= f.input :photo_cache, as: "hidden" %>
             <%= f.input :current_password,
                   required: true,
                   label: false,
-                  placeholder: "Retype Password",
+                  placeholder: "Mot de passe",
                   input_html: { autocomplete: "current-password" } %>
 
         <div class="form-actions">
-          <%= f.button :submit, "Edit", class: "btn btn-green text-white font-weight-bolder w-100 mb-2" %>
+          <%= f.button :submit, "Modifier", class: "btn btn-green text-white font-weight-bolder w-100 mb-2" %>
         </div>
       </div>
-      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+      <%= link_to "Supprime ton compte", registration_path(resource_name), data: { confirm: "Supprimer le compte?" }, method: :delete %>
     <% end %>
   </div>
 </div>
