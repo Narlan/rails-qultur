@@ -46,8 +46,17 @@ def create_datas
   print_adaptative_info()
 end
 
+def create_captured_hunts
+  print_adaptative_info("2 hunts for test user", "start")
+  user = User.where("nickname = 'Jedi'")
+  Hunt.create(score: 6, progress: "finish", monument: Monument.first, user: user)
+  Hunt.create(score: 7, progress: "finish", monument: Monument.last, user: user)
+  print_adaptative_info()
+end
+
 clear
 print_the_final_QR
 create_user
 create_datas
 print_user_informations
+create_captured_hunts
