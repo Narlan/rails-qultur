@@ -1,18 +1,32 @@
 <div class="container">
-  <ul>
+  <div class="chatroom">
     <% @chat_rooms.each do |chat_room| %>
-      <li>
-        <div class="d-flex justify-content-between">
-          <%= link_to "#{chat_room.user.nickname}", "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", class: "btn btn-success", style: " margin-top: 15px" %>
-          <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", method: :delete do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+      <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}" do %>
+          <div class="notification d-flex">
+            <%= cl_image_tag chat_room.user.photo, class: "avatar-large" %>
+            <div class="notification-content">
+              <p><%= chat_room.user.nickname %></p>
+            </div>
 
-  <%= link_to new_user_chat_room_path(current_user.id) do %>
-      <i class="far fa-comment-dots"></i>
-  <% end %>
+            <div class="notification-actions">
+              <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", method: :delete do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+  <div class="poubelle">
+    <%= link_to new_user_chat_room_path(current_user.id) do %>
+        <i class="fas fa-plus-square"
+        style="
+        font-size: 54px;
+        color: green;
+        position: absolute;
+        bottom: 80px;
+        right: 22px;">
+    </i>
+    <% end %>
+  </div>
 </div>

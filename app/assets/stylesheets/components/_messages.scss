@@ -56,6 +56,7 @@
 .message_content {
   margin-bottom: 0;
 }
+
 input.form-control {
   border: 1px solid #ECECEC;
   box-shadow: none;
@@ -67,6 +68,7 @@ input.form-control {
     box-shadow: none;
   }
 }
+
 .chat-header {
   background-color: #075E54;
   color: white;
@@ -81,5 +83,49 @@ input.form-control {
 }
 
 .police-text {
+  font-size: 14px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background-color: $green;
+  padding: 8px 16px;
+  border: 2px solid $green;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.notification .notification-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.notification p {
+  font-size: 26px;
+  margin: 0;
+  line-height: 1.4;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chatroom {
+  overflow: scroll;
+  height: 85vh;
+}
+
+.notification .notification-actions {
+  opacity: 1;
+  display: flex;
+  transition: ease .3s;
+  color: #555555;
+}
+
+
+.notification .notification-actions a {
+  color: #999999;
+  margin-left: 16px;
   font-size: 14px;
 }
