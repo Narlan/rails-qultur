@@ -19,10 +19,12 @@
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render 'shared/bottom-navbar' %>
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
     <%= javascript_include_tag 'application' %>
+    <%= yield :after_js %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>

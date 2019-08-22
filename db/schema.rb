@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_21_122125) do
+ActiveRecord::Schema.define(version: 2019_08_22_115323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2019_08_21_122125) do
     t.string "content", array: true
     t.bigint "question_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_chat_rooms_on_user_id"
   end
 
   create_table "choices", force: :cascade do |t|
@@ -43,6 +51,17 @@ ActiveRecord::Schema.define(version: 2019_08_21_122125) do
     t.datetime "updated_at", null: false
     t.index ["monument_id"], name: "index_hunts_on_monument_id"
     t.index ["user_id"], name: "index_hunts_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chat_room_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "published_at"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "monuments", force: :cascade do |t|
@@ -88,9 +107,12 @@ ActiveRecord::Schema.define(version: 2019_08_21_122125) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "chat_rooms", "users"
   add_foreign_key "choices", "answers"
   add_foreign_key "choices", "hunts"
   add_foreign_key "hunts", "monuments"
   add_foreign_key "hunts", "users"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "questions", "monuments"
 end
