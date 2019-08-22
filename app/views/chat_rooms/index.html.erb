@@ -3,7 +3,7 @@
     <% @chat_rooms.each do |chat_room| %>
       <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}" do %>
           <div class="notification d-flex">
-            <%= cl_image_tag chat_room.user.photo, class: "avatar-large" %>
+            <%= cl_image_tag chat_room.user.photo, class: "avatar-small" %>
             <div class="notification-content">
               <p><%= chat_room.user.nickname %></p>
             </div>
