@@ -2056,7 +2056,7 @@ const initMapbox = () => {
 
     // use the three.js GLTF loader to add the 3D model to the three.js scene
     var loader = new THREE.GLTFLoader();
-    loader.load('https://docs.mapbox.com/mapbox-gl-js/assets/34M_17/34M_17.gltf', (function (gltf) {
+    loader.load('https://raw.githubusercontent.com/Narlan/rails-qultur/master/public/gltfs/eiffel.gltf', (function (gltf) {
     this.scene.add(gltf.scene);
     console.dir(gltf.scene);
     }).bind(this));
