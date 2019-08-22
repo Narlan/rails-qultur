@@ -6,15 +6,10 @@
             <%= @questions.first.title %>
         </p>
         <div class="row">
-          <% @questions.first.answers.each do |answer| %>
-            <% while answer.content != [] %>
-              <div class="answer col-6" id="choice" data-good="<%= answer.content[0] %>">
-                <% proposal = answer.content.first %>
-                <p> <%= proposal %> </p>
-                <% index = answer.content.find_index(proposal) %>
-                <% answer.content.delete_at(index) %>
-              </div>
-            <% end %>
+          <% @questions.first.answers.first.content.each_with_index do |content, index| %>
+            <div class="answer col-6" style="order: <%= @randoms[index] %>" id="choice" data-index="<%= index %>">
+              <%= content %>
+            </div>
           <% end %>
         </div>
     </div>
