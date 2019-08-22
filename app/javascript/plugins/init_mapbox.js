@@ -20,7 +20,8 @@ const initMapbox = () => {
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     console.log("Detected: map div")
-    mapboxgl.accessToken = 'pk.eyJ1Ijoia2VzaHJhIiwiYSI6ImNqempxeTFsNTBidjIzbXBtbnE0YTVudTUifQ.qHqQ3V2uosWobIRloC68ag';
+
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     var map = window.map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
@@ -71,7 +72,6 @@ const initMapbox = () => {
     var loader = new THREE.GLTFLoader();
     loader.load('https://raw.githubusercontent.com/Narlan/rails-qultur/master/public/gltfs/eiffel.gltf', (function (gltf) {
     this.scene.add(gltf.scene);
-    console.dir(gltf.scene);
     }).bind(this));
     this.map = map;
     console.log(loader);
@@ -109,6 +109,13 @@ const initMapbox = () => {
     map.addLayer(customLayer, 'waterway-label');
     });
 
+    map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+    enableHighAccuracy: true
+  },
+    trackUserLocation: true
+  }));
+
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       new mapboxgl.Marker()
@@ -120,5 +127,7 @@ const initMapbox = () => {
     console.log("Not detected: map div")
   }
 };
+
+
 
 export { initMapbox };
