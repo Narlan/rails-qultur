@@ -72,9 +72,6 @@ const initMapbox = () => {
       loader.load('https://raw.githubusercontent.com/Narlan/rails-qultur/master/public/gltfs/eiffel.gltf', (function (gltf) {
       this.scene.add(gltf.scene);
       }).bind(this));
-      loader.load('https://raw.githubusercontent.com/Narlan/rails-qultur/master/public/gltfs/arc%20de%20triomphe.gltf', (function (gltf) {
-      this.scene.add(gltf.scene);
-      }).bind(this));
       this.map = map;
       console.log(loader);
 
