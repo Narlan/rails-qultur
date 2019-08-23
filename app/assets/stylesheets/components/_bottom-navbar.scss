@@ -7,7 +7,12 @@
   width: 100%;
   flex: 0 0 56px;
   margin-top: auto;
+  box-shadow: 0px 0px 8px #DADADA;
   left: 0px;
+}
+
+.footer i {
+  color: #404040;
 }
 
 /* Style the links inside the navigation bar */
@@ -15,6 +20,10 @@
   color: #202020;
   font-size: 32px;
   padding: 4px;
+}
+
+.bottom-navbar a:active {
+  border-top: 4px solid $green;
 }
 
 /* A mettre en place avec du Javascript (ajout et suppression de classe avec un listener) */
@@ -28,8 +37,8 @@
   margin: 0;
   width: 56px;
   height: 56px;
-  border: 2px solid #202020;
-  box-shadow: 0px 0px 8px #777777;
+  border: 2px solid #DADADA;
+  box-shadow: 0px 0px 6px #999999;
   background: url("//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg") 50% 50% no-repeat;
   background-size: 32px;
 }
