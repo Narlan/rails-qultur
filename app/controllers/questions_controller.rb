@@ -4,7 +4,6 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @randoms = [0, 1, 2, 3].shuffle
-
     @next_question = Question.find_by(position: @question.position + 1, monument: @question.monument)
     @hunt = Hunt.where(user_id: current_user, monument_id: @question.monument).first
   end

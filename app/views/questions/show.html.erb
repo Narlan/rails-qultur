@@ -12,6 +12,7 @@
           <% end %>
         </div>
     </div>
+    <div>
     <% if @next_question.present? %>
       <%= link_to 'Question suivante', monument_question_path(@question.monument, @next_question), class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
     <% else %>

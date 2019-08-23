@@ -13,7 +13,7 @@
   </div>
   <div class="button-profile my-5 mx-2">
     <% if user_signed_in? %>
-      <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-block btn-green' %>
+      <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-block btn-green edit' %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-red' %>
     <% end %>
   </div>

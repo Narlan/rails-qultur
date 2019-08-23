@@ -17,8 +17,10 @@
 }
 
 .navbar {
-padding: 10px 15px !important;
-background-color: lightgray;
+  padding: 10px 15px !important;
+  background-color: lightgray;
+  position: sticky;
+  top: 0px;
 }
 
 .navbar a {

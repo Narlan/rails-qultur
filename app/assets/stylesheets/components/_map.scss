@@ -22,3 +22,17 @@
   object-fit: cover;
   object-position: center;
 }
+
+.mapboxgl-canvas {
+  position: absolute;
+  width: 375px !important;
+  height: 613px !important;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  top: 27px;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-group {
+  position: relative;
+  top: 24px;
+}
