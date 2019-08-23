@@ -25,15 +25,12 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
       next.classList.remove('disabled');
       if ((choice.dataset.index) === "0" ) {
         choice.classList.add('choice-good');
-        const r = r + 1;
-        const results = "<%= ${r} %>";
-        const score = document.querySelector('.results-score');
-        score.insertAdjacentHTML(beforeend, results);
         //disabled tous les autres choices
       } else {
         choice.classList.add('choice-bad');
         //disabled tous les autres choices
-        next.insertAdjacentHTML("beforebegin", `<p>La bonne réponse était : <strong>${event.path[1].childNodes[1].innerText}</strong></p>`);
+        const hint = document.getElementById('hint');
+        hint.insertAdjacentHTML("afterbegin", `<p>La bonne réponse était : <strong>${event.path[1].childNodes[1].innerText}</strong></p>`);
       }
     });
   });
