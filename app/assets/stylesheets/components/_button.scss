@@ -50,5 +50,10 @@
 
 .btn.btn-block.btn-green.mt-4 {
   position: relative;
-  top: 102px;
+  top: -24px;
+}
+
+#hint {
+  overflow: scroll;
+  height: 159px;
 }

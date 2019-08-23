@@ -34,3 +34,13 @@
 .choice-bad {
  background-color: $red;
 }
+
+.question-title.mt-4 {
+  overflow: scroll;
+  height: 62px;
+}
+
+#hint {
+  overflow: scroll;
+  height: 159px;
+}
