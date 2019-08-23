@@ -1,16 +1,23 @@
-<div>
-  <div class="card-monument">
-    <%= image_tag @hunt.monument.photo %>
-    <h1><%= @hunt.monument.name %></h1>
-  </div>
+<div class="container text-center">
 
   <div class="signin">
-    <div class="report">
-      <h2> <%= render "hunts/report" %> </h2>
+    <div class="m-2">
+      <%= image_tag('Q.png', width: 80) %>
     </div>
-    <hr>
-    <div class="question-section">
-      <%= render "hunts/questions_section" %>
-    </div>
+
+    <%= image_tag @hunt.monument.photo, class: 'avatar-large' %>
+
+    <% if @hunt.score >= 5 %>
+      <h2 class="mt-5">Félicitations! <i class="fas fa-medal"></i></h2>
+      <p>Tu as réussi le quiz avec un score de :</p>
+      <h2><%= @hunt.score %> / 10</h2>
+    <% else %>
+      <h2 class="mt-5">Désolé! <i class="fas fa-sad-cry"></i></h2>
+      <p>Tu n'as pas réussi le quiz...</p><p>Tu as un score de :</p>
+      <h2><%= @hunt.score %> / 10</h2>
+    <% end %>
+
+    <%= link_to 'Retour', root_path, class: 'btn btn-green mt-5 mb-2' %>
   </div>
+
 </div>

@@ -37,4 +37,8 @@ class HuntsController < ApplicationController
       redirect_to monument_path(monuments[0])
     end
   end
+
+  def show
+    @hunt = Hunt.find(params[:id])
+  end
 end
