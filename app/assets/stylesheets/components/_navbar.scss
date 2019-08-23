@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  box-shadow: 0px 0px 8px #999999;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -33,4 +34,8 @@
 
 .information p {
   margin: 1px 22px 0px 18px;
+}
+
+.information i {
+  color: #404040;
 }
