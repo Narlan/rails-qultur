@@ -9,10 +9,8 @@ Rails.application.routes.draw do
 
   resources :monuments, only: [:index, :show] do
     resources :questions, only: [:index, :show, :new, :create]
-    resources :hunts, only: [:create]
+    resources :hunts, only: [:create, :show]
   end
-
-  resources :hunts, only: [:show]
 
   post "hunts/scanned", to: "hunts#scanned", as: "scanned"
 

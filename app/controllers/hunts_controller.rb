@@ -39,6 +39,6 @@ class HuntsController < ApplicationController
   end
 
   def show
-    @hunt = Hunt.find(params[:id])
+    @hunt = Hunt.where(user_id: current_user, monument_id: params[:monument_id]).first
   end
 end
