@@ -24,7 +24,8 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
       } else {
         choice.classList.add('choice-bad');
         //disabled tous les autres choices
-        next.insertAdjacentHTML("beforebegin", `<p>La bonne réponse était : <strong>${event.path[1].childNodes[1].innerText}</strong></p>`);
+        const hint = document.getElementById('hint');
+        hint.insertAdjacentHTML("afterbegin", `<p>La bonne réponse était : <strong>${event.path[1].childNodes[1].innerText}</strong></p>`);
       }
     });
   });

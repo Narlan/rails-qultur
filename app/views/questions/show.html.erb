@@ -1,6 +1,6 @@
 <div class="container text-center">
     <div id="quizz">
-        <p class="mt-4">
+        <p class="question-title mt-4">
             <%= @question.position %> -
             <%= @question.title %>
         </p>
@@ -11,8 +11,8 @@
             </div>
           <% end %>
         </div>
+    <div id="hint"></div>
     </div>
-    <div>
     <% if @next_question.present? %>
       <%= link_to 'Question suivante', monument_question_path(@question.monument, @next_question), class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
     <% else %>
