@@ -10,7 +10,7 @@
       <% if @monument.questions.present? %>
         <%= link_to 'Commencer le quiz', monument_question_path(@monument, @monument.questions.find_by(position: 1)), class: 'btn btn-block btn-green' %>
       <% else %>
-        <%= link_to 'Retour à la collection', root_path, class: 'btn btn-block btn-green' %>
+        <%= link_to 'Retour à la collection', monuments_path, class: 'btn btn-block btn-green' %>
       <% end %>
   </div>
 </div>
