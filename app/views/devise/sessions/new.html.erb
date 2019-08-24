@@ -1,7 +1,8 @@
 <div class="container text-center">
   <div class="signup">
-    <div class="mb-2">
-      <%= image_tag('Q.png', width: 80) %>
+    <div class="m-2">
+      <%= image_tag('logo.png', width: 80) %>
+      <h1>QultuR</h1>
     </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -17,15 +18,15 @@
                       label: false,
                       placeholder: "Mot de passe",
                       input_html: { autocomplete: "current-password" } %>
-            <div class="d-flex justify-content-between font-weight-lighter">
-              <small><%= f.input :remember_me, label: "Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %></small>
+            <div class="d-flex justify-content-between">
+              <small class="w-100"><%= f.input :remember_me, label: "Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %></small>
               <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-                <small class="forget-password"><%= link_to "Mot de passe oublié?", new_password_path(resource_name) %></small><br />
+                <small class="forget-password w-100"><%= link_to "Mot de passe oublié?", new_password_path(resource_name) %></small><br />
               <% end %>
             </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Se connecter", class: "btn btn-green text-white font-weight-bolder w-100 mt-4 mb-2" %>
+            <%= f.button :submit, "Se connecter", class: "btn btn-block btn-green mb-2" %>
             <table width="100%">
               <tr>
                 <td><hr /></td>
@@ -33,7 +34,7 @@
                 <td><hr /></td>
               </tr>
             </table>​
-            <p>Pas encore inscrit?</p>
+            <p class="mb-0">Pas encore inscrit?</p>
             <%= render "devise/shared/links" %>
           </div>
         </div>
