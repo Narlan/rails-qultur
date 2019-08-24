@@ -4,11 +4,10 @@
       <%= image_tag ('logo.png'), class: 'logo' %>
     </div>
     <div class="information d-flex">
-
-          <%= link_to "/users/#{current_user.id}/chat_rooms" do %>
-            <i class="far fa-comments" style="font-size: 32px"></i>
-          <% end %>
-      </div>
+      <%= link_to "/users/#{current_user.id}/chat_rooms" do %>
+        <i class="far fa-comments" style="font-size: 32px"></i>
+      <% end %>
+    </div>
   </div>
 <% else %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-md-between" style="height: 51px;">

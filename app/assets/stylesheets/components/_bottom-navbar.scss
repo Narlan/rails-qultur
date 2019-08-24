@@ -1,22 +1,19 @@
 /* Place the navbar at the bottom of the page, and make it stick */
-.footer {
+.bottom-navbar {
   background-color: white;
-  // overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
-  flex: 0 0 56px;
-  margin-top: auto;
   box-shadow: 0px 0px 8px #DADADA;
-  left: 0px;
+  left: 0;
 }
 
-.footer i {
+.bottom-navbar i {
   color: #404040;
 }
 
 /* Style the links inside the navigation bar */
-.footer a {
+.bottom-navbar a {
   color: #202020;
   font-size: 32px;
   padding: 4px;
