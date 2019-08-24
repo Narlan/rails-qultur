@@ -54,6 +54,7 @@ def create_captured_hunts
   Hunt.create(score: 2, progress: "finish", monument: Monument.last, user: user)
   Hunt.create(score: 4, progress: "finish", monument: Monument.find(3), user: user)
   Hunt.create(score: 5, progress: "finish", monument: Monument.find(4), user: user)
+  Hunt.create(score: 9, progress: "finish", monument: Monument.find(2), user: user)
   print_adaptative_info()
 end
 

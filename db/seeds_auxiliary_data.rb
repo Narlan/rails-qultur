@@ -10,7 +10,7 @@ def monuments
     monument_002: {
       name: "Arc de Triomphe",
       description: "Napoléon Ier, au lendemain de la bataille d'Austerlitz, déclare aux soldats français : « Vous ne rentrerez dans vos foyers que sous des arcs de triomphe. » L'Empereur s'est référé aux arcs de triomphe érigés sous l’Empire romain afin de commémorer un général vainqueur défilant à la tête de ses troupes.",
-      photo:"https://upload.wikimedia.org/wikipedia/commons/7/79/Arc_de_Triomphe%2C_Paris_21_October_2010.jpg",
+      photo:"https://upload.wikimedia.org/wikipedia/commons/7/79/Arc_de_Triomphe,_Paris_21_October_2010.jpg",
       address: "Place Charles de Gaulle, 75008 Paris",
       qrcode: "monument_002_test"
     },
@@ -31,7 +31,7 @@ def monuments
     monument_005: {
       name: "Musée d'Orsay",
       description: "Le musée d’Orsay est un musée national inauguré en 1986, situé dans le 7e arrondissement de Paris le long de la rive gauche de la Seine. Il est installé dans l’ancienne gare d'Orsay, construite par Victor Laloux de 1898 à 1900 et réaménagée en musée sur décision du Président de la République Valéry Giscard d'Estaing.",
-      photo:"https://upload.wikimedia.org/wikipedia/commons/7/7c/Musée_d'Orsay%2C_North-West_view%2C_Paris_7e_140402.jpg",
+      photo:"https://reservation.my-travelmate.com/uploads/pictures/1485858484_orsay%20PP.jpg",
       address: "1 Rue de la Légion d'Honneur, 75007 Paris",
       qrcode: "monument_005_test"
     }
