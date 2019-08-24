@@ -1,24 +1,21 @@
 <div class="f-flex align-items-center">
   <% @captured_monuments.each do |monument| %>
-    <div class="card-gradient m-2">
+    <div class="card-gradient m-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= monument.photo %>); background-position: center; background-size: cover;">
       <%= link_to monument_path(monument) do %>
         <div class="card-monument-anim">
           <h2 class="title"><%= monument.name %></h2>
           <i class="far fa-check-circle"></i>
-          <%= image_tag monument.photo %>
           </div>
       <% end %>
     </div>
   <% end %>
 
   <% @visited_monuments.each do |monument| %>
-    <div class="card-gradient m-2">
-      <div class="card-monument-anim not-captured">
+    <div class="card-gradient not-captured m-2" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3),rgba(0,0,0,0.5)), url(<%= monument.photo %>); background-position: center; background-size: cover;">
+      <div class="card-monument-anim">
         <h2 class="title"><%= monument.name %></h2>
         <i class="far fa-circle"></i>
-        <%= image_tag monument.photo, style: 'opacity: 0.3' %>
-        </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
