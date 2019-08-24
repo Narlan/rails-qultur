@@ -1,20 +1,29 @@
-<div class="container">
-  <div class="">
+<div class="container mt-4">
+  <div class="info-bg pb-3">
     <div class="d-flex justify-content-start align-items-end">
-    <%= cl_image_tag @user.photo, class: 'avatar-large my-3' %>
-    <div class="ml-4 mb-3">
-      <h2><%= @user.nickname %></h2>
-      <p class="m-0"><%= @user.first_name %> <%= @user.last_name %></p>
-      <em><small><%= @user.age %> ans</small></em>
+      <% if @user.photo.file.nil? %>
+        <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg",
+                      class: 'avatar-large my-3' %>
+      <% else %>
+        <%= cl_image_tag @user.photo, class: 'avatar-large my-3' %>
+      <% end %>
+      <div class="ml-4 mb-3">
+        <h2><%= @user.nickname %></h2>
+        <p class="m-0"><%= @user.first_name %> <%= @user.last_name %></p>
+        <% unless @user.age.nil? %>
+          <em><small><%= @user.age %> ans</small></em>
+        <% end %>
+      </div>
     </div>
-    </div>
-      <p><%= @user.description %></p>
+
+    <p><%= @user.description %></p>
+
+    <div class="d-flex align-items-end">
+      <% if user_signed_in? && @user == current_user %>
+        <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-block btn-outline-green mx-2' %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-green mx-2' %>
+      <% end %>
     </div>
   </div>
-  <div class="d-flex align-items-end">
-    <% if user_signed_in? %>
-      <%= link_to "Edit", edit_user_registration_path, class: 'btn btn-block btn-outline-green mx-2' %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-green mx-2' %>
-    <% end %>
-  </div>
+
 </div>

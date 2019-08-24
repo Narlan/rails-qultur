@@ -8,7 +8,7 @@
     <%= f.error_notification %>
       <div class="form-inputs justify-content-between mx-2">
         <div class="d-flex">
-          <div class="mr-1">
+          <div class="mr-1 w-100">
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -17,7 +17,7 @@
                         label: false,
                         placeholder: "Prénom" %>
           </div>
-          <div>
+          <div class="w-100">
             <%= f.input :last_name,
                         label: false,
                         placeholder: "Nom" %>
