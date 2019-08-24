@@ -1,13 +1,24 @@
-<div class="container">
- <% @monuments.each do |monument| %>
-   <%= link_to monument_path(monument) do %>
-     <div class="card-captured-monument">
-       <%= image_tag monument.photo %>
-         <div class="card-captured-monument-infos">
-           <h2><%= monument.name %></h2>
-           <p><%= monument.address %></p>
-         </div>
-       </div>
-   <% end %>
- <% end %>
+<div class="f-flex align-items-center">
+  <% @captured_monuments.each do |monument| %>
+    <div class="card-gradient m-2">
+      <%= link_to monument_path(monument) do %>
+        <div class="card-monument-anim">
+          <h2 class="title"><%= monument.name %></h2>
+          <i class="far fa-check-circle"></i>
+          <%= image_tag monument.photo %>
+          </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% @visited_monuments.each do |monument| %>
+    <div class="card-gradient m-2">
+      <div class="card-monument-anim not-captured">
+        <h2 class="title"><%= monument.name %></h2>
+        <i class="far fa-circle"></i>
+        <%= image_tag monument.photo, style: 'opacity: 0.3' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

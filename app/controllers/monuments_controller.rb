@@ -4,8 +4,10 @@ class MonumentsController < ApplicationController
   def index
     if user_signed_in?
       hunts = current_user.hunts
-      @monuments = []
-      hunts.each { |hunt| @monuments << hunt.monument if hunt.score > 4 }
+      @captured_monuments = []
+      hunts.each { |hunt| @captured_monuments << hunt.monument if hunt.score >= 5 }
+      @visited_monuments = []
+      hunts.each { |hunt| @visited_monuments << hunt.monument if hunt.score < 5 }
     else
       redirect_to new_user_session_path
     end
