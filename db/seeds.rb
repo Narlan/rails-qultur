@@ -48,10 +48,12 @@ def create_datas
 end
 
 def create_captured_hunts
-  print_adaptative_info("2 hunts for test user", "start")
+  print_adaptative_info("4 hunts for test user", "start")
   user = User.where("nickname = 'Jedi'")[0]
   Hunt.create(score: 6, progress: "finish", monument: Monument.first, user: user)
-  Hunt.create(score: 7, progress: "finish", monument: Monument.last, user: user)
+  Hunt.create(score: 2, progress: "finish", monument: Monument.last, user: user)
+  Hunt.create(score: 4, progress: "finish", monument: Monument.find(3), user: user)
+  Hunt.create(score: 5, progress: "finish", monument: Monument.find(4), user: user)
   print_adaptative_info()
 end
 
