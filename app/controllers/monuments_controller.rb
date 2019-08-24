@@ -3,7 +3,7 @@ class MonumentsController < ApplicationController
 
   def index
     if user_signed_in?
-      hunts = current_user.hunts
+      hunts = current_user.hunts.where.not(progress: 'pending')
       @captured_monuments = []
       hunts.each { |hunt| @captured_monuments << hunt.monument if hunt.score >= 5 }
       @visited_monuments = []
@@ -15,5 +15,8 @@ class MonumentsController < ApplicationController
 
   def show
     @monument = Monument.find(params[:id])
+    current_user.hunts.each do |hunt|
+      @hunt = hunt if @monument.id == hunt.monument_id
+    end
   end
 end

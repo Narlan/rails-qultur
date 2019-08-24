@@ -1,4 +1,4 @@
-#quizz {
+.question-title {
  font-weight: bold;
 }
 
@@ -6,15 +6,13 @@
  background-color: #404040;
  border-radius: 8px;
  color: white;
- font-weight: normal;
- height: 160px;
+ height: 180px;
  margin: 8px;
  max-width: 45.5%;
  vertical-align: 50%;
  display: flex;
  align-items: center;
  justify-content: center;
- font-size: 16px !important;
 }
 
 #button-next.disabled {
@@ -29,20 +27,11 @@
 }
 
 .choice-good {
- background-color: $green;
+ background-color: #7BC950;
+ font-weight: bolder;
 }
 
 .choice-bad {
  background-color: $red;
-}
-
-.question-title.mt-4 {
-  overflow: scroll;
-  height: 43px;
-  font-size: 16px !important;
-}
-
-#hint {
-  overflow: scroll;
-  height: 135px;
+ font-weight: bolder;
 }
