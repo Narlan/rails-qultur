@@ -5,9 +5,9 @@ class MonumentsController < ApplicationController
     if user_signed_in?
       hunts = current_user.hunts.where.not(progress: 'pending')
       @captured_monuments = []
-      hunts.each { |hunt| @captured_monuments << hunt.monument if is_capture?(hunt) }
+      hunts.each { |hunt| @captured_monuments << hunt.monument if captured?(hunt) }
       @visited_monuments = []
-      hunts.each { |hunt| @visited_monuments << hunt.monument if !is_capture?(hunt) }
+      hunts.each { |hunt| @visited_monuments << hunt.monument if !captured?(hunt) }
     else
       redirect_to new_user_session_path
     end
@@ -22,15 +22,10 @@ class MonumentsController < ApplicationController
 
   private
 
-  def is_capture?(hunt)
+  def captured?(hunt)
     choices = hunt.choices
     count = 0
     choices.each { |choice| count += 1 if choice.success == true }
-    if count > 4
-      return true
-    else
-      return false
-    end
+    count > 4
   end
-
 end
