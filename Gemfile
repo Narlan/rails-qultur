@@ -18,8 +18,10 @@ gem 'webpacker'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'colorize'
+gem 'faker'
 
 gem 'geocoder'
+gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 gem 'turbolinks'
 
 group :development do

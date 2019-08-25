@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :chat_rooms, only: [ :index, :show, :new, :create, :destroy ] do
       resources :messages, only: [ :create ]
     end
+    member do
+      post :follow
+      post :unfollow
+    end
   end
 
   resources :monuments, only: [:index, :show] do
