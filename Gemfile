@@ -20,6 +20,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'colorize'
 
 gem 'geocoder'
+gem 'turbolinks'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
