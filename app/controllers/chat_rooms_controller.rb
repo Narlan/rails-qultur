@@ -14,15 +14,15 @@ class ChatRoomsController < ApplicationController
   end
 
   def create
-    @chat_room = ChatRoom.new
-    @chat_room.user = User.find(params[:query][:user_id])
-    if current_user == @user
-      @chat_room.name = "Chat with #{@chat_room.user.nickname}"
-    else
-      @chat_room.name = "Chat with #{@chat_room.user.nickname}"
-    end
-    @chat_room.save
-    redirect_to "/users/#{current_user.id}/chat_rooms/#{@chat_room.id}"
+      @chat_room = ChatRoom.new
+      @chat_room.user = User.find(params[:query][:user_id])
+      if current_user == @user
+        @chat_room.name = "Chat with #{@chat_room.user.nickname}"
+      else
+        @chat_room.name = "Chat with #{@chat_room.user.nickname}"
+      end
+      @chat_room.save
+      redirect_to "/users/#{current_user.id}/chat_rooms/#{@chat_room.id}"
   end
 
   def destroy
