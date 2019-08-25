@@ -1,4 +1,34 @@
-<h1>Users:</h1>
+<div class="container mt-4">
+  
+  <h1>Users:</h1>
 <ul>
   <%= render @users %>
 </ul>
+  
+  
+  <% @users.each do |user| %>
+
+    <div class="info-bg pb-3">
+      <div class="d-flex justify-content-start align-items-end">
+        <% if user.photo.file.nil? %>
+          <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg",
+                        class: 'avatar border my-3' %>
+        <% else %>
+          <%= cl_image_tag user.photo, class: 'avatar border my-3' %>
+        <% end %>
+        <div class="d-flex justify-content-around w-100">
+          <h2><%= user.nickname %></h2>
+          <div>
+            <p class="m-0"><%= user.first_name %> <%= user.last_name %></p>
+            <% unless user.age.nil? %>
+              <em><small><%= user.age %> ans</small></em>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
+
