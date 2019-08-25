@@ -21,7 +21,6 @@ gem 'colorize'
 gem 'faker'
 
 gem 'geocoder'
-gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 gem 'turbolinks'
 
 group :development do
