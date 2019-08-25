@@ -1,5 +1,6 @@
 require_relative 'seeds_auxiliary_data.rb'
 require_relative 'seeds_auxiliary_ui.rb'
+require 'faker'
 
 def create_monuments(monuments)
   monuments.each_value do |value|
@@ -20,17 +21,29 @@ def create_answers(answers)
 end
 
 def create_user
-  print_adaptative_info("1 user", "start")
-  user = User.create!(
-    first_name: "John",
-    last_name: "Doe",
-    nickname: "Jedi",
-    age: 30,
-    email: "user@example.com",
-    password: "password",
-    description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
-    remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
-  print_adaptative_info()
+    print_adaptative_info("1 user", "start")
+    user = User.create!(
+      first_name: "John",
+      last_name: "Doe",
+      nickname: Faker::Ancient.god,
+      age: 30,
+      email: "user@example.com",
+      password: "password",
+      description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
+      remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
+    print_adaptative_info()
+
+    9.times do
+      fake_user = User.create(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        nickname: Faker::Ancient.god,
+        age: rand(18..42),
+        email: Faker::Internet.free_email,
+        password: "password",
+        description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
+        remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
+    end
 end
 
 def create_datas
