@@ -1,9 +1,9 @@
 <div data-user=<%= user.id %>>
   <%= user.nickname %>
   <% if current_user.is_following?(user.id) %>
-    <%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
+    <%= link_to "Se désabonner", unfollow_user_path(user.id), method: :post, remote: true, class: 'btn btn-block btn-green'  %>
   <% else %>
-    <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
+    <%= link_to "S'abonner", follow_user_path(user.id), method: :post, remote: true, class: 'btn btn-block btn-outline-green'  %>
   <% end %>
 </div>
 
