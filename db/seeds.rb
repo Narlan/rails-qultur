@@ -23,14 +23,14 @@ end
 def create_user
     print_adaptative_info("1 active user", "start")
     user = User.create!(
-      first_name: "John",
-      last_name: "Doe",
+      first_name: "Grumpy",
+      last_name: "Grandpa",
       nickname: Faker::Ancient.god,
       age: 30,
       email: "user@example.com",
       password: "password",
-      description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
-      remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
+      description: "J'aimes pas noël ; je détestes les enfants et la joie de vivre me donne envie de mourrir !",
+      remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
     print_adaptative_info()
 
     print_adaptative_info("9 fake users", "start")
@@ -43,7 +43,8 @@ def create_user
         email: Faker::Internet.free_email,
         password: "password",
         description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
-        remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
+        remote_photo_url: "https://source.unsplash.com/featured/?face")
+      sleep(3)
     end
     print_adaptative_info
 end
