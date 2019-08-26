@@ -1,9 +1,9 @@
-<% if @hunt.progress == "pending" %>
+<% if @hunt.progress == 0 %>
   <div class="btn-green disable"><p>Quiz</p></div>
-<% elsif @hunt.progress == "scanned" %>
+<% elsif @hunt.progress == 1 %>
   <a href="#"><div class="btn-green"><p>Quiz</p></div></a>
-<% elsif @hunt.progress == "answering" %>
+<% elsif @hunt.progress == 2 %>
   <div class="btn-green-disable"><p>Quiz</p></div>
-<% else @hunt.progress == "finish" %>
+<% else @hunt.progress == 3 %>
   <h1><%= @hunt.captured %> / 10</h1>
 <% end %>

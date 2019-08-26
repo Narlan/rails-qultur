@@ -68,7 +68,7 @@ def create_hunts_with_random_capture
   monuments = Monument.all.drop(1)
   puts monuments.length
   monuments.each do |monument|
-    hunt = Hunt.create(progress: "finish", monument: monument, user: user)
+    hunt = Hunt.create(progress: 3, monument: monument, user: user)
     hunt.monument.questions.each do |question|
         choice = Choice.create(hunt: hunt, answer: question.answers.first, success: [true, false].sample)
     end

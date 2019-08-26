@@ -4,4 +4,6 @@ class Hunt < ApplicationRecord
   has_many :answers, through: :choices
   has_many :choices
   validates :user, :monument, presence: true
+
+  enum status: %i[pending scanned answering finished]
 end
