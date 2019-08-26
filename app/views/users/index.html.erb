@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="search-form">
-    <p>Sélectionne un utilisateur</p>
+    <p>Retrouve tes amis</p>
     <%= simple_form_for(:query, method: :get, url: search_path) do |f| %>
       <%= select("post", "person_id", @users.all.collect {|p| [ p.name, p.id ] },{ include_blank: true }, class: "search-bar") %>
     <% end %>
