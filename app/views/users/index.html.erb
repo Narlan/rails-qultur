@@ -2,7 +2,7 @@
 
   <%= simple_form_for(:query, method: :get, url: search_path) do |f| %>
     <%= select("post", "person_id", @users.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, class: "search-bar") %>
-    <%= f.submit %>
+    <%= f.submit "Profil", class: "btn btn-block btn-green mt-2 disabled", id: "profil-access-btn" %>
   <% end %>
 
   <% current_user.following.each do |follower| %>

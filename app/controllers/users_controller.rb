@@ -2,11 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :destroy]
 
   def index
-    if params[:query].present?
-      @users = User.where(nickname: params[:query])
-    else
-      @users = User.where.not(id: current_user.id)
-    end
+    @users = User.where.not(id: current_user.id)
   end
 
   def show

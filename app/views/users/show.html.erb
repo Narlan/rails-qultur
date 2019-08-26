@@ -27,11 +27,11 @@
 
     <div class="d-flex align-items-end">
       <% if @user != current_user %>
-        <%= link_to "discuter avec #{@user.nickname}", new_user_chat_room_path(current_user), class: 'btn btn-block btn-outline-green mx-2' %>
+        <%= link_to "Chat", new_user_chat_room_path(current_user), class: 'btn btn-block btn-green mx-2' %>
         <% if current_user.is_following?(@user.id) %>
-          <%= link_to "Ne plus suivre #{@user.nickname}", unfollow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
+          <%= link_to "Ne plus suivre", unfollow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
         <% else %>
-          <%= link_to "Suivre #{@user.nickname}", follow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
+          <%= link_to "Suivre", follow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
         <% end %>
       <% end %>
     </div>
