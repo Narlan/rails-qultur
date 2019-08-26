@@ -6,16 +6,25 @@ const initMapbox = () => {
   const mapElement = document.getElementById('map');
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
-    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-    markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
+    markers.forEach((marker) => {
+
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('https://github.com/Narlan/rails-qultur/blob/master/app/assets/images/map-marker-monument.png?raw=true')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '30px';
+      element.style.height = '38px';
+
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
       new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup) // add this
         .addTo(map);
     });
+
+    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -105,7 +114,7 @@ const initMapbox = () => {
     };
 
     map.on('style.load', function() {
-    map.addLayer(customLayer, 'waterway-label');
+      map.addLayer(customLayer, 'waterway-label');
     });
 
     map.addControl(new mapboxgl.GeolocateControl({
@@ -116,19 +125,7 @@ const initMapbox = () => {
   }));
 
   const markers = JSON.parse(mapElement.dataset.markers);
-  markers.forEach((marker) => {
 
-    const element = document.createElement('div');
-    element.className = 'marker';
-    element.style.backgroundImage = `url('https://github.com/Narlan/rails-qultur/blob/master/app/assets/images/map-marker-monument.png?raw=true')`;
-    element.style.backgroundSize = 'contain';
-    element.style.width = '30px';
-    element.style.height = '38px';
-
-    new mapboxgl.Marker(element)
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-    });
   fitMapToMarkers(map, markers);
   } else {
     console.log("Not detected: map div")
