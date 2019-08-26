@@ -1,5 +1,10 @@
 <div class="container mt-4">
 
+<select class="search-bar" name="pseudo" multiple="multiple">
+  <% @users.each do |user| %>
+    <option value="AL"><%= user.name %></option>
+  <% end %>
+</select>
 
   <%= render @users %>
 
