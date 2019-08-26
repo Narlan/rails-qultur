@@ -8,7 +8,7 @@
         <%= cl_image_tag @user.photo, class: 'avatar-large my-3' %>
       <% end %>
       <div class="ml-4 mb-4 mr-2">
-        <h4><%= @user.nickname %></h4>
+        <h4 id="nickname"><%= @user.nickname %></h4>
         <p class="m-0"><%= @user.first_name %> <%= @user.last_name %></p>
         <% unless @user.age.nil? %>
           <em><small><%= @user.age %> ans</small></em>

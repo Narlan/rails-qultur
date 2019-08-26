@@ -63,10 +63,9 @@ def create_datas
 end
 
 def create_hunts_with_random_capture
-  print_adaptative_info("#{Monument.all.length} hunts for active user", "start")
+  print_adaptative_info("hunts for active user", "start")
   user = User.find(1)
   monuments = Monument.all.drop(1)
-  puts monuments.length
   monuments.each do |monument|
     hunt = Hunt.create(progress: 3, monument: monument, user: user)
     hunt.monument.questions.each do |question|
