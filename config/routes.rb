@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "users/search", to: "users#search", as: "search"
+
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [:index, :show] do
