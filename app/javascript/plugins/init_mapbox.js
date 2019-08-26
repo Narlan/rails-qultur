@@ -23,10 +23,10 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     var map = window.map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v10',
+    style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 4.5,
     center: [2.213749, 46.227638],
-    pitch: 35,
+    pitch: 0,
     antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
     });
 
