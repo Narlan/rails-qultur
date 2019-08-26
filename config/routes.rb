@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   post "hunts/scanned", to: "hunts#scanned", as: "scanned"
 
+  mount ActionCable.server => "/cable"
 end
