@@ -1,11 +1,11 @@
-<ul data-user=<%= user.id %>>
+<div data-user=<%= user.id %>>
   <%= user.nickname %>
   <% if current_user.is_following?(user.id) %>
     <%= link_to "Unfollow", unfollow_user_path(user.id), method: :post, remote: true %>
   <% else %>
     <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
   <% end %>
-</ul>
+</div>
 
 
 
