@@ -90,26 +90,12 @@ perspective: 2000px;
   background-color: $green;
   border-radius: 50%;
 }
-.item:nth-child(4)>div {
-  background-color: rgba(0,0,0,0);
-}
-.item:nth-child(5)>div {
-  background-color: rgba(0,0,0,0);
-}
-
 .back {
   position: relative;
   transform:rotateY(180deg);
   bottom: 130px;
   color: white;
-<<<<<<< HEAD
-  font-size: 12px;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-=======
-  font-size: 20px;
->>>>>>> 27a79a67ce8a695586a54ef540f1e68e3a6d0e6e
+  font-size: 35px;
 }
 
 i {
