@@ -29,15 +29,15 @@
 // }
 
 .qr-button {
-  font-family: "Juicy Culture";
   border-radius: 50%;
   margin: 0;
-  width: 56px;
-  height: 56px;
-  border: 2px solid #DADADA;
-  box-shadow: 0px 0px 6px #999999;
-  background: url("//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg") 50% 50% no-repeat;
-  background-size: 32px;
+  width: 75px;
+  height: 75px;
+  border: 2px solid white;
+  box-shadow: 0px 0px 2px #999999;
+  text-align: center;
+  padding-top: 17px;
+  padding-left: 1px;
 }
 
 .qr-button > input[type=file] {
@@ -50,7 +50,7 @@
 
 
 .container.navbar-bottom {
-height: 73px;
+height: 75px;
 width: 100%;
 position: fixed;
 padding: 0px;
@@ -81,38 +81,36 @@ perspective: 2000px;
 }
 
 .item:nth-child(1)>div {
-  background-color: #5fb3f9;
+  background-color: rgba(0,0,0,0);
 }
 .item:nth-child(2)>div {
-  background-color: #60ead3;
+  background-color: rgba(0,0,0,0);
 }
 .item:nth-child(3)>div {
-  background-color: #fda660;
+  background-color: $green;
+  border-radius: 50%;
 }
 .item:nth-child(4)>div {
-  background-color: #fd7b87;
+  background-color: rgba(0,0,0,0);
 }
 .item:nth-child(5)>div {
-  background-color: #93c167;
+  background-color: rgba(0,0,0,0);
 }
 
 .back {
   position: relative;
-  transform:rotateX(180deg);
+  transform:rotateY(180deg);
   bottom: 130px;
   color: white;
   font-size: 20px;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
 }
 
-.fas {
-  color: white;
+i {
+  color: $gray;
   font-size: 35px;
 }
 
 .item:active{
-  transform:rotateX(180deg);
+  transform:rotateY(180deg);
   transition: 1s;
 }
