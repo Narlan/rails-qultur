@@ -8,6 +8,9 @@ const enableButton = (button) => {
 const select2InUserIndex  = () => {
   $(document).ready(function() {
       $('.search-bar').select2();
+      $('.search-bar').change(function(){
+      $('.search-bar').submit();
+});
   });
 }
 
