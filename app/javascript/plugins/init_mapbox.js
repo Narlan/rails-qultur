@@ -2,9 +2,7 @@ import mapboxgl from 'mapbox-gl';
 
 console.log("Entered: init_mapbox")
 
-
 const buildMonument = (map, monumentId, modelOrigin, modelAltitude, modelRotate, modelScale, modelUrl) => {
-
 
     // transformation parameters to position, rotate and scale the 3D model onto the map
     var modelTransform = {
@@ -75,27 +73,6 @@ const buildMonument = (map, monumentId, modelOrigin, modelAltitude, modelRotate,
     };
     return customLayer;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -172,7 +149,6 @@ const initMapbox = () => {
     console.log("Not detected: map div")
   }
 };
-
 
 
 export { initMapbox };
