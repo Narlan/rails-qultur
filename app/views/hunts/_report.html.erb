@@ -3,7 +3,7 @@
     "Vous n'avez pas encore scanné le monument ;)"
   <% elsif @hunt.progress == "scanned" %>
     "Félicitation, vous avez atteint <%=@hunt.monument.name%>. Vous pouvez désormais répondre au quizzz!"
-  <% elsif @hunt.progress == "aswering" %>
+  <% elsif @hunt.progress == "answering" %>
     "Vous avez débuté le questionnaire, bonne chance"
   <% elsif @hunt.progress == "finish" %>
 
