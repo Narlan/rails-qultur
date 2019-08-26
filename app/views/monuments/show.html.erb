@@ -3,9 +3,9 @@
   <div class="card-monument">
     <%= image_tag @monument.photo %>
     <h1><%= @monument.name %></h1>
-    <div>
-      <p> <%= @monument.description %> </p>
-    </div>
+  </div>
+      <p class="text-justify"> <%= @monument.description %> </p>
+
     <!-- Test if monument is already captured by current_user -->
       <% if @hunt.progress != 3 %>
         <%= link_to 'Commencer le quiz', monument_question_path(@monument, @monument.questions.find_by(position: 1)), class: 'btn btn-block btn-green' %>
