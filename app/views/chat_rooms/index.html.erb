@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="d-flex justify-content-around mt-3">
+  <div class="d-flex justify-content-between mt-3">
     <div>
         <%= simple_form_for :query, url: user_chat_rooms_path(current_user), method: :post, :html => {:class => "form-inline"} do |f| %>
           <%= f.input :user_id, collection: @users, label: false %>
     </div>
 
     <div class="col-auto">
-      <button type="submit" class="btn btn-green ml-5">Parlons!</button>
+      <button type="submit" class="btn btn-green ml-1">Parlons!</button>
     </div>
     <% end %>
   </div>
