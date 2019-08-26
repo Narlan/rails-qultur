@@ -2,6 +2,7 @@ class ChatRoomsController < ApplicationController
 
   def index
     @chat_rooms = ChatRoom.where(params[:id] == current_user.id)
+    @users = User.all
   end
 
   def show
