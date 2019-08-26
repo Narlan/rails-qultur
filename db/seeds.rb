@@ -65,8 +65,10 @@ end
 def create_hunts_with_random_capture
   print_adaptative_info("#{Monument.all.length} hunts for active user", "start")
   user = User.find(1)
-  Monument.all.each do |monument|
-    hunt = Hunt.create(score: 6, progress: "finish", monument: monument, user: user)
+  monuments = Monument.all.drop(1)
+  puts monuments.length
+  monuments.each do |monument|
+    hunt = Hunt.create(progress: "finish", monument: monument, user: user)
     hunt.monument.questions.each do |question|
         choice = Choice.create(hunt: hunt, answer: question.answers.first, success: [true, false].sample)
     end
