@@ -10,7 +10,11 @@ class UsersController < ApplicationController
   end
 
   def search
-    user = User.find(params[:post][:person_id])
+    if params[:post][:person_id] != ""
+      user = User.find(params[:post][:person_id])
+    else
+      user = current_user
+    end
     redirect_to user_path(user)
   end
 
