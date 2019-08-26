@@ -9,6 +9,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def search
+    user = User.find(params[:post][:person_id])
+    redirect_to user_path(user)
+  end
+
   def edit
   end
 
