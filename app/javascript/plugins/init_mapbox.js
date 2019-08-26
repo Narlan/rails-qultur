@@ -24,8 +24,9 @@ const initMapbox = () => {
     var map = window.map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    zoom: 4,
-    center: [2.294481, 48.858370],
+    zoom: 4.5,
+    center: [2.213749, 46.227638],
+    pitch: 35,
     antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
     });
 

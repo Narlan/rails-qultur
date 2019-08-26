@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://unpkg.com/three@0.106.2/build/three.min.js'></script>
+    <script src="https://unpkg.com/three@0.106.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
 
     <title>QultuR</title>
     <%= csrf_meta_tags %>
@@ -14,15 +17,12 @@
     <%= favicon_link_tag asset_path('logo.png') %>
   </head>
   <body>
-    <script src='https://unpkg.com/three@0.106.2/build/three.min.js'></script>
-    <script src="https://unpkg.com/three@0.106.2/examples/js/loaders/GLTFLoader.js"></script>
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/bottom-navbar' %>
-    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false %>
     <%= yield :after_js %>
     <%= javascript_pack_tag 'application' %>
   </body>

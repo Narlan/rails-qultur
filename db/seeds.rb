@@ -21,7 +21,7 @@ def create_answers(answers)
 end
 
 def create_user
-    print_adaptative_info("1 user", "start")
+    print_adaptative_info("1 active user", "start")
     user = User.create!(
       first_name: "John",
       last_name: "Doe",
@@ -33,6 +33,7 @@ def create_user
       remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
     print_adaptative_info()
 
+    print_adaptative_info("9 fake users", "start")
     9.times do
       fake_user = User.create(
         first_name: Faker::Name.first_name,
@@ -44,6 +45,7 @@ def create_user
         description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
         remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg")
     end
+    print_adaptative_info
 end
 
 def create_datas
@@ -60,14 +62,17 @@ def create_datas
   print_adaptative_info()
 end
 
-def create_captured_hunts
-  print_adaptative_info("4 hunts for test user", "start")
+def create_hunts_with_random_capture
+  print_adaptative_info("#{Monument.all.length} hunts for active user", "start")
   user = User.find(1)
-  Hunt.create(score: 6, progress: "finish", monument: Monument.first, user: user)
-  Hunt.create(score: 2, progress: "finish", monument: Monument.last, user: user)
-  Hunt.create(score: 4, progress: "finish", monument: Monument.find(3), user: user)
-  Hunt.create(score: 5, progress: "finish", monument: Monument.find(4), user: user)
-  Hunt.create(score: 9, progress: "finish", monument: Monument.find(2), user: user)
+  monuments = Monument.all.drop(1)
+  puts monuments.length
+  monuments.each do |monument|
+    hunt = Hunt.create(progress: "finish", monument: monument, user: user)
+    hunt.monument.questions.each do |question|
+        choice = Choice.create(hunt: hunt, answer: question.answers.first, success: [true, false].sample)
+    end
+  end
   print_adaptative_info()
 end
 
@@ -75,5 +80,5 @@ clear
 print_the_final_QR
 create_user
 create_datas
-create_captured_hunts
+create_hunts_with_random_capture
 print_user_informations

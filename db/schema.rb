@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_25_080725) do
+ActiveRecord::Schema.define(version: 2019_08_25_160545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.boolean "success", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "content", array: true
@@ -37,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_08_25_080725) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "answer_id"
+    t.boolean "success"
     t.index ["answer_id"], name: "index_choices_on_answer_id"
     t.index ["hunt_id"], name: "index_choices_on_hunt_id"
   end
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_08_25_080725) do
 
   create_table "hunts", force: :cascade do |t|
     t.boolean "current_hunt", default: false
-    t.integer "score"
+    t.integer "score", default: 0
     t.string "progress", default: "pending"
     t.bigint "monument_id"
     t.bigint "user_id"

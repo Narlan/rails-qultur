@@ -245,7 +245,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks
+  turbolinks (~> 5.2.0)
   uglifier
   web-console (>= 3.3.0)
   webpacker

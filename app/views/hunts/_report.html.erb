@@ -1,18 +1,18 @@
-<h2>
+<p>
   <% if @hunt.progress == "pending" %>
-    Vous n'avez pas encore scanné le monument ;)
+    "Vous n'avez pas encore scanné le monument ;)"
   <% elsif @hunt.progress == "scanned" %>
-    Félicitation, vous avez atteint <%=@hunt.monument.name%>. Vous pouvez désormais répondre au quizzz!
-  <% elsif @hunt.progress == "aswering" %>
-    Vous avez débuté le questionnaire, bonne chance
+    "Félicitation, vous avez atteint <%=@hunt.monument.name%>. Vous pouvez désormais répondre au quizzz!"
+  <% elsif @hunt.progress == "answering" %>
+    "Vous avez débuté le questionnaire, bonne chance"
   <% elsif @hunt.progress == "finish" %>
 
   </div>
-    <% if @hunt.score > 5%>
-      Vous n'êtes pas parvenu à capturer le monument :(... mais ne soyez pas triste, il y a encore de nombreux monuments à capturer !
+    <% if @hunt.captured? %>
+      "Vous avez capturé ce momument ! Félicitation !"
     <% else %>
-      Vous avez capturé ce momument ! Félicitation !
+      "Vous n'êtes pas parvenu à capturer le monument :(... mais ne soyez pas triste, il y a encore de nombreux monuments à capturer !"
     <% end %>
 
   <% end %>
-</h2>
+</p>
