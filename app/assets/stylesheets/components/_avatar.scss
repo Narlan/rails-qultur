@@ -18,6 +18,16 @@
   object-position: center;
 }
 
+.avatar-medium {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0px !important;
+}
+
+
 .avatar-large {
   width: 140px;
   height: 140px;

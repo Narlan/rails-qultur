@@ -7,8 +7,8 @@
       <% else %>
         <%= cl_image_tag @user.photo, class: 'avatar-large my-3' %>
       <% end %>
-      <div class="ml-4 mb-3">
-        <h2 id="nickname"><%= @user.nickname %></h2>
+      <div class="ml-4 mb-4 mr-2">
+        <h4 id="nickname"><%= @user.nickname %></h4>
         <p class="m-0"><%= @user.first_name %> <%= @user.last_name %></p>
         <% unless @user.age.nil? %>
           <em><small><%= @user.age %> ans</small></em>
@@ -27,11 +27,11 @@
 
     <div class="d-flex align-items-end">
       <% if @user != current_user %>
-        <%= link_to "Chat", new_user_chat_room_path(current_user), class: 'btn btn-block btn-green mx-2' %>
+        <%= link_to "Chat", new_user_chat_room_path(current_user), class: 'btn btn-block btn-green' %>
         <% if current_user.is_following?(@user.id) %>
-          <%= link_to "Ne plus suivre", unfollow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
+          <%= link_to "Se desabonner", unfollow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green ml-2' %>
         <% else %>
-          <%= link_to "Suivre", follow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
+          <%= link_to "S'abonner", follow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green ml-2' %>
         <% end %>
       <% end %>
     </div>
