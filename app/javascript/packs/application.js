@@ -10,6 +10,9 @@ import "./question.js";
 initMapbox();
 // openQRCamera()
 
+var Turbolinks = require("turbolinks")
+Turbolinks.start()
+
 // Il semble qu'il fasse ajouter des listener pour pouvoir utiliser cette structure...
 // Le script du lecteur qr est actuellement dans la view...
 // import { openQRCamera } from "./scan.js"
