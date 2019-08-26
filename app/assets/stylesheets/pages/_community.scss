@@ -1,7 +1,17 @@
 .followers {
   overflow: scroll;
+  height: 71vh;
 }
 
 .search-form {
   position: sticky;
+}
+
+.search-form p {
+  margin: 0px;
+}
+
+
+.d-block.text-left.pr-4 {
+  width: 22vh;
 }
