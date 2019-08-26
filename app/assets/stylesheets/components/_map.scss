@@ -3,6 +3,14 @@
   height: calc(100vh - 128px);
 }
 
+.marker {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+}
+
 .mapboxgl-popup {
   max-width: 300px;
 }
@@ -42,3 +50,4 @@
 .mapboxgl-control-container {
   height: 600px;
 }
+

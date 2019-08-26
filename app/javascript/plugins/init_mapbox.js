@@ -11,7 +11,7 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
-      new mapboxgl.Marker()
+      new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup) // add this
         .addTo(map);
@@ -26,7 +26,7 @@ const initMapbox = () => {
     style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 4.5,
     center: [2.213749, 46.227638],
-    pitch: 0,
+    pitch: 35,
     antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
     });
 
@@ -117,7 +117,15 @@ const initMapbox = () => {
 
   const markers = JSON.parse(mapElement.dataset.markers);
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
+
+    const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.backgroundImage = `url('https://github.com/Narlan/rails-qultur/blob/master/app/assets/images/map-marker-monument.png?raw=true')`;
+    element.style.backgroundSize = 'contain';
+    element.style.width = '30px';
+    element.style.height = '38px';
+
+    new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .addTo(map);
     });
