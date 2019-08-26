@@ -38,7 +38,7 @@ def create_user
       fake_user = User.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
-        nickname: Faker::Ancient.god,
+        nickname: Faker::Games::Pokemon.name,
         age: rand(18..42),
         email: Faker::Internet.free_email,
         password: "password",
