@@ -34,12 +34,12 @@
   width: 75px;
   height: 75px;
   border: 2px solid white;
-  box-shadow: 0px 0px 4px #999999;
+  box-shadow: 0px 0px 4px #AAAAAA;
   text-align: center;
   padding-top: 17px;
   padding-left: 1px;
   margin-bottom: 8px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255);
 }
 
 .qr-button > input[type=file] {
@@ -62,6 +62,8 @@
   right: 0;
   perspective: 2000px;
   -webkit-perspective: 2000px;
+  background-color: rgba (255, 255, 255, 0.8);
+  box-shadow: 0px 0px 8px #DADADA;
 }
 
 .item {
@@ -83,19 +85,14 @@
 }
 
 .item:nth-child(1)>div {
-  background-color: rgba(255, 255, 255, 0.7);
 }
 .item:nth-child(2)>div {
-  background-color: rgba(255, 255, 255, 0.7);
 }
 .item:nth-child(3)>div {
-  background-color: rgba(255, 255, 255, 0.8);
 }
 .item:nth-child(4)>div {
-  background-color: rgba(255, 255, 255, 0.7);
 }
 .item:nth-child(5)>div {
-  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .back {
