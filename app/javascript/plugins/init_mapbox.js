@@ -116,7 +116,7 @@ const initMapbox = () => {
     var modelOrigin = [2.29503, 48.872928];
     var modelAltitude = 0;
     var modelRotate = [Math.PI / 2, 180.2, 0];
-    var modelScale = 1000.41843220338983e-8;
+    var modelScale = 1050.41843220338983e-8;
     var modelUrl = 'https://raw.githubusercontent.com/Narlan/rails-qultur/master/public/gltfs/arc.gltf';
 
     const customLayer = buildMonument(map, 'arc', modelOrigin, modelAltitude, modelRotate, modelScale, modelUrl);
