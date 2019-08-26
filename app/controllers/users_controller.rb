@@ -2,15 +2,16 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :destroy]
 
   def index
-    if params[:query].present?
-      @users = User.where(nickname: params[:query])
-    else
-      @users = User.where.not(id: current_user.id)
-    end
+    @users = User.where.not(id: current_user.id)
   end
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def search
+    user = User.find(params[:post][:person_id])
+    redirect_to user_path(user)
   end
 
   def edit
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if current_user.follow(@user.id)
       respond_to do |format|
-        format.html { redirect_to root_path }
+        format.html { redirect_to user_path(@user) }
         format.js
       end
     end
@@ -43,7 +44,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if current_user.unfollow(@user.id)
       respond_to do |format|
-        format.html { redirect_to root_path }
+        format.html { redirect_to user_path(@user) }
         format.js { render action: :follow }
       end
     end

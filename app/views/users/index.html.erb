@@ -1,8 +1,9 @@
 <div class="container mt-4">
 
-
-  <%= render @users %>
-
+  <%= simple_form_for(:query, method: :get, url: search_path) do |f| %>
+    <%= select("post", "person_id", @users.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, class: "search-bar") %>
+    <%= f.submit "Profil", class: "btn btn-block btn-green mt-2", id: "profil-access-btn" %>
+  <% end %>
 
   <% current_user.following.each do |follower| %>
 
@@ -11,8 +12,7 @@
         <div class="d-flex justify-content-start align-items-end">
 
           <% if follower.photo.file.nil? %>
-            <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg",
-                          class: 'avatar border my-3' %>
+            <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg", class: 'avatar border my-3' %>
           <% else %>
             <%= cl_image_tag follower.photo, class: 'avatar border my-3' %>
           <% end %>
