@@ -3,7 +3,7 @@
       <%= link_to user_chat_rooms_path(current_user.id) do %>
         <i class="fas fa-reply text-white"></i>
       <% end %>
-      <h4><%= "#{@chat_room.name}"%></h4>
+      <h5><%= "#{@chat_room.name}"%></h5>
     </div>
     <div class="messages">
       <% @chat_room.messages.each do |message| %>
