@@ -9,9 +9,10 @@ const select2InUserIndex  = () => {
   $(document).ready(function() {
       $('.search-bar').select2();
       $('.search-bar').change(function(){
-      $('.search-bar').submit();
-});
-  });
+        $('.query').submit();
+      }
+      );
+    });
 }
 
 export { select2InUserIndex }
