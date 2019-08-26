@@ -20,7 +20,15 @@
   object-position: center;
 }
 
-.mapboxgl-ctrl.mapboxgl-ctrl-group {
+.mapboxgl-ctrl .mapboxgl-ctrl-logo {
+  display: none;
+}
+
+.mapboxgl-ctrl-bottom-right > .mapboxgl-ctrl-attrib {
+  display: none;
+}
+
+.mapboxgl-ctrl .mapboxgl-ctrl-group {
   position: relative;
   top: 0px;
 }
