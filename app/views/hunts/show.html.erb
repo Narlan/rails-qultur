@@ -2,7 +2,7 @@
 
   <div class="m-2">
     <%= image_tag('logo.png', width: 80) %>
-    <h1>QultuR</h1>
+    <h1 class="title-qultur">QultuR</h1>
   </div>
 
   <%= image_tag @hunt.monument.photo, class: 'avatar-large' %>
@@ -17,6 +17,6 @@
     <h2><%= @hunt.score %> / 10</h2>
   <% end %>
 
-  <%= link_to 'Retour', root_path, class: 'btn btn-green mt-5 mb-2' %>
+  <%= link_to 'Retour', monuments_path, class: 'btn btn-block btn-green mt-5 mb-2' %>
 
 </div>

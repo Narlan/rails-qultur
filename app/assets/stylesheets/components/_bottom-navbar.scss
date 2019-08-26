@@ -1,27 +1,27 @@
 /* Place the navbar at the bottom of the page, and make it stick */
-.bottom-navbar {
-  background-color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0px 0px 8px #DADADA;
-  left: 0;
-}
+// .bottom-navbar {
+//   background-color: white;
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   box-shadow: 0px 0px 8px #DADADA;
+//   left: 0;
+// }
 
-.bottom-navbar i {
-  color: #404040;
-}
+// .bottom-navbar i {
+//   color: #404040;
+// }
 
-/* Style the links inside the navigation bar */
-.bottom-navbar a {
-  color: #202020;
-  font-size: 32px;
-  padding: 4px;
-}
+// /* Style the links inside the navigation bar */
+// .bottom-navbar a {
+//   color: #202020;
+//   font-size: 32px;
+//   padding: 4px;
+// }
 
-.bottom-navbar a:active {
-  border-top: 4px solid $green;
-}
+// .bottom-navbar a:active {
+//   border-top: 4px solid $green;
+// }
 
 /* A mettre en place avec du Javascript (ajout et suppression de classe avec un listener) */
 // .bottom-navbar .active {
@@ -29,15 +29,15 @@
 // }
 
 .qr-button {
-  font-family: "Juicy Culture";
   border-radius: 50%;
   margin: 0;
-  width: 56px;
-  height: 56px;
-  border: 2px solid #DADADA;
-  box-shadow: 0px 0px 6px #999999;
-  background: url("//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg") 50% 50% no-repeat;
-  background-size: 32px;
+  width: 75px;
+  height: 75px;
+  border: 2px solid white;
+  box-shadow: 0px 0px 2px #999999;
+  text-align: center;
+  padding-top: 17px;
+  padding-left: 1px;
 }
 
 .qr-button > input[type=file] {
@@ -46,4 +46,71 @@
   width:0px;
   height:0px;
   opacity:0;
+}
+
+
+.container.navbar-bottom {
+height: 75px;
+width: 100%;
+position: fixed;
+padding: 0px;
+margin: auto;
+bottom: 0;
+left: 0;
+right: 0;
+perspective: 2000px;
+-webkit-perspective: 2000px;
+}
+
+.item {
+  float: left;
+  height: 100%;
+  width: 20%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+
+}
+
+.front, .back {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+.item:nth-child(1)>div {
+  background-color: rgba(0,0,0,0);
+}
+.item:nth-child(2)>div {
+  background-color: rgba(0,0,0,0);
+}
+.item:nth-child(3)>div {
+  background-color: $green;
+  border-radius: 50%;
+}
+.item:nth-child(4)>div {
+  background-color: rgba(0,0,0,0);
+}
+.item:nth-child(5)>div {
+  background-color: rgba(0,0,0,0);
+}
+
+.back {
+  position: relative;
+  transform:rotateY(180deg);
+  bottom: 130px;
+  color: white;
+  font-size: 20px;
+}
+
+i {
+  color: $gray;
+  font-size: 35px;
+}
+
+.item:active{
+  transform:rotateY(180deg);
+  transition: 0.6s;
 }

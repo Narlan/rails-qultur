@@ -24,8 +24,8 @@ class MonumentsController < ApplicationController
 
   def captured?(hunt)
     choices = hunt.choices
-    count = 0
-    choices.each { |choice| count += 1 if choice.success == true }
-    count > 4
+    hunt.score = 0
+    choices.each { |choice| hunt.score += 1 if choice.success == true }
+    hunt.score > 4
   end
 end

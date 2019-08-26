@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_25_160545) do
+ActiveRecord::Schema.define(version: 2019_08_26_090650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,11 +54,11 @@ ActiveRecord::Schema.define(version: 2019_08_25_160545) do
   create_table "hunts", force: :cascade do |t|
     t.boolean "current_hunt", default: false
     t.integer "score"
-    t.string "progress", default: "pending"
     t.bigint "monument_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "progress", default: 0
     t.index ["monument_id"], name: "index_hunts_on_monument_id"
     t.index ["user_id"], name: "index_hunts_on_user_id"
   end
