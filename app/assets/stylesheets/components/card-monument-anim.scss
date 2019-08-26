@@ -1,23 +1,23 @@
 .card-monument-anim {
-  height: 124px;
+  height: 130px;
   width: 100%;
-  border-radius: 24px;
-  box-shadow: -1rem 0 3rem #202020;
-/*   margin-left: -50px; */
+  border-radius: 2px;
+  box-shadow: 0 0 8px #202020;
   transition: 0.4s ease-out;
   position: relative;
 }
 
 .card-gradient {
-  border-radius: 24px;
+  border-radius: 2px;
 }
 
 .card-gradient:hover {
-  transform: translateY(-20px);
+  transform: translateX(10px);
   transition: 0.4s ease-out;
 }
 
 .title {
+  font-family: $qultur-font;
   color: white;
   font-size: 36px;
   font-weight: 300;
@@ -41,12 +41,4 @@
 
 .not-captured {
   opacity: 0.4;
-}
-
-
-hr.hr-styled {
-  opacity: 0.5;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
