@@ -23,6 +23,22 @@ class MonumentsController < ApplicationController
     current_user.hunts.each do |hunt|
       @hunt = hunt if @monument.id == hunt.monument_id
     end
+    hunt_choices = @hunt.choices
+    all_answers_recieved = [] # Intermediate step...
+    hunt_choices.each do |choice|
+      all_answers_recieved << choice.answer
+    end
+    all_question_answered = []
+    all_answers_recieved.each do |answer|
+      all_question_answered << answer.question
+    end
+    last_question = all_question_answered.last
+
+    if last_question == nil
+      @last_question_position = 1
+    else
+      @last_question_position = last_question.position + 1
+    end
   end
 
   private
