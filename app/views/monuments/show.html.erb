@@ -1,14 +1,18 @@
 <div class="container">
 
   <div class="card-monument">
-    <%= image_tag @monument.photo %>
+    <!-- <%= image_tag @monument.photo %> -->
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= @monument.photo %>); background-position: center; background-size: cover; height: 200px;"></div>
+    <%= link_to monument_navigation_path(@monument) do %>
+      <%= image_tag 'https://image.flaticon.com/icons/svg/214/214320.svg', class: 'nav-icon' %>
+    <% end %>
     <h1><%= @monument.name %></h1>
   </div>
       <p class="text-justify"> <%= @monument.description %> </p>
 
     <!-- Test if monument is already captured by current_user -->
-      <% if @hunt.progress != 3 %>
-        <%= link_to 'Commencer le quiz', monument_question_path(@monument, @monument.questions.find_by(position: 1)), class: 'btn btn-block btn-green' %>
+      <% if @hunt.progress == 1 && @monument.questions.find_by(position: 1) != nil && @last_question_position < 11 %>
+        <%= link_to 'Commencer le quiz', monument_question_path(@monument, @monument.questions.find_by(position: @last_question_position)), class: 'btn btn-block btn-green' %>
       <% else %>
         <%= link_to 'Retour à la collection', monuments_path, class: 'btn btn-block btn-green' %>
       <% end %>

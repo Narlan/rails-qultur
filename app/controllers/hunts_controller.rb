@@ -13,7 +13,7 @@ class HuntsController < ApplicationController
       end
       hunt.save
     end
-    Hunt.create(current_hunt: true, progress: "pending", monument: monument, user: current_user) unless hunt_already_exist
+    Hunt.create(current_hunt: true, progress: 0, monument: monument, user: current_user) unless hunt_already_exist
     redirect_to monument_path(monument)
   end
 
@@ -28,17 +28,28 @@ class HuntsController < ApplicationController
         if hunt.monument.id == monuments[0].id
           hunt.current_hunt = true
           hunt_already_exist = true
-          hunt.progress = 'scanned'
+          hunt.progress = 1
           actual_hunt = hunt
         end
         hunt.save
       end
-      actual_hunt = Hunt.create(current_hunt: true, progress: "pending", monument: monuments[0], user: current_user) unless hunt_already_exist
+      actual_hunt = Hunt.create(current_hunt: true, progress: 1, monument: monuments[0], user: current_user) unless hunt_already_exist
       redirect_to monument_path(monuments[0])
     end
   end
 
   def show
     @hunt = Hunt.where(user_id: current_user, monument_id: params[:monument_id]).first
+    @score = count_score(@hunt)
+    @hunt.progress = 3
+  end
+
+  private
+
+  def count_score(hunt)
+    choices = hunt.choices
+    count = 0
+    choices.each { |choice| count += 1 if choice.success == true }
+    return count
   end
 end
