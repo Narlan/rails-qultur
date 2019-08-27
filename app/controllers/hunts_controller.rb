@@ -42,9 +42,15 @@ class HuntsController < ApplicationController
     @hunt = Hunt.where(user_id: current_user, monument_id: params[:monument_id]).first
     @score = count_score(@hunt)
     @coins = count_coins(@score)
-    @xp = count_xp(score)
+    @xp = count_xp(@score)
 
+    current_user.coins += @coins
+    total_xp = current_user.exp + @xp
+    current_user.level += total_xp / 100
+    total_xp = total_xp % 100
+    current_user.exp = total_xp
     @hunt.progress = 3
+    current_user.save
   end
 
   private
