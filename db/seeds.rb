@@ -44,8 +44,8 @@ def create_user
         age: rand(18..42),
         email: Faker::Internet.free_email,
         password: "password",
-        level: rand(1..10),
-        exp: rand(0..100),
+        level: rand(1..20),
+        exp: rand(0..10) * 10,
         description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
         remote_photo_url: "https://source.unsplash.com/featured/?face")
         # sleep(3)
