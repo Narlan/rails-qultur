@@ -54,8 +54,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def level
-
+  def level(level_user)
+    total_exp = 100 * level_user
+    total_exp
   end
 
   private
