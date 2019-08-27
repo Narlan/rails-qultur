@@ -54,8 +54,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def level
-
+  def level(level_user)
+    total_exp = 0
+    level_min = 100
+    if level_user == 1
+      level_min
+    else
+      until level_user == 1
+        exp_per_level = level_min * 1.2
+        level_user -= 1
+        total_exp += level_min + (exp_per_level * level_user)
+      end
+      total_exp
+    end
   end
 
   private
