@@ -44,7 +44,7 @@ def create_user
         password: "password",
         description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
         remote_photo_url: "https://source.unsplash.com/featured/?face")
-      sleep(3)
+      # sleep(3)
     end
     print_adaptative_info
 end
@@ -63,22 +63,22 @@ def create_datas
   print_adaptative_info()
 end
 
-def create_hunts_with_random_capture
-  print_adaptative_info("hunts for active user", "start")
-  user = User.find(1)
-  monuments = Monument.all.drop(1)
-  monuments.each do |monument|
-    hunt = Hunt.create(progress: 3, monument: monument, user: user)
-    hunt.monument.questions.each do |question|
-        choice = Choice.create(hunt: hunt, answer: question.answers.first, success: [true, false].sample)
-    end
-  end
-  print_adaptative_info()
-end
+# def create_hunts_with_random_capture
+#   print_adaptative_info("hunts for active user", "start")
+#   user = User.find(1)
+#   monuments = Monument.all.drop(1)
+#   monuments.each do |monument|
+#     hunt = Hunt.create(progress: 3, monument: monument, user: user)
+#     hunt.monument.questions.each do |question|
+#         choice = Choice.create(hunt: hunt, answer: question.answers.first, success: [true, false].sample)
+#     end
+#   end
+#   print_adaptative_info()
+# end
 
 clear
 print_the_final_QR
 create_user
 create_datas
-create_hunts_with_random_capture
+# create_hunts_with_random_capture
 print_user_informations
