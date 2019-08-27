@@ -29,6 +29,8 @@ def create_user
       age: 30,
       email: "user@example.com",
       password: "password",
+      level: rand(1..10),
+      exp: rand(0..100),
       description: "J'aime pas Noël ; je déteste les enfants et la joie de vivre me donne envie de vomir !",
       remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
     print_adaptative_info()
@@ -42,6 +44,8 @@ def create_user
         age: rand(18..42),
         email: Faker::Internet.free_email,
         password: "password",
+        level: rand(1..10),
+        exp: rand(0..100),
         description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
         remote_photo_url: "https://source.unsplash.com/featured/?face")
       sleep(3)

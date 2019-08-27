@@ -26,10 +26,10 @@
   <div class="stats">
 
     <div class="xp-bar d-flex align-items-center mb-5">
-      <p>XP</p>
+      <p><%= @user.exp % 100 %>% XP</p>
       <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
     </div>
-    
+
   </div>
 
   <div class="buttons-profile">
