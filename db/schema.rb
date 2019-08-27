@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_163527) do
 
   create_table "hunts", force: :cascade do |t|
     t.boolean "current_hunt", default: false
-    t.integer "score"
+    t.integer "score", default: 0
     t.bigint "monument_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
