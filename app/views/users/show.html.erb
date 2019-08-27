@@ -25,11 +25,31 @@
 
   <div class="stats">
 
-    <div class="xp-bar d-flex align-items-center mb-5">
-      <p>XP</p>
+    <div class="d-flex justify-content-center">
+      <p> XP </p>
+    </div>
+    <div class="xp-bar d-flex align-items-center mb-3">
+      <p id="paraone"><%= @user.exp %>/<%= @user.exp %></p>
       <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
     </div>
-    
+
+    <div class="d-flex justify-content-center">
+      <p> Total bonnes reponses </p>
+    </div>
+    <div class="xp-bar d-flex align-items-center mb-3">
+      <p id="paratwo"><%=  %>/<%= Monument.all.count * 10 %></p>
+      <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <p> Monuments captures </p>
+    </div>
+    <div class="xp-bar d-flex align-items-center mb-3">
+      <p id="parathree"><%= @captured_monuments.count %>/<%= Monument.all.count %></p>
+      <div class="xp-bar-progress" style="width: <%= @x %>%"></div>
+    </div>
+
+
   </div>
 
   <div class="buttons-profile">

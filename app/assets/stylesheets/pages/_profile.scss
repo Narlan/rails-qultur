@@ -9,7 +9,7 @@
 
  .buttons-profile {
     position: fixed;
-    bottom: 85px;
+    bottom: 92px;
     right: 0;
     left: 0;
   }
@@ -18,5 +18,51 @@
     margin-bottom: 7px;
     height: 35vh;
     margin-top: 7px;
+    padding-top: 12px;
 }
 
+.stats p {
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+.xp-bar {
+  background-color: #808080;
+  border-radius: 16px;
+  position: relative;
+  padding: 3px 0px;
+}
+
+.xp-bar-progress {
+  background-color: $green;
+  border-radius: 16px;
+  height: 24px;
+  position: left;
+}
+
+#paraone {
+  color: white;
+  font-weight: bolder;
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  left: 159px;
+}
+
+
+#paratwo {
+  color: white;
+  font-weight: bolder;
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  left: 168px;
+}
+#parathree{
+  color: white;
+  font-weight: bolder;
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  left: 158px;
+}

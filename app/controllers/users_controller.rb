@@ -7,6 +7,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    hunts = @user.hunts.where.not(progress: 'pending')
+    @captured_monuments = []
+    hunts.each { |hunt| @captured_monuments << hunt.monument if captured?(hunt) }
+    @x = (@captured_monuments.count / Monument.all.count.to_f * 100).to_i
   end
 
   def search
@@ -69,5 +73,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :first_name, :last_name, :age, :description, :email, :password, :longitude, :latitude, :photo)
+  end
+
+  def captured?(hunt)
+    choices = hunt.choices
+    hunt.score = 0
+    choices.each { |choice| hunt.score += 1 if choice.success == true }
+    hunt.score > 4
   end
 end
