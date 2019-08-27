@@ -41,6 +41,10 @@ class MonumentsController < ApplicationController
     end
   end
 
+  def navigation
+    @monument = Monument.find(params[:monument_id])
+  end
+
   private
 
   def captured?(hunt)
