@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   post "hunts/scanned", to: "hunts#scanned", as: "scanned"
+  post "questions/:question_id/choices", to: "choices#create", as: "choice"
 
   mount ActionCable.server => "/cable"
 end
