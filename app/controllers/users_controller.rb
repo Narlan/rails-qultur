@@ -71,6 +71,13 @@ class UsersController < ApplicationController
     total_exp
   end
 
+  def level_up
+    if current_user.exp > 100
+      current_user.level += 1
+      current_user.exp = (current_user.exp % 100)
+    end
+  end
+
   private
 
   def set_user

@@ -25,7 +25,6 @@
   </div>
 
   <div class="stats">
-
     <div class="d-flex justify-content-center">
       <p> XP </p>
     </div>
@@ -35,7 +34,7 @@
     </div>
 
     <div class="d-flex justify-content-center">
-      <p> Total bonnes reponses </p>
+      <p> Total bonnes réponses </p>
     </div>
     <div class="xp-bar d-flex align-items-center mb-3">
       <p id="paratwo"><%= @total_good_answer %>/<%= Monument.all.count * 10 %></p>
@@ -43,21 +42,19 @@
     </div>
 
     <div class="d-flex justify-content-center">
-      <p> Monuments captures </p>
+      <p> Monuments capturés </p>
     </div>
     <div class="xp-bar d-flex align-items-center mb-3">
       <p id="parathree"><%= @captured_monuments.count %>/<%= Monument.all.count %></p>
       <div class="xp-bar-progress" style="width: <%= @x %>%"></div>
     </div>
-
-
   </div>
 
   <div class="buttons-profile">
     <div class="d-flex align-items-end">
       <% if user_signed_in? && @user == current_user %>
         <%= link_to "Modifier", edit_user_registration_path, class: 'btn btn-block btn-outline-green mx-2' %>
-        <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-green mr-2 pt-2' %>
+        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-green mr-2 pt-2' %>
       <% end %>
     </div>
 
