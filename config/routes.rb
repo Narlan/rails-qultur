@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :hunts, only: [:create, :show]
   end
 
+  get "monuments/:monument_id/navigation", to: "monuments#navigation", as: "monument_navigation"
+
   post "hunts/scanned", to: "hunts#scanned", as: "scanned"
   post "questions/:question_id/choices", to: "choices#create", as: "choice"
 

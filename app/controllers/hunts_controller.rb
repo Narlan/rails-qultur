@@ -51,5 +51,4 @@ class HuntsController < ApplicationController
     choices.each { |choice| count += 1 if choice.success == true }
     return count
   end
-
 end

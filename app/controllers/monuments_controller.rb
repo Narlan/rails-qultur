@@ -7,7 +7,7 @@ class MonumentsController < ApplicationController
       @captured_monuments = []
       hunts.each { |hunt| @captured_monuments << hunt.monument if captured?(hunt) }
       @visited_monuments = []
-      hunts.each { |hunt| @visited_monuments << hunt.monument if !captured?(hunt) }
+      hunts.each { |hunt| @visited_monuments << hunt.monument unless captured?(hunt) }
     else
       redirect_to new_user_session_path
     end
@@ -18,6 +18,10 @@ class MonumentsController < ApplicationController
     current_user.hunts.each do |hunt|
       @hunt = hunt if @monument.id == hunt.monument_id
     end
+  end
+
+  def navigation
+    @monument = Monument.find(params[:monument_id])
   end
 
   private

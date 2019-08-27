@@ -1,7 +1,11 @@
 <div class="container">
 
   <div class="card-monument">
-    <%= image_tag @monument.photo %>
+    <!-- <%= image_tag @monument.photo %> -->
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= @monument.photo %>); background-position: center; background-size: cover; height: 200px;"></div>
+    <%= link_to monument_navigation_path(@monument) do %>
+      <%= image_tag 'https://image.flaticon.com/icons/svg/214/214320.svg', class: 'nav-icon' %>
+    <% end %>
     <h1><%= @monument.name %></h1>
   </div>
       <p class="text-justify"> <%= @monument.description %> </p>
