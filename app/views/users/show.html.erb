@@ -8,7 +8,7 @@
       <% else %>
         <div class="avatar-user">
           <%= cl_image_tag @user.photo, class: 'avatar-large my-3' %>
-          <span class="level">23</span>
+          <span class="level"><%= @user.level %></span>
         </div>
       <% end %>
       <div class="m-4">
@@ -24,7 +24,7 @@
 
     <div class="xp-bar d-flex align-items-center mb-5">
       <p>XP</p>
-      <div class="xp-bar-progress" style="width: 72%"></div>
+      <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
     </div>
 
     <div class="d-flex align-items-end">
