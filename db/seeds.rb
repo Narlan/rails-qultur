@@ -29,7 +29,7 @@ def create_user
       age: 30,
       email: "user@example.com",
       password: "password",
-      description: "J'aimes pas noël ; je détestes les enfants et la joie de vivre me donne envie de mourrir !",
+      description: "J'aime pas noël ; je déteste les enfants et la joie de vivre me donne envie de mourir !",
       remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
     print_adaptative_info()
 
