@@ -2,10 +2,14 @@
   <div class="info-bg pb-3">
     <div class="d-flex justify-content-start align-items-end">
       <% if @user.photo.file.nil? %>
-        <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg",
-                      class: 'avatar-large my-3' %>
+        <div class="avatar-user">
+          <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg", class: 'avatar-large my-3' %>
+        </div>
       <% else %>
-        <%= cl_image_tag @user.photo, class: 'avatar-large my-3' %>
+        <div class="avatar-user">
+          <%= cl_image_tag @user.photo, class: 'avatar-large my-3' %>
+          <span class="level">23</span>
+        </div>
       <% end %>
       <div class="m-4">
         <h4 id="nickname"><%= @user.nickname %></h4>
@@ -21,6 +25,11 @@
 
   <div class="stats">
 
+    <div class="xp-bar d-flex align-items-center mb-5">
+      <p>XP</p>
+      <div class="xp-bar-progress" style="width: 72%"></div>
+    </div>
+    
   </div>
 
   <div class="buttons-profile">
