@@ -44,7 +44,7 @@ def create_user
         password: "password",
         description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
         remote_photo_url: "https://source.unsplash.com/featured/?face")
-      sleep(3)
+      # sleep(3)
     end
     print_adaptative_info
 end
