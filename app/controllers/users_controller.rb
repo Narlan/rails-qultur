@@ -11,6 +11,14 @@ class UsersController < ApplicationController
     @captured_monuments = []
     hunts.each { |hunt| @captured_monuments << hunt.monument if captured?(hunt) }
     @x = (@captured_monuments.count / Monument.all.count.to_f * 100).to_i
+    all_hunts = @user.hunts
+    choix = []
+    all_hunts.each do |hunt|
+      hunt.choices.each do |choice|
+        choix << choice.success
+      end
+    end
+    @total_good_answer = choix.count(true)
   end
 
   def search
