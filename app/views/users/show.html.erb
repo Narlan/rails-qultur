@@ -4,6 +4,7 @@
       <% if @user.photo.file.nil? %>
         <div class="avatar-user">
           <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg", class: 'avatar-large my-3' %>
+          <span class="level"><%= @user.level %></span>
         </div>
       <% else %>
         <div class="avatar-user">
@@ -20,7 +21,7 @@
       </div>
     </div>
 
-    <p><%= @user.description %></p>
+    <p id="description-profile"><%= @user.description %></p>
   </div>
 
   <div class="stats">
@@ -37,8 +38,8 @@
       <p> Total bonnes reponses </p>
     </div>
     <div class="xp-bar d-flex align-items-center mb-3">
-      <p id="paratwo"><%=  %>/<%= Monument.all.count * 10 %></p>
-      <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
+      <p id="paratwo"><%= @total_good_answer %>/<%= Monument.all.count * 10 %></p>
+      <div class="xp-bar-progress" style="width: <%= @total_good_answer * 2 %>%"></div>
     </div>
 
     <div class="d-flex justify-content-center">
@@ -56,7 +57,7 @@
     <div class="d-flex align-items-end">
       <% if user_signed_in? && @user == current_user %>
         <%= link_to "Modifier", edit_user_registration_path, class: 'btn btn-block btn-outline-green mx-2' %>
-        <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-green mr-2' %>
+        <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-green mr-2 pt-2' %>
       <% end %>
     </div>
 

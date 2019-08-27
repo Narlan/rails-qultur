@@ -15,3 +15,13 @@
 .d-block.text-left.pr-4 {
   width: 22vh;
 }
+
+.select2-container .select2-selection--single {
+  margin-top: 3px;
+  height: 34px !important;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: 7px !important;
+}
