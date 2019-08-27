@@ -41,6 +41,9 @@ class HuntsController < ApplicationController
   def show
     @hunt = Hunt.where(user_id: current_user, monument_id: params[:monument_id]).first
     @score = count_score(@hunt)
+    @coins = count_coins(@score)
+    @xp = count_xp(score)
+
     @hunt.progress = 3
   end
 
@@ -52,4 +55,49 @@ class HuntsController < ApplicationController
     choices.each { |choice| count += 1 if choice.success == true }
     return count
   end
+
+  def count_coins(score)
+    coins = 0
+    case score
+    when 6
+      coins = 20
+    when 7
+      coins = 40
+    when 8
+      coins = 60
+    when 9
+      coins = 80
+    when 10
+      coins = 120
+    end
+    return coins
+  end
+
+  def count_xp(score)
+    xp = 0
+    case score
+    when 1
+      xp = 10
+    when 2
+      xp = 20
+    when 3
+      xp = 30
+    when 4
+      xp = 40
+    when 5
+      xp = 50
+    when 6
+      xp = 70
+    when 7
+      xp = 90
+    when 8
+      xp = 110
+    when 9
+      xp = 130
+    when 10
+      xp = 160
+    end
+    return xp
+  end
+
 end
