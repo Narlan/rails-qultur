@@ -33,7 +33,7 @@
   margin: 0;
   width: 75px;
   height: 75px;
-  border: 2px solid white;
+  border: 2px solid rgba(34, 107, 172, 0.7);
   box-shadow: 0px 0px 4px #AAAAAA;
   text-align: center;
   padding-top: 16px;
@@ -100,11 +100,6 @@
   transform:rotateY(180deg);
   bottom: 130px;
   color: white;
-  font-size: 35px;
-}
-
-i {
-  color: $gray;
   font-size: 35px;
 }
 
