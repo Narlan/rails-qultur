@@ -10,11 +10,3 @@ import { select2InUserIndex } from '../plugins/init_select2';
 
 select2InUserIndex();
 initMapbox();
-// openQRCamera()
-
-// Il semble qu'il fasse ajouter des listener pour pouvoir utiliser cette structure...
-// Le script du lecteur qr est actuellement dans la view...
-// import { openQRCamera } from "./scan.js"
-// import { showQRIntro } from "./scan.js"
-// openQRCamera();
-// showQRIntro();
