@@ -4,9 +4,9 @@ def print_the_final_QR
  | |  | |_   _| | |_ _   _| |__) |
  | |  | | | | | | __| | | |  _  /
  | |__| | |_| | | |_| |_| | | \\ \\
-  \\___\\_\\\\__,_|_|\\__|\\__,_|_|  \\_\
+  \\___\\_\\\\__,_|_|\\__|\\__,_|_|  \\_\\
 
-                                  \n"
+                                  \n\n"
 end
 
 def creation_validation(feed, state = "start")
@@ -43,4 +43,8 @@ end
 
 def print_dancers
   print "      〜(￣▽￣〜) (〜￣▽￣)〜\n\n\n"
+end
+
+def backspace(times)
+  times.times { print "\b \b" }
 end

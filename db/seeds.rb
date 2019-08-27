@@ -36,7 +36,8 @@ def create_user
     print_adaptative_info()
 
     print_adaptative_info("9 fake users", "start")
-    9.times do
+    9.times do |time|
+      print " [#{time + 1} / 9]"
       fake_user = User.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
@@ -49,6 +50,7 @@ def create_user
         description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
         remote_photo_url: "https://source.unsplash.com/featured/?face")
         # sleep(3)
+        backspace(8)
     end
     print_adaptative_info
 end
