@@ -1,5 +1,5 @@
 <div class="container text-center">
-    <div id="quizz">
+    <div id="quizz" data-hint="<%= params[:dataset] %>" >
         <p class="mt-4 mb-0"><%= @question.position %>/10</p>
         <p class="question-title">
             <%= @question.title %>
@@ -15,10 +15,10 @@
     <div id="answer"></div>
     </div>
 
+    <%= link_to 'hint', help_path(@question), method: :post, id: 'button-hint', class: 'btn btn-block btn-warning mt-4' %>
     <form action='/questions/<%="#{@question.id}"%>/choices' method="post" class="invisible-form">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input type="hidden" name="success" id="success-field" value='false'>
-      <input value="Aide 40" class='btn btn-block btn-green mt-4' id='button-hint'>
       <% if @next_question.present? %>
         <input type="submit" value="Question suivante" class='btn btn-block btn-green mt-4 disabled' id='button-next'>
       <% else %>

@@ -15,12 +15,14 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
     next.classList.add('disabled');
   });
 
-  const hint = document.getElementById('button-hint');
-  hint.addEventListener("click", (event) => {
+  const hint = document.querySelector('#quizz');
+  if (hint.dataset.hint) {
+    console.log("sa marche pas")
     answers[3].classList.add('disabled');
     answers[Math.floor(Math.random() * 2) + 1].classList.add('disabled');
-    hint.classList.add('disabled');
-  });
+    const tets = document.querySelector('#button-hint').classList.add('disabled');
+    console.log(tets);
+  }
 
   document.querySelectorAll("#choice").forEach((choice) => {
     choice.addEventListener("click", (event) => {
