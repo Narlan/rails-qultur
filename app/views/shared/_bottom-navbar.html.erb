@@ -40,24 +40,24 @@
     <div class="front">
       <%= link_to root_path, class: 'active' do %>
         <!-- <i class="fas fa-map-marker-alt"></i> -->
-      <%= image_tag 'https://image.flaticon.com/icons/svg/1244/1244564.svg', class: 'icons' %>
+      <%= image_tag 'https://image.flaticon.com/icons/svg/1527/1527576.svg', class: 'icons' %>
       <% end %>
     </div>
     <div class="back">
       <!-- <i class="fas fa-map-marker-alt"></i> -->
-      <%= image_tag 'https://image.flaticon.com/icons/svg/1244/1244564.svg', class: 'icons' %>
+      <%= image_tag 'https://image.flaticon.com/icons/svg/1527/1527576.svg', class: 'icons' %>
     </div>
   </div>
   <div class="item">
     <div class="front">
       <%= link_to monuments_path do %>
         <!-- <i class="fas fa-landmark"></i> -->
-        <%= image_tag 'https://image.flaticon.com/icons/svg/701/701349.svg', class: 'icons' %>
+        <%= image_tag 'https://image.flaticon.com/icons/svg/533/533471.svg', class: 'icons' %>
       <% end %>
     </div>
     <div class="back">
       <!-- <i class="fas fa-landmark"></i> -->
-      <%= image_tag 'https://image.flaticon.com/icons/svg/701/701349.svg', class: 'icons' %>
+      <%= image_tag 'https://image.flaticon.com/icons/svg/533/533471.svg', class: 'icons' %>
     </div>
   </div>
   <div class="item">
@@ -67,7 +67,7 @@
         <form action="<%= scanned_path %>">
           <label class=qr-button>
             <!-- <i class="fas fa-qrcode"></i> -->
-            <%= image_tag 'https://image.flaticon.com/icons/svg/1235/1235443.svg', class: 'icons' %>
+            <%= image_tag 'https://image.flaticon.com/icons/svg/2067/2067311.svg', class: 'icons' %>
             <input type=file accept="image/*" capture=environment id="qr-field" tabindex=-1>
           </label>
         </form>
@@ -79,7 +79,7 @@
         <form action="<%= scanned_path %>">
           <label class=qr-button>
             <!-- <i class="fas fa-qrcode"></i> -->
-            <%= image_tag 'https://image.flaticon.com/icons/svg/1235/1235443.svg', class: 'icons' %>
+            <%= image_tag 'https://image.flaticon.com/icons/svg/2067/2067311.svg', class: 'icons' %>
             <input type=file accept="image/*" capture=environment id="qr-field" tabindex=-1>
           </label>
         </form>
@@ -90,12 +90,12 @@
     <div class="front">
       <%= link_to users_path do %>
         <!-- <i class="fas fa-users"></i> -->
-        <%= image_tag 'https://image.flaticon.com/icons/svg/417/417712.svg', class: 'icons' %>
+        <%= image_tag 'https://image.flaticon.com/icons/svg/417/417782.svg', class: 'icons' %>
       <% end %>
     </div>
     <div class="back">
       <!-- <i class="fas fa-users"></i> -->
-      <%= image_tag 'https://image.flaticon.com/icons/svg/417/417712.svg', class: 'icons' %>
+      <%= image_tag 'https://image.flaticon.com/icons/svg/417/417782.svg', class: 'icons' %>
     </div>
   </div>
   <div class="item">
@@ -103,18 +103,18 @@
       <% if user_signed_in? %>
         <%= link_to user_path(current_user) do %>
           <!-- <i class="fas fa-user"></i> -->
-          <%= image_tag 'https://image.flaticon.com/icons/svg/1077/1077982.svg', class: 'icons' %>
+          <%= image_tag 'https://image.flaticon.com/icons/svg/1246/1246458.svg', class: 'icons' %>
         <% end %>
       <% else %>
         <%= link_to new_user_session_path do %>
           <!-- <i class="fas fa-user"></i> -->
-          <%= image_tag 'https://image.flaticon.com/icons/svg/1077/1077982.svg', class: 'icons' %>
+          <%= image_tag 'https://image.flaticon.com/icons/svg/1246/1246458.svg', class: 'icons' %>
         <% end %>
       <% end %>
     </div>
     <div class="back">
       <!-- <i class="fas fa-user"></i> -->
-      <%= image_tag 'https://image.flaticon.com/icons/svg/1077/1077982.svg', class: 'icons' %>
+      <%= image_tag 'https://image.flaticon.com/icons/svg/1246/1246458.svg', class: 'icons' %>
     </div>
   </div>
 </div>

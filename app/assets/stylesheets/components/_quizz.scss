@@ -20,6 +20,11 @@
  cursor: default;
 }
 
+#button-hint.disabled {
+ pointer-events: none;
+ cursor: default;
+}
+
 .answer.disabled {
  pointer-events: none;
  cursor: default;
