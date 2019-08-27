@@ -29,8 +29,8 @@
     padding: 11px 10px 8px 10px;
   }
   &.right {
-    color: black;
-    background-color: #25D366;
+    color: white;
+    background-color: rgba(59,165,139,1);
     border-radius: 8px;
     margin: 0 10px;
     padding: 11px 10px 8px 10px;
@@ -70,7 +70,7 @@ input.form-control {
 }
 
 .chat-header {
-  background-color: #075E54;
+  background-color: rgba(59,165,139,1);
   color: white;
   padding: 10px 20px;
   h5 {
@@ -90,9 +90,9 @@ input.form-control {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  background-color: $green;
+  background-color: rgba(59,165,139,1);
   padding: 8px 16px;
-  border: 2px solid $green;
+  border: 2px solid rgba(59,165,139,1);
   margin-top: 8px;
   border-radius: 8px;
   width: 345px;
@@ -136,16 +136,14 @@ input.form-control {
   padding-right: 0px;
 }
 
-#plus-btn {
-  font-size: 54px;
-  color: $green;
-  position: absolute;
-  bottom: 87px;
-  right: 12px;
-}
-
 .notification-actions {
   position: absolute;
-  right: 17px;
-  bottom: 28px;
+  right: 24px;
+  bottom: 32px;
+}
+
+
+i {
+  color: white;
+  font-size: 24px;
 }

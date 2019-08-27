@@ -29,6 +29,14 @@
   height: 35px;
 }
 
+.msg-icon {
+  width: 40px;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  bottom: 3px;
+}
+
 #coin {
   margin: 0px 0px 0px 3px;
   padding-top: 2px;
