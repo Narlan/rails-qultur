@@ -1,6 +1,7 @@
 class ChoicesController < ApplicationController
 
   def create
+    @notice = "COUCOU"
     question = Question.find(params[:question_id])
     answer = question.answers[0]
     current_hunt = current_user.hunts.select { |hunt| hunt.current_hunt == true}
