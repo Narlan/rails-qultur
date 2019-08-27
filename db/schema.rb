@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_163527) do
+ActiveRecord::Schema.define(version: 2019_08_27_132303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_163527) do
 
   create_table "hunts", force: :cascade do |t|
     t.boolean "current_hunt", default: false
-    t.integer "score", default: 0
+    t.integer "score"
     t.bigint "monument_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_163527) do
     t.text "description"
     t.integer "level", default: 1
     t.integer "exp", default: 0
+    t.integer "coins", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

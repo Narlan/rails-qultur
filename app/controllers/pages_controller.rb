@@ -13,8 +13,7 @@ class PagesController < ApplicationController
       {
         lat: monument.latitude,
         lng: monument.longitude,
-        infoWindow: render_to_string(partial: "monuments/info_window", locals: { monument: monument }),
-        image_url: helpers.asset_url('coin.png')
+        infoWindow: render_to_string(partial: "monuments/info_window", locals: { monument: monument })
       }
     end
   end
