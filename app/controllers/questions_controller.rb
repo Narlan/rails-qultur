@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_monument, only: %i[new create show next_question]
 
   def show
+    @choice = Choice.new
     @question = Question.find(params[:id])
     @randoms = [0, 1, 2, 3].shuffle
     @next_question = Question.find_by(position: @question.position + 1, monument: @question.monument)

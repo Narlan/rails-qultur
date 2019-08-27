@@ -19,6 +19,7 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
     choice.addEventListener("click", (event) => {
       next.classList.remove('disabled');
       if ((choice.dataset.index) === "0" ) {
+        document.getElementById("success-field").value = "true"
         choice.classList.add('choice-good');
         //disabled tous les autres choices
       } else {

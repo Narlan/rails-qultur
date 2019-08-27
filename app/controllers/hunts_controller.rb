@@ -40,5 +40,16 @@ class HuntsController < ApplicationController
 
   def show
     @hunt = Hunt.where(user_id: current_user, monument_id: params[:monument_id]).first
+    @score = count_score(@hunt)
   end
+
+  private
+
+  def count_score(hunt)
+    choices = hunt.choices
+    count = 0
+    choices.each { |choice| count += 1 if choice.success == true }
+    return count
+  end
+
 end
