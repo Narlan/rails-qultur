@@ -80,5 +80,5 @@ clear
 print_the_final_QR
 create_user
 create_datas
-create_hunts_with_random_capture
+# create_hunts_with_random_capture
 print_user_informations
