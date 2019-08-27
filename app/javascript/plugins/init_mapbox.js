@@ -26,7 +26,7 @@ const buildMonument = (map, monumentId, modelOrigin, modelAltitude, modelRotate,
       this.camera = new THREE.Camera();
       this.scene = new THREE.Scene();
 
-      // create two three.js lights to illuminate the model
+      // create three three.js lights to illuminate the model
       var directionalLight = new THREE.DirectionalLight(0xffffff);
       directionalLight.position.set(0, -70, 100).normalize();
       this.scene.add(directionalLight);
@@ -34,6 +34,10 @@ const buildMonument = (map, monumentId, modelOrigin, modelAltitude, modelRotate,
       var directionalLight2 = new THREE.DirectionalLight(0xffffff);
       directionalLight2.position.set(0, 70, 100).normalize();
       this.scene.add(directionalLight2);
+
+      var directionalLight3 = new THREE.DirectionalLight(0xffffff);
+      directionalLight3.position.set(0, 30, -50).normalize();
+      this.scene.add(directionalLight3);
 
       // use the three.js GLTF loader to add the 3D model to the three.js scene
       var loader = new THREE.GLTFLoader();
@@ -113,8 +117,8 @@ const initMapbox = () => {
 
     // ARC
     // parameters to ensure the model is georeferenced correctly on the map
-    var modelOrigin = [2.29503, 48.872928];
-    var modelAltitude = 0;
+    var modelOrigin = [2.29505, 48.872535];
+    var modelAltitude = 45;
     var modelRotate = [Math.PI / 2, 180.2, 0];
     var modelScale = 1050.41843220338983e-8;
     var modelUrl = 'https://raw.githubusercontent.com/Narlan/rails-qultur/master/public/gltfs/arc.gltf';
