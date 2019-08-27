@@ -15,6 +15,13 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
     next.classList.add('disabled');
   });
 
+  const hint = document.getElementById('button-hint');
+  hint.addEventListener("click", (event) => {
+    answers[3].classList.add('disabled');
+    answers[Math.floor(Math.random() * 2) + 1].classList.add('disabled');
+    hint.classList.add('disabled');
+  });
+
   document.querySelectorAll("#choice").forEach((choice) => {
     choice.addEventListener("click", (event) => {
       next.classList.remove('disabled');
@@ -25,8 +32,8 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
       } else {
         choice.classList.add('choice-bad');
         //disabled tous les autres choices
-        const hint = document.getElementById('hint');
-        hint.insertAdjacentHTML("afterbegin", `<p>La bonne réponse était : <strong>${event.path[1].childNodes[1].innerText}</strong></p>`);
+        const displayAnswer = document.getElementById('answer');
+        displayAnswer.insertAdjacentHTML("afterbegin", `<p>La bonne réponse était : <strong>${event.path[1].childNodes[1].innerText}</strong></p>`);
       }
     });
   });
