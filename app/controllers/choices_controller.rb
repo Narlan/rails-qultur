@@ -7,7 +7,7 @@ class ChoicesController < ApplicationController
     current_hunt = current_hunt.first
     choice = Choice.create(hunt: current_hunt, success: params[:success], answer: answer)
     next_question = Question.find_by(position: question.position + 1, monument: question.monument)
-    if next_question != nil
+    if next_que stion != nil
       redirect_to monument_question_path(question.monument, next_question)
     else
       redirect_to monument_hunt_path(monument_id: question.monument, id: current_hunt)
