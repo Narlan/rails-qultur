@@ -7,6 +7,7 @@ import { qrCodeActivated } from "./scan.js";
 $(document).ready(qrCodeActivated());
 import "./question.js";
 import { select2InUserIndex } from '../plugins/init_select2';
+import "./level-up.js";
 
 select2InUserIndex();
 initMapbox();

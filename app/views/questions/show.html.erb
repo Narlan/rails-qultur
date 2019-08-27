@@ -29,7 +29,7 @@
 <!--     <% if @next_question.present? %>
       <%= link_to 'Question suivante', monument_question_path(@question.monument, @next_question), class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
     <% else %>
-      <%= link_to 'Fin du quiz', monument_hunt_path(monument_id: @question.monument, id: @hunt), class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
-    <% end %> -->
-
+      <input type="submit" value="Fin du quiz" class='btn btn-block btn-green mt-4 disabled' id='button-next'>
+    <% end %>
+  </form>
 </div>
