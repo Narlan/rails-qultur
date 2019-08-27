@@ -45,10 +45,10 @@ class HuntsController < ApplicationController
     @xp = count_xp(@score)
 
     current_user.coins += @coins
-    total_xp = current_user.exp + @xp
-    current_user.level += total_xp / 100
-    total_xp = total_xp % 100
-    current_user.exp = total_xp
+    @total_xp = current_user.exp + @xp
+    current_user.level += @total_xp / 100
+    @total_xp = @total_xp % 100
+    current_user.exp = @total_xp
     @hunt.progress = 3
     current_user.save
   end

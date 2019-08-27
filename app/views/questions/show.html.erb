@@ -1,34 +1,27 @@
 <div class="container text-center">
-    <div id="quizz">
-        <p class="mt-4 mb-0"><%= @question.position %>/10</p>
-        <p class="question-title">
-            <%= @question.title %>
-        </p>
+  <div id="quizz">
+      <p class="mt-4 mb-0"><%= @question.position %>/10</p>
+      <p class="question-title">
+          <%= @question.title %>
+      </p>
 
-        <div class="row">
-          <% @question.answers[0].content.each_with_index do |content, index| %>
-            <div class="answer col-6" style="order: <%= @randoms[index] %>" id="choice" data-index="<%= index %>">
-              <%= content %>
-            </div>
-          <% end %>
-        </div>
-    <div id="hint"></div>
-    </div>
+      <div class="row">
+        <% @question.answers[0].content.each_with_index do |content, index| %>
+          <div class="answer col-6" style="order: <%= @randoms[index] %>" id="choice" data-index="<%= index %>">
+            <%= content %>
+          </div>
+        <% end %>
+      </div>
+  <div id="hint"></div>
+  </div>
 
-    <form action='/questions/<%="#{@question.id}"%>/choices' method="post" class="invisible-form">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input type="hidden" name="success" id="success-field" value='false'>
-      <% if @next_question.present? %>
-        <input type="submit" value="Question suivante" class='btn btn-block btn-green mt-4 disabled' id='button-next'>
-      <% else %>
-        <input type="submit" value="Fin du quiz" class='btn btn-block btn-green mt-4 disabled' id='button-next'>
-      <% end %>
-    </form>
-
-<!--     <% if @next_question.present? %>
-      <%= link_to 'Question suivante', monument_question_path(@question.monument, @next_question), class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
+  <form action='/questions/<%="#{@question.id}"%>/choices' method="post" class="invisible-form">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="hidden" name="success" id="success-field" value='false'>
+    <% if @next_question.present? %>
+      <input type="submit" value="Question suivante" class='btn btn-block btn-green mt-4 disabled' id='button-next'>
     <% else %>
-      <%= link_to 'Fin du quiz', monument_hunt_path(monument_id: @question.monument, id: @hunt), class: 'btn btn-block btn-green mt-4 disabled', id: 'button-next' %>
-    <% end %> -->
-
+      <input type="submit" value="Fin du quiz" class='btn btn-block btn-green mt-4 disabled' id='button-next'>
+    <% end %>
+  </form>
 </div>
