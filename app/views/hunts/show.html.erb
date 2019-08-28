@@ -1,4 +1,4 @@
-<div class="container text-center" id="levelup" data-level="<%=  %>">
+<div class="container text-center" id="levelup" data-exp="<%= @current_user_total_xp %>" data-level="<%= current_user.level %>">
   <div class="m-2">
     <%= image_tag('logo.png', width: 80) %>
     <h1 class="title-qultur">QultuR</h1>
@@ -17,11 +17,6 @@
   <% end %>
 
   <%= link_to 'Retour', monuments_path, class: 'btn btn-block btn-green mt-5 mb-2' %>
-
-
-
-
-
 
 
     <div id="myModal" class="modal fade" role="dialog">

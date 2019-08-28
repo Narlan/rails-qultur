@@ -1,6 +1,4 @@
 class HuntsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:scanned]
-
   def create
     hunt_already_exist = false
     monument = Monument.find(params[:monument_id])
@@ -51,6 +49,7 @@ class HuntsController < ApplicationController
     current_user.exp = @total_xp
     @hunt.progress = 3
     current_user.save
+    @current_user_total_xp = current_user.exp + (current_user.level * 100)
   end
 
   private
