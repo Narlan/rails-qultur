@@ -31,7 +31,6 @@ def create_user
       password: "password",
       level: 13,
       exp: 0,
-      coins: 40,
       description: "J'aime pas Noël ; je déteste les enfants et la joie de vivre me donne envie de vomir !",
       remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
     print_adaptative_info()
@@ -48,6 +47,7 @@ def create_user
         password: "password",
         level: rand(1..20),
         exp: rand(0..10) * 10,
+        coins: rand(0..1200),
         description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
         remote_photo_url: "https://source.unsplash.com/featured/?face")
         # sleep(3)
