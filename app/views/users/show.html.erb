@@ -60,6 +60,7 @@
 
     <div class="d-flex align-items-end">
       <% if @user != current_user %>
+        <%= link_to "Cadeau", gift_path(@user), method: :get, class: 'btn btn-block btn-green ml-2' %>
         <%= link_to "Chat", user_chat_rooms_path(current_user), method: :get, class: 'btn btn-block btn-green ml-2' %>
         <% if current_user.is_following?(@user.id) %>
           <%= link_to "Se désabonner", unfollow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
