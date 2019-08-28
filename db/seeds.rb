@@ -63,7 +63,7 @@ def create_user(descriptions)
         description: description,
         remote_photo_url: "https://source.unsplash.com/featured/?face")
       cpt += 1
-      # sleep(3)
+      sleep(3)
       backspace(8)
     end
     print_adaptative_info
