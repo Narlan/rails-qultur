@@ -9,19 +9,6 @@ const mapNavigation = () => {
   let userLatitude = 48.865014;
   let userLongitude = 2.379869;
 
-  // function getLocation() {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition((position) => {
-  //       userLatitude = position.coords.latitude
-  //       userLongitude = position.coords.longitude
-  //     });
-  //   } else {
-  //     x.innerHTML = "Geolocation is not supported by this browser.";
-  //   }
-  //   return userLatitude, userLongitude
-  // }
-  // userLatitude, userLongitude = getLocation()
-
   if (document.querySelector("#map-navigation")) {
   const longitude = document.querySelector("#map-navigation").dataset.monumentlongitute
   const latitude = document.querySelector("#map-navigation").dataset.monumentlatitude
@@ -29,7 +16,7 @@ const mapNavigation = () => {
   const mapElement = document.getElementById('map-navigation');
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   // added manualy
-  const wagon = {
+  const user = {
     lng: userLongitude,
     lat: userLatitude
   };
@@ -38,11 +25,11 @@ const mapNavigation = () => {
     lat: parseFloat(latitude)
   };
   // position wagon paris
-  let start = [wagon.lng, wagon.lat];
+  let start = [user.lng, user.lat];
   let final = [monument.lng, monument.lat];
   const focus = {
-    lng: (wagon.lng + monument.lng) / 2,
-    lat: (wagon.lat + monument.lat) / 2
+    lng: (user.lng + monument.lng) / 2,
+    lat: (user.lat + monument.lat) / 2
   };
 
   // From Mapbox API

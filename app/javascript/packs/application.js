@@ -9,7 +9,7 @@ import "./question.js";
 import { select2InUserIndex } from '../plugins/init_select2';
 import "./level-up.js";
 import { mapNavigation } from './navigation';
+$(document).ready(mapNavigation());
 
-mapNavigation();
 select2InUserIndex();
 initMapbox();
