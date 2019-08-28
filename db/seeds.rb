@@ -29,7 +29,7 @@ def create_user
       age: 30,
       email: "user@example.com",
       password: "password",
-      level: 0,
+      level: 1,
       exp: 0,
       description: "J'aime pas Noël ; je déteste les enfants et la joie de vivre me donne envie de vomir !",
       remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
