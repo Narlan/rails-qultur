@@ -20,7 +20,7 @@ def create_answers(answers)
   end
 end
 
-def create_user
+def create_user(descriptions)
     print_adaptative_info("1 active user", "start")
     user = User.create!(
       first_name: "Grumpy",
@@ -35,9 +35,10 @@ def create_user
       remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
     print_adaptative_info()
 
-    print_adaptative_info("9 fake users", "start")
-    9.times do |time|
-      print " [#{time + 1} / 9]"
+    cpt = 1
+    print_adaptative_info("#{descriptions.length} fake users", "start")
+    descriptions.each do |each|
+      print " [#{cpt} / 9]"
       fake_user = User.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
@@ -47,10 +48,11 @@ def create_user
         password: "password",
         level: rand(1..20),
         exp: rand(0..10) * 10,
-        description: "J'adore voyager! J'ai visité le Japon, les Philippines, la Thaïlande, le Pérou et les Îles Fidji. Je suis actuellement à Bordeaux pour mes études.",
+        description: "description",
         remote_photo_url: "https://source.unsplash.com/featured/?face")
-        # sleep(3)
-        backspace(8)
+      cpt += 1
+      # sleep(3)
+      backspace(8)
     end
     print_adaptative_info
 end
@@ -82,9 +84,11 @@ end
 #   print_adaptative_info()
 # end
 
+user_descriptions = fake_user_description()
+
 clear
 print_the_final_QR
-create_user
+create_user(user_descriptions)
 create_datas
 # create_hunts_with_random_capture
 print_user_informations
