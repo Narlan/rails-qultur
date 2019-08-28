@@ -8,6 +8,8 @@ $(document).ready(qrCodeActivated());
 import "./question.js";
 import { select2InUserIndex } from '../plugins/init_select2';
 import "./level-up.js";
+import { mapNavigation } from './navigation';
 
+mapNavigation();
 select2InUserIndex();
 initMapbox();
