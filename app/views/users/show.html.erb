@@ -68,10 +68,25 @@
         </div>
 
         <div class="d-flex align-items-end">
-          <%= link_to gift_path(@user), method: :get, class: 'btn btn-block btn-green mx-2' do %>
-            Don <%= image_tag("coins.png", width: 25, height: 25, class: "coin-logo") %>
-          <% end %>
+          <a href="#" class="modal-trigger btn btn-block btn-green ml-2" data-modal="modal-name">Don <%= image_tag("coins.png", width: 25, height: 25, class: 'coin-logo')%></a>
           <%= link_to "Chat", user_chat_rooms_path(current_user), method: :get, class: 'btn btn-block btn-green mx-2' %>
+        </div>
+
+
+        <div class="modal" id="modal-name">
+          <div class="modal-sandbox"></div>
+          <div class="modal-box">
+            <div class="modal-body text-center">
+               <form action="/users/gift/<%= "#{@user.id}" %>" method="post" class="form-example">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+              <label class= "mb-0" for="coins"><h4>Don à <%= @user.nickname %></h4></label>
+              <br>
+              <%= image_tag("coins.png", width: 80, height: 80, class: 'mb-2')%>
+              <input type="number" name="coins" id="coins" max="<%= "#{current_user.coins}" %>" placeholder="Maximum de <%= current_user.coins %> pièces" required>
+              <input type="submit" value="Envoyer !" class="btn btn-block btn-green mt-3">
+            </form>
+            </div>
+          </div>
         </div>
 
       <% end %>
