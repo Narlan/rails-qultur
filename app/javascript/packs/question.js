@@ -15,12 +15,12 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
     next.classList.add('disabled');
   });
 
+  const test = document.querySelector('#button-hint')
   const hint = document.querySelector('#quizz');
   if (hint.dataset.hint) {
     answers[3].classList.add('disabled');
     answers[Math.floor(Math.random() * 2) + 1].classList.add('disabled');
-    const tets = document.querySelector('#button-hint').classList.add('disabled');
-    console.log(tets);
+    test.classList.add('disabled');
   }
 
   document.querySelectorAll("#choice").forEach((choice) => {
