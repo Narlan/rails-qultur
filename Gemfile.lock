@@ -76,10 +76,6 @@ GEM
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
     erubi (1.8.0)
-    exception_handler (0.8.0.0)
-      bundler
-      rails (>= 4.2.0)
-      responders
     execjs (2.7.0)
     faker (2.1.2)
       i18n (>= 0.8)
@@ -234,7 +230,6 @@ DEPENDENCIES
   colorize
   devise
   dotenv-rails
-  exception_handler (~> 0.8.0.0)
   faker
   font-awesome-sass (~> 5.6.1)
   geocoder
