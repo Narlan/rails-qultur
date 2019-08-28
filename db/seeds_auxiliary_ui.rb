@@ -19,12 +19,11 @@ def clear
 end
 
 def print_user_informations
-  print "\n\n"
-  print "   email:".colorize(:color => :white, :background => :red)
-  print "          user@example.com\n".colorize(:color => :black, :background => :white)
-  print "password:".colorize(:color => :white, :background => :red)
-  print "                  password".colorize(:color => :black, :background => :white)
-  print "\n\n\n"
+  print "\n\n          User                   email                password\n".colorize(:color => :white, :background => :red)
+  print "Grumpy Grandpa".colorize(:color => :black, :background => :white)
+  print "        user@example.com                password\n".colorize(:color => :black, :background => :white)
+  print " Rebecca Wurst".colorize(:color => :black, :background => :white)
+  print "    rebecca@caramail.com                password\n\n".colorize(:color => :black, :background => :white)
 end
 
 def print_adaptative_info(feed = nil, state = "done")
