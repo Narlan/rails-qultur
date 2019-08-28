@@ -1,6 +1,4 @@
 class HuntsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:scanned]
-
   def create
     hunt_already_exist = false
     monument = Monument.find(params[:monument_id])
