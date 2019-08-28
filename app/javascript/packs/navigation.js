@@ -5,18 +5,37 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 
 const mapNavigation = () => {
+
+  let userLatitude = 48.865014;
+  let userLongitude = 2.379869;
+
+  // function getLocation() {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition((position) => {
+  //       userLatitude = position.coords.latitude
+  //       userLongitude = position.coords.longitude
+  //     });
+  //   } else {
+  //     x.innerHTML = "Geolocation is not supported by this browser.";
+  //   }
+  //   return userLatitude, userLongitude
+  // }
+  // userLatitude, userLongitude = getLocation()
+
   if (document.querySelector("#map-navigation")) {
-    console.log("map-navigation detected!")
+  const longitude = document.querySelector("#map-navigation").dataset.monumentlongitute
+  const latitude = document.querySelector("#map-navigation").dataset.monumentlatitude
+  console.log(latitude)
   const mapElement = document.getElementById('map-navigation');
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   // added manualy
   const wagon = {
-    lng: 2.3800903,
-    lat: 48.8649224
+    lng: userLongitude,
+    lat: userLatitude
   };
   const monument = {
-    lng: 2.294481,
-    lat: 48.858370
+    lng: parseFloat(longitude),
+    lat: parseFloat(latitude)
   };
   // position wagon paris
   let start = [wagon.lng, wagon.lat];

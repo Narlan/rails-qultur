@@ -17,7 +17,6 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
 
   const hint = document.querySelector('#quizz');
   if (hint.dataset.hint) {
-    console.log("sa marche pas")
     answers[3].classList.add('disabled');
     answers[Math.floor(Math.random() * 2) + 1].classList.add('disabled');
     const tets = document.querySelector('#button-hint').classList.add('disabled');
