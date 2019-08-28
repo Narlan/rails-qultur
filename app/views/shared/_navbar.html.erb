@@ -5,8 +5,8 @@
     </div>
     <div class="information d-flex">
       <div class="coins d-flex mr-3 align-items-center">
-        <%= image_tag("coins.png", width: 30, height: 30)%>
         <p id="coin"><%= current_user.coins %></p>
+        <%= image_tag("coins.png", width: 30, height: 30)%>
       </div>
       <%= link_to "/users/#{current_user.id}/chat_rooms" do %>
         <!-- <i class="far fa-comments"></i> -->
