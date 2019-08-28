@@ -40,7 +40,7 @@ def create_user(descriptions)
       last_name: "Wurst",
       nickname: "Grumpy Unicorn",
       age: 30,
-      email: "rebeccadu33@caramail.com",
+      email: "rebecca@caramail.com",
       password: "password",
       level: 1,
       exp: 0,
@@ -50,7 +50,7 @@ def create_user(descriptions)
     cpt = 1
     print_adaptative_info("#{descriptions.length} fake users", "start")
     descriptions.each do |description|
-      print " [#{cpt} / 9]"
+      print " [#{cpt} / #{descriptions.length}]"
       fake_user = User.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
