@@ -5,6 +5,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 
 const mapNavigation = () => {
+  if (document.querySelector("#map-navigation")) {
+    console.log("map-navigation detected!")
   const mapElement = document.getElementById('map-navigation');
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   // added manualy
@@ -191,6 +193,7 @@ const mapNavigation = () => {
     }
     getRoute(coords);
   });
+}
 }
 
 export { mapNavigation }
