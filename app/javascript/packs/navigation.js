@@ -47,6 +47,7 @@ const mapNavigation = () => {
 
   // create a function to make a directions request
   const getRoute = (end) => {
+    console.log(`getRoute called with argument ${end}`)
     // make a directions request using cycling profile
     // an arbitrary start will always be the same
     // only the end or destination will change
@@ -105,11 +106,10 @@ const mapNavigation = () => {
   map.on('load', function() {
     // make an initial directions request that
     // starts and ends at the same location
-    getRoute(start);
 
     // Add starting point to the map
     map.addLayer({
-      id: 'point',
+      id: 'start',
       type: 'circle',
       source: {
         type: 'geojson',
@@ -131,7 +131,39 @@ const mapNavigation = () => {
         'circle-color': '#3887be'
       }
     });
+    map.addLayer({
+      id: 'final',
+      type: 'circle',
+      source: {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: [{
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'Point',
+              coordinates: final
+            }
+          }
+          ]
+        }
+      },
+      paint: {
+        'circle-radius': 6,
+        'circle-color': '#3887be'
+      }
+    });
+    getRoute(start);
+    getRoute(final);
   });
+
+  // #####################################################################
+  // #####################################################################
+  // Tout ce qui ets en bas semble inutile pour nous... ##################
+  // #####################################################################
+  // #####################################################################
+  // #####################################################################
 
 
   // on click we load way to destination
