@@ -35,6 +35,18 @@ def create_user(descriptions)
       remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
     print_adaptative_info()
 
+    user = User.create!(
+      first_name: "Rebecca",
+      last_name: "Wurst",
+      nickname: "Grumpy Unicorn",
+      age: 30,
+      email: "rebeccadu33@caramail.com",
+      password: "password",
+      level: 1,
+      exp: 0,
+      description: "J'adore Paris ! <3 Je suis une jeune entrepreneuse en provenance de Berlin.",
+      remote_photo_url: "https://static.lexpress.fr/medias_10890/w_960,h_540,c_fill,g_north/v1459781832/selfie-tour-eiffel_5576077.jpg")
+
     cpt = 1
     print_adaptative_info("#{descriptions.length} fake users", "start")
     descriptions.each do |description|
