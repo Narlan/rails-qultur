@@ -31,6 +31,7 @@ def create_user
       password: "password",
       level: 13,
       exp: 0,
+      coins: 40,
       description: "J'aime pas Noël ; je déteste les enfants et la joie de vivre me donne envie de vomir !",
       remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
     print_adaptative_info()
