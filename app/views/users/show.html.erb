@@ -57,16 +57,23 @@
         <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'btn btn-block btn-green mr-2 pt-2' %>
       <% end %>
     </div>
-
-    <div class="d-flex align-items-end">
+    <div class="d-flex flex-column">
       <% if @user != current_user %>
-        <%= link_to "Cadeau", gift_path(@user), method: :get, class: 'btn btn-block btn-green ml-2' %>
-        <%= link_to "Chat", user_chat_rooms_path(current_user), method: :get, class: 'btn btn-block btn-green ml-2' %>
-        <% if current_user.is_following?(@user.id) %>
-          <%= link_to "Se désabonner", unfollow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
-        <% else %>
-          <%= link_to "S'abonner", follow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green mx-2' %>
-        <% end %>
+        <div>
+          <% if current_user.is_following?(@user.id) %>
+            <%= link_to "Se désabonner", unfollow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green ml-2', style:"width: 95%" %>
+          <% else %>
+            <%= link_to "S'abonner", follow_user_path(@user.id), method: :post, class: 'btn btn-block btn-outline-green ml-2', style:"width: 95%" %>
+          <% end %>
+        </div>
+
+        <div class="d-flex align-items-end">
+          <%= link_to gift_path(@user), method: :get, class: 'btn btn-block btn-green mx-2' do %>
+            Don <%= image_tag("coins.png", width: 25, height: 25, class: "coin-logo") %>
+          <% end %>
+          <%= link_to "Chat", user_chat_rooms_path(current_user), method: :get, class: 'btn btn-block btn-green mx-2' %>
+        </div>
+
       <% end %>
     </div>
   </div>

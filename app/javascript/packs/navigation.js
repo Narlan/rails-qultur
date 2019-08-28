@@ -5,25 +5,31 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 
 const mapNavigation = () => {
+
+  let userLatitude = 48.865014;
+  let userLongitude = 2.379869;
+
   if (document.querySelector("#map-navigation")) {
-    console.log("map-navigation detected!")
+  const longitude = document.querySelector("#map-navigation").dataset.monumentlongitute
+  const latitude = document.querySelector("#map-navigation").dataset.monumentlatitude
+  console.log(latitude)
   const mapElement = document.getElementById('map-navigation');
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   // added manualy
-  const wagon = {
-    lng: 2.3800903,
-    lat: 48.8649224
+  const user = {
+    lng: userLongitude,
+    lat: userLatitude
   };
   const monument = {
-    lng: 2.294481,
-    lat: 48.858370
+    lng: parseFloat(longitude),
+    lat: parseFloat(latitude)
   };
   // position wagon paris
-  let start = [wagon.lng, wagon.lat];
+  let start = [user.lng, user.lat];
   let final = [monument.lng, monument.lat];
   const focus = {
-    lng: (wagon.lng + monument.lng) / 2,
-    lat: (wagon.lat + monument.lat) / 2
+    lng: (user.lng + monument.lng) / 2,
+    lat: (user.lat + monument.lat) / 2
   };
 
   // From Mapbox API
@@ -47,6 +53,7 @@ const mapNavigation = () => {
 
   // create a function to make a directions request
   const getRoute = (end) => {
+    console.log(`getRoute called with argument ${end}`)
     // make a directions request using cycling profile
     // an arbitrary start will always be the same
     // only the end or destination will change
@@ -105,11 +112,10 @@ const mapNavigation = () => {
   map.on('load', function() {
     // make an initial directions request that
     // starts and ends at the same location
-    getRoute(start);
 
     // Add starting point to the map
     map.addLayer({
-      id: 'point',
+      id: 'start',
       type: 'circle',
       source: {
         type: 'geojson',
@@ -131,7 +137,39 @@ const mapNavigation = () => {
         'circle-color': '#3887be'
       }
     });
+    map.addLayer({
+      id: 'final',
+      type: 'circle',
+      source: {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: [{
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'Point',
+              coordinates: final
+            }
+          }
+          ]
+        }
+      },
+      paint: {
+        'circle-radius': 6,
+        'circle-color': '#3887be'
+      }
+    });
+    getRoute(start);
+    getRoute(final);
   });
+
+  // #####################################################################
+  // #####################################################################
+  // Tout ce qui ets en bas semble inutile pour nous... ##################
+  // #####################################################################
+  // #####################################################################
+  // #####################################################################
 
 
   // on click we load way to destination
