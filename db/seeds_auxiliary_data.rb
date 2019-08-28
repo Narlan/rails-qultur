@@ -317,3 +317,15 @@ def answers
     }
   }
 end
+
+def fake_user_description
+  descriptions = [
+    "Un jour serais le meilleur touriste, je voyagerais sans répis. Je capturerais les monuments, et j'apprendrais leur secrets !",
+    "J'ai 23 chats chez moi. J'ai décidé de voyager pour échapper à l'odeur. Mes destinations préférées sont l'égypte et le japon.",
+    "Quand j'étais petit, ma maman m'a dit : mon enfant, tu ne marchera jamais. Aujourd'hui j'ai aussi le cancer, alors je profite des trois dernières semaines qui me reste pour voir le monde...",
+    "En 2019, j'ai participé au Naruto run à la zone 51. Maintenant que je suis enfin sorti de prison, moi et mes copains nous avons décidé d'explorer les nations fondé par nos pères les extraterestres.",
+    "Mes arrières petits enfants m'on donné un nouveau combiné téléphonique. Depuis que je suis un papy branché, je partage tout sur mon mur Facebook, je paye une fortune sur les jeux mobiles, et je cherche l'amour sur QultuR.xyz.",
+    "Salu je sé pa ecrir car kan jété peti mé parant m'on mal trété é jété disleksik",
+    "J'ai peur des gens ='O, alors pour me soigner je vais m'imerger au milieux des autochtônes du pays parisien, loin de ma patrie de Versaille... mais je suis sur la bonne voix.",
+  ]
+end

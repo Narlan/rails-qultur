@@ -14,7 +14,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :nickname, :first_name, :last_name, presence: true
   validates :email, :nickname, uniqueness: true
-  validates :description, length: { maximum: 200 }
+  validates :description, length: { maximum: 250 }
 
   def name
     nickname
