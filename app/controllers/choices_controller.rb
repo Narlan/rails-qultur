@@ -16,8 +16,8 @@ class ChoicesController < ApplicationController
 
   def help
     question = Question.find(params[:question_id])
-    if current_user.coins >= 40
-      current_user.coins -= 40
+    if current_user.coins >= 30
+      current_user.coins -= 30
       current_user.save
       redirect_to monument_question_path(question.monument, question, dataset: 'hint')
     else
