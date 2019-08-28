@@ -30,13 +30,13 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
       if ((choice.dataset.index) === "0" ) {
         document.getElementById("success-field").value = "true"
         choice.classList.add('choice-good');
-        //disabled tous les autres choices
       } else {
+        for (let i = 1; i < answers.length; i++) {
+        answers[i].classList.add('disabled');
+        }
         choice.classList.add('choice-bad');
-        //disabled tous les autres choices
-        const displayAnswer = document.getElementById('answer');
-        displayAnswer.insertAdjacentHTML("afterbegin", `<p>La bonne réponse était : <strong>${event.path[1].childNodes[1].innerText}</strong></p>`);
-      }
+        answers[0].classList.add('choice-good');
+       }
     });
   });
 }
