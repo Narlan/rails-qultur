@@ -16,7 +16,9 @@
   </div>
 
 <div class="d-flex align-items-end">
-  <%= link_to 'Indice', help_path(@question), method: :post, id: 'button-hint', class: 'btn btn-block' %>
+  <%= link_to help_path(@question), method: :post, id: 'button-hint', class: 'btn btn-block' do %>
+    <span>Indice 40 <%= image_tag("coins.png", width: 20, height: 20)%></span>
+  <% end %>
     <form action='/questions/<%="#{@question.id}"%>/choices' method="post" class="invisible-form">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input type="hidden" name="success" id="success-field" value='false'>
