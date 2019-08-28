@@ -83,7 +83,12 @@ class UsersController < ApplicationController
   end
 
   def update_coins_gift
-    @user = User.find(params[:user_id])
+    user = User.find(params[:user_id])
+    user.coins += params[:coins].to_i
+    current_user.coins -= params[:coins].to_i
+    user.save
+    current_user.save
+    redirect_to user_path(user)
   end
 
   private
