@@ -29,8 +29,9 @@ def create_user(descriptions)
       age: 30,
       email: "user@example.com",
       password: "password",
-      level: 1,
-      exp: 0,
+      level: 8,
+      exp: 80,
+      coins: 420,
       description: "J'aime pas Noël ; je déteste les enfants et la joie de vivre me donne envie de vomir !",
       remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
     print_adaptative_info()
