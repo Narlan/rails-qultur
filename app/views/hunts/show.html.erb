@@ -7,16 +7,20 @@
   <%= image_tag @hunt.monument.photo, class: 'avatar-large' %>
 
   <% if @score >= 5 %>
-    <h2 class="mt-5">Félicitations! <i class="fas fa-medal"></i></h2>
-    <p>Tu as réussi le quiz avec un score de :</p>
-    <h2><%= @score %> / 10</h2>
+    <h2 class="mt-4">Félicitations ! <i class="fas fa-medal"></i></h2>
+    <h3><%= @score %> / 10</h3>
+    <p class="mb-0">Monument capturé !</p>
   <% else %>
-    <h2 class="mt-5">Désolé! <i class="fas fa-sad-cry"></i></h2>
-    <p>Tu n'as pas réussi le quiz... Tu as un score de :</p>
-    <h2><%= @score %> / 10</h2>
+    <h2 class="mt-4">Désolé ! <i class="fas fa-sad-cry"></i></h2>
+    <h3><%= @score %> / 10</h3>
+    <p class="mb-0">Tu n'as pas réussi à capturer le monument...</p>
   <% end %>
+  <hr>
+  <h4>Bonus</h4>
+  <div>+<%= @xp %> XP</div>
+  <div>+<%= @coins %><%= image_tag("coins.png", width: 25, height: 25, class: "coin-logo")%></div>
 
-  <%= link_to 'Retour', monuments_path, class: 'btn btn-block btn-green mt-5 mb-2' %>
+  <%= link_to 'Retour', monuments_path, class: 'btn btn-block btn-green mt-3 mb-2' %>
 
 
     <div id="myModal" class="modal fade" role="dialog">
