@@ -1,6 +1,7 @@
 <div id="map-navigation"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-     data-monumentlongitute="<%= "#{@monument.longitude}" %>"
-     data-monumentlatitude="<%= "#{@monument.latitude}" %>">
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-monumentlongitute="<%= "#{@monument.longitude}" %>"
+  data-monumentlatitude="<%= "#{@monument.latitude}" %>">
+  <div id="distance-div", style="display: none;"><h3 id="distance-field"></h3></div>
 </div>
