@@ -8,24 +8,23 @@
 
   <div class="followers">
     <% current_user.following.each do |follower| %>
-
       <%= link_to user_path(follower) do %>
-        <div class="info-bg pb-3">
+        <div class="info-bg pb-2">
           <div class="d-flex justify-content-between">
 
             <% if follower.photo.file.nil? %>
-              <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg", class: 'avatar-medium border my-3' %>
+              <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg", class: 'avatar-medium my-3' %>
+              <span class="level-community"><%= follower.level %></span>
             <% else %>
-              <%= cl_image_tag follower.photo, class: 'avatar-medium border my-3' %>
+              <%= cl_image_tag follower.photo, class: 'avatar-medium my-3' %>
+              <span class="level-community"><%= follower.level %></span>
             <% end %>
 
             <div class="d-block text-left pr-4">
               <h4><%= follower.nickname %></h4>
               <div>
                 <p class="m-0"><%= follower.first_name %> <%= follower.last_name %></p>
-                <% unless follower.age.nil? %>
-                  <em><small><%= follower.age %> ans</small></em>
-                <% end %>
+                <em><%= image_tag("coins.png", width: 25, height: 25, class: 'coin-logo ml-0')%><small class="ml-1"><%= follower.coins %></small></em>
               </div>
             </div>
           </div>
