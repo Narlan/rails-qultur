@@ -50,21 +50,22 @@ def create_user(descriptions)
 
     cpt = 1
     print_adaptative_info("#{descriptions.length} fake users", "start")
-    descriptions.each do |description|
+    descriptions.each do |user|
       print " [#{cpt} / #{descriptions.length}]"
       fake_user = User.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
-        nickname: Faker::Esport.player,
+        nickname: user[1],
         age: rand(18..42),
         email: Faker::Internet.free_email,
         password: "password",
         level: rand(1..20),
         exp: rand(0..10) * 10,
-        description: description,
-        remote_photo_url: "https://source.unsplash.com/featured/?face")
+        description: user[0],
+        remote_photo_url: user[2])
+        # remote_photo_url: "https://source.unsplash.com/featured/?face")
       cpt += 1
-      sleep(3)
+      # sleep(3)
       backspace(8)
     end
     print_adaptative_info

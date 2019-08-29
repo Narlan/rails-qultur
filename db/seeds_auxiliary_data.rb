@@ -320,12 +320,12 @@ end
 
 def fake_user_description
   descriptions = [
-    "Un jour, je serai le meilleur touriste, je voyagerai sans répit. Je capturerai les monuments et j'apprendrai leurs secrets !",
-    "J'ai 23 chats chez moi. J'ai décidé de voyager pour échapper à l'odeur. Mes destinations préférées sont l'Egypte et le Japon.",
-    "Quand j'étais petit, ma maman m'a dit : mon enfant, le savoir, c'est le pouvoir. Aujourd'hui, je suis président de la République.",
-    "En 2019, j'ai participé au Naruto run à la zone 51. Maintenant que je suis enfin sorti de prison, mes copains et moi, nous avons décidé d'explorer les nations fondées par nos pères les extraterrestres.",
-    "Mes arrières petits-enfants m'ont donnés un nouveau combiné téléphonique. Depuis que je suis un papy branché, je partage tout sur mon mur Facebook, je paye une fortune sur les jeux mobiles, et je cherche l'amour sur QultuR.xyz.",
-    "Salu je sé pa ecrir car kan jété peti mé parant m'on mal trété é jété disleksik",
-    "J'ai peur des gens ='O, alors pour me soigner, je vais m'immerger au milieu des autochtones du pays parisien, loin de ma patrie de Versailles... Je suis sur la bonne voie.",
+    ["Un jour, je serai le meilleur touriste, je voyagerai sans répit. Je capturerai les monuments et j'apprendrai leurs secrets !", "PokeSensei", "app/assets/images/sacha.jpg"],
+    ["J'ai 23 chats chez moi. J'ai décidé de voyager pour échapper à l'odeur. Mes destinations préférées sont l'Egypte et le Japon.", "Hellokitty", "app/assets/images/kitty.jpg"],
+    ["Quand j'étais petit, ma maman m'a dit : mon enfant, le savoir, c'est le pouvoir. Aujourd'hui, je suis président de la République.", "Manu", "app/assets/images/macron.jpg"],
+    ["En 2019, j'ai participé au Naruto run à la zone 51. Maintenant que je suis enfin sorti de prison, mes copains et moi, nous avons décidé d'explorer les nations fondées par nos pères les extraterrestres.", "Raël", "app/assets/images/sylvain.png"],
+    ["Mes arrières petits-enfants m'ont donnés un nouveau combiné téléphonique. Depuis que je suis un papy branché, je partage tout sur mon mur Facebook, je paye une fortune sur les jeux mobiles, et je cherche l'amour sur QultuR.xyz.", "TinderBoy", "app/assets/images/old.jpg"],
+    ["Salu je sé pa ecrir car kan jété peti mé parant m'on mal trété é jété disleksik", "M. Pivot", "app/assets/images/manequin.jpg"],
+    ["J'ai peur des gens ='O, alors pour me soigner, je vais m'immerger au milieu des autochtones du pays parisien, loin de ma patrie de Versailles... Je suis sur la bonne voie.", "La fripouille", "app/assets/images/fripouille.jpg"],
   ]
 end
