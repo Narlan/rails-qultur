@@ -100,24 +100,3 @@
   position: absolute;
   top: 2px;
 }
-
-.xp-bar {
-  background-color: $gray;
-  border-radius: 16px;
-  position: relative;
-}
-
-.xp-bar-progress {
-  background-color: $green;
-  border-radius: 16px;
-  height: 24px;
-  position: left;
-}
-
-.xp-bar p {
-  color: white;
-  font-weight: bolder;
-  font-size: 12px;
-  text-align: center;
-  padding-top: 4px;
-}

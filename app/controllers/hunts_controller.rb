@@ -104,5 +104,4 @@ class HuntsController < ApplicationController
     end
     return xp
   end
-
 end

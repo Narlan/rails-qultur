@@ -36,6 +36,7 @@ if (quizz) { // only build a quizz if there's a div#quizz to inject into
         choice.classList.add('choice-bad');
         answers[0].classList.add('choice-good');
        }
+      test.classList.add('disabled');
     });
   });
 }
