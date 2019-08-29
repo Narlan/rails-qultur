@@ -14,3 +14,5 @@ import "./modal-gift.js";
 
 select2InUserIndex();
 initMapbox();
+var Turbolinks = require("turbolinks");
+Turbolinks.start();
