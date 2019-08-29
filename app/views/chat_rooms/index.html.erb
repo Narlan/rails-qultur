@@ -17,8 +17,8 @@
           <div class="notification">
             <%= cl_image_tag chat_room.user.photo, class: "avatar-small" %>
             <div class="notification-content">
-              <p><%= chat_room.user.nickname %> - Niveau
-              <%= chat_room.user.level %></p>
+              <p><%= chat_room.user.nickname %></p>
+              <text>Niveau <%= chat_room.user.level %> - Coins <%= chat_room.user.coins %><%= image_tag("coins.png", width: 25, height: 25, class: "coin-logo")%></text>
             </div>
           </div>
         <% end %>
