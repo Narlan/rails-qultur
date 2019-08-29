@@ -7,32 +7,33 @@
   <%= image_tag @hunt.monument.photo, class: 'avatar-large' %>
 
   <% if @score >= 5 %>
-    <h2 class="mt-4">Félicitations ! <i class="fas fa-medal"></i></h2>
+    <h2 class="mt-2">Félicitations ! <i class="fas fa-medal"></i></h2>
     <h3><%= @score %> / 10</h3>
     <p class="mb-0">Monument capturé !</p>
   <% else %>
-    <h2 class="mt-4">Désolé ! <i class="fas fa-sad-cry"></i></h2>
+    <h2 class="mt-2">Désolé ! <i class="fas fa-sad-cry"></i></h2>
     <h3><%= @score %> / 10</h3>
     <p class="mb-0">Tu n'as pas réussi à capturer le monument...</p>
   <% end %>
   <hr>
   <h4>Bonus</h4>
-  <div class="d-flex justify-content-around">
-    XP
-    <div
-      data-preset="fan"
-      class="ldBar label-center"
-      data-value="<%= @xp %>"
-    ></div>
-    Pièces
-    <div
-      data-preset="fan"
-      class="ldBar label-center"
-      data-value="<%= @coins %>"
-    ></div>
+  <div class="d-flex justify-content-around align-items-end">
+    <div>
+      <style type="text/css">
+        .ldBar-label:after {
+          content: "";
+        }
+      </style>
+      <em>+ <%= @xp %> XP</em>
+      <div data-preset="fan" data-stroke="data:ldbar/res,gradient(0,1.5,white,$green)" class="ldBar label-center" data-value="<%= @xp %>"></div>
+    </div>
+    <div>
+      <em>+ <%= @coins %> <%= image_tag("coins.png", width: 30, height: 30, class: 'mb-2  ')%></em>
+      <div data-preset="fan" class="ldBar label-center" data-value="<%= @coins %>"></div>
+    </div>
   </div>
 
-  <%= link_to 'Retour', monuments_path, class: 'btn btn-block btn-green mt-4 mb-2' %>
+  <%= link_to 'Retour', monuments_path, class: 'btn btn-block btn-green mt-3' %>
 
 
    <!--  <div id="myModal" class="modal fade" role="dialog">
