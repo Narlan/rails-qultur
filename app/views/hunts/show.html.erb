@@ -17,12 +17,19 @@
   <% end %>
   <hr>
   <h4>Bonus</h4>
-  <style type="text/css">
-    .ldBar-label:after {
-      content: "XP";
-    }
-  </style>
-  <div class="d-flex">
+  <div class="d-flex justify-content-around">
+    XP
+    <div
+      data-preset="fan"
+      class="ldBar label-center"
+      data-value="<%= @xp %>"
+    ></div>
+    Pièces
+    <div
+      data-preset="fan"
+      class="ldBar label-center"
+      data-value="<%= @coins %>"
+    ></div>
   </div>
 
   <%= link_to 'Retour', monuments_path, class: 'btn btn-block btn-green mt-4 mb-2' %>
