@@ -1,0 +1,46 @@
+.info-level-up p {
+  margin: 0px;
+}
+
+.info-level-up {
+  margin-top: 12px;
+}
+
+.coin-logo {
+  position: relative;
+  top: -2px;
+  margin-left: 4px;
+}
+
+
+.modal-content {
+  border-radius: 8px;
+  padding: 8px;
+  border: 4px solid $green;
+}
+
+.modal-content > button {
+  text-align: right;
+}
+
+.pyro > button {
+  position: relative;
+  top: -7px;
+}
+
+.modal-body > p {
+  font-size: 30px;
+}
+
+.modal-body {
+  padding: 0px;
+}
+
+.fas.fa-medal {
+  color: #CFA418;
+  font-size: 35px;
+}
+
+#myModal {
+  z-index: 2000;
+}
