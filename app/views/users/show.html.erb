@@ -30,7 +30,9 @@
     </div>
     <div class="xp-bar d-flex align-items-center mb-3">
       <p id="paraone"><%= @user.exp % 100 %>%</p>
-      <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
+      <% unless @user.exp == 0 %>
+        <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
+      <% end %>
     </div>
 
     <div class="d-flex justify-content-center">
@@ -38,7 +40,9 @@
     </div>
     <div class="xp-bar d-flex align-items-center mb-3">
       <p id="paratwo"><%= @total_good_answer %>/<%= Monument.all.count * 10 %></p>
-      <div class="xp-bar-progress" style="width: <%= @total_good_answer * 2 %>%"></div>
+      <% unless @total_good_answer == 0 %>
+        <div class="xp-bar-progress" style="width: <%= @total_good_answer * 2 %>%"></div>
+      <% end %>
     </div>
 
     <div class="d-flex justify-content-center">
@@ -46,7 +50,9 @@
     </div>
     <div class="xp-bar d-flex align-items-center mb-3">
       <p id="parathree"><%= @captured_monuments.count %>/<%= Monument.all.count %></p>
-      <div class="xp-bar-progress" style="width: <%= @x %>%"></div>
+      <% unless @x == 0 %>
+        <div class="xp-bar-progress" style="width: <%= @x %>%"></div>
+      <% end %>
     </div>
   </div>
 
