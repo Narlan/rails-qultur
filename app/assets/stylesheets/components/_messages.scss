@@ -94,7 +94,7 @@ input.form-control {
   padding: 8px 16px;
   border: 2px solid rgba(59,165,139,1);
   margin-top: 8px;
-  border-radius: 8px;
+  border-radius: 4px;
   width: 345px;
 }
 
@@ -104,12 +104,17 @@ input.form-control {
 }
 
 .notification p {
-  font-size: 26px;
+  font-size: 18px;
   margin: 0;
   line-height: 1.4;
   color: white;
   font-weight: bold;
-  text-align: center;
+}
+
+.notification text {
+  font-size: 12px;
+  line-height: 1.4;
+  color: white;
 }
 
 .chatroom {
@@ -138,8 +143,8 @@ input.form-control {
 
 .notification-actions {
   position: absolute;
-  right: 24px;
-  bottom: 32px;
+  right: 0px;
+  bottom: 64px;
 }
 
 
