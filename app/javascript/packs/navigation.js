@@ -71,7 +71,7 @@ const mapNavigation = () => {
     req.onload = function() {
       var distance = req.response.routes[0].distance
       distanceField.innerHTML = `Distance : ${Number((distance/1000).toFixed(2))} km`
-      distanceDiv.style.display = "block";
+      distanceDiv.style.display = "flex";
       var data = req.response.routes[0];
       var route = data.geometry.coordinates;
       var geojson = {

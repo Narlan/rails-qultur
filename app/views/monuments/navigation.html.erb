@@ -3,5 +3,5 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   data-monumentlongitute="<%= "#{@monument.longitude}" %>"
   data-monumentlatitude="<%= "#{@monument.latitude}" %>">
-  <div id="distance-div", style="display: none;"><h3 id="distance-field"></h3></div>
+  <div id="distance-div", style="display: none;"> <%= image_tag("bicycle-icon.png", width: 34, height: 34, id:"icon")%> <h3 id="distance-field"></h3></div>
 </div>
