@@ -11,6 +11,7 @@ import "./level-up.js";
 import { mapNavigation } from './navigation';
 $(document).ready(mapNavigation());
 import "./modal-gift.js";
+import "./loading-bar.js";
 
 select2InUserIndex();
 initMapbox();
