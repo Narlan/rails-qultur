@@ -11,7 +11,7 @@
 
       <%= link_to user_path(follower) do %>
         <div class="info-bg pb-3">
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between info-bg-internal">
 
             <% if follower.photo.file.nil? %>
               <%= cl_image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ137OO1cEyky0WKe3HS3KZpkDjk1Ex06k-CaX0K_TiCIre5XTiYg", class: 'avatar-medium border my-3' %>
