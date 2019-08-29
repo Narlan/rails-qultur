@@ -31,6 +31,8 @@
   object-fit: cover;
   object-position: center;
   margin: 0px !important;
+  border: 3px solid $green;
+
 }
 
 .avatar-user {
@@ -63,6 +65,21 @@
   text-align: center;
   padding-top: 4px;
 }
+
+.level-community {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 100px;
+  background-color: $green;
+  color: white;
+  font-weight: bolder;
+  font-size: 16px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 4px;
+}
+
 
 .avatar-bordered {
   width: 40px;

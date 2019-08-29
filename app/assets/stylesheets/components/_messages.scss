@@ -90,9 +90,9 @@ input.form-control {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  background-color: rgba(59,165,139,1);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 8px 16px;
-  border: 2px solid rgba(59,165,139,1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   margin-top: 8px;
   border-radius: 4px;
   width: 345px;
@@ -107,14 +107,14 @@ input.form-control {
   font-size: 18px;
   margin: 0;
   line-height: 1.4;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
 .notification text {
   font-size: 12px;
   line-height: 1.4;
-  color: white;
+  color: black;
 }
 
 .chatroom {
@@ -144,11 +144,11 @@ input.form-control {
 .notification-actions {
   position: absolute;
   right: 0px;
-  bottom: 64px;
+  bottom: 60px;
 }
 
 
 i {
-  color: white;
+  color: $green;
   font-size: 24px;
 }
