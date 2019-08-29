@@ -160,7 +160,9 @@ const mapNavigation = () => {
         'circle-color': '#3887be'
       }
     });
-    getRoute(start);
+    getRoute(start)
+    getRoute(final);
+    getRoute(final);
     getRoute(final);
   });
 
