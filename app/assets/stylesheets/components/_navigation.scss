@@ -1,0 +1,30 @@
+#map-navigation {
+  position: relative;
+}
+
+#distance-field, h3 {
+  font-family: sans-serif;
+  margin: 8px;
+  margin-right: 12px;
+  font-size: 24px;
+  margin-top: 11px;
+}
+
+#distance-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 8px;
+  top: 2%;
+  left: 2%;
+  background-color: #FFFFFF;
+  z-index: 10;
+  -webkit-box-shadow: 0px 0px 6px 0px #000000;
+  box-shadow: 0px 0px 6px 0px #000000;
+}
+
+#icon {
+  margin-left: 12px;
+  margin-bottom: 5px;
+}

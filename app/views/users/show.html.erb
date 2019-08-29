@@ -25,29 +25,32 @@
   </div>
 
   <div class="stats">
-    <div class="d-flex justify-content-center">
-      <p> XP </p>
-    </div>
-    <div class="xp-bar d-flex align-items-center mb-3">
-      <p id="paraone"><%= @user.exp % 100 %>%</p>
-      <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
-    </div>
 
-    <div class="d-flex justify-content-center">
-      <p> Total bonnes réponses </p>
-    </div>
-    <div class="xp-bar d-flex align-items-center mb-3">
-      <p id="paratwo"><%= @total_good_answer %>/<%= Monument.all.count * 10 %></p>
-      <div class="xp-bar-progress" style="width: <%= @total_good_answer * 2 %>%"></div>
-    </div>
+      <div class="d-flex justify-content-center">
+        <p> XP </p>
+      </div>
+      <div class="xp-bar d-flex align-items-center mb-3">
+        <p id="paraone"><%= @user.exp % 100 %>%</p>
+        <div class="xp-bar-progress" style="width: <%= @user.exp %>%"></div>
+      </div>
 
-    <div class="d-flex justify-content-center">
-      <p> Monuments capturés </p>
-    </div>
-    <div class="xp-bar d-flex align-items-center mb-3">
-      <p id="parathree"><%= @captured_monuments.count %>/<%= Monument.all.count %></p>
-      <div class="xp-bar-progress" style="width: <%= @x %>%"></div>
-    </div>
+      <div class="d-flex justify-content-center">
+        <p> Total bonnes réponses </p>
+      </div>
+      <div class="xp-bar d-flex align-items-center mb-3">
+        <p id="paratwo"><%= @total_good_answer %>/<%= Monument.all.count * 10 %></p>
+        <div class="xp-bar-progress" style="width: <%= @total_good_answer * 2 %>%"></div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <p> Monuments capturés </p>
+      </div>
+      <div class="xp-bar d-flex align-items-center mb-3">
+        <p id="parathree"><%= @captured_monuments.count %>/<%= Monument.all.count %></p>
+        <div class="xp-bar-progress" style="width: <%= @x %>%"></div>
+      </div>
+
+
   </div>
 
   <div class="buttons-profile">
@@ -77,14 +80,14 @@
           <div class="modal-sandbox"></div>
           <div class="modal-box">
             <div class="modal-body text-center">
-               <form action="/users/gift/<%= "#{@user.id}" %>" method="post" class="form-example">
-              <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-              <label class= "mb-0" for="coins"><h4>Don à <%= @user.nickname %></h4></label>
-              <br>
-              <%= image_tag("coins.png", width: 80, height: 80, class: 'mb-2')%>
-              <input type="number" name="coins" id="coins" max="<%= "#{current_user.coins}" %>" placeholder="Maximum de <%= current_user.coins %> pièces" required>
-              <input type="submit" value="Envoyer !" class="btn btn-block btn-green mt-3">
-            </form>
+              <form action="/users/gift/<%= "#{@user.id}" %>" method="post" class="form-example">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+                <label class= "mb-0" for="coins"><h4>Don à <%= @user.nickname %></h4></label>
+                <br>
+                <%= image_tag("coins.png", width: 80, height: 80, class: 'mb-2')%>
+                <input type="number" name="coins" id="coins" max="<%= "#{current_user.coins}" %>" placeholder="Maximum de <%= current_user.coins %> pièces" required>
+                <input type="submit" value="Envoyer !" class="btn btn-green mt-2" id="button-gift">
+              </form>
             </div>
           </div>
         </div>

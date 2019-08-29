@@ -60,11 +60,18 @@ const mapNavigation = () => {
     // let start = [-122.662323, 45.523751];
     var url = 'https://api.mapbox.com/directions/v5/mapbox/cycling/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=true&geometries=geojson&access_token=' + mapboxgl.accessToken;
 
+    // get the distance div to display the distance
+    const distanceField = document.getElementById("distance-field")
+    const distanceDiv = document.getElementById("distance-div")
+
     // make an XHR request https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
     var req = new XMLHttpRequest();
     req.responseType = 'json';
     req.open('GET', url, true);
     req.onload = function() {
+      var distance = req.response.routes[0].distance
+      distanceField.innerHTML = `Distance : ${Number((distance/1000).toFixed(2))} km`
+      distanceDiv.style.display = "flex";
       var data = req.response.routes[0];
       var route = data.geometry.coordinates;
       var geojson = {

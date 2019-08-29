@@ -18,12 +18,13 @@
             <%= cl_image_tag chat_room.user.photo, class: "avatar-small" %>
             <div class="notification-content">
               <p><%= chat_room.user.nickname %></p>
+              <text>Niveau <%= chat_room.user.level %></text>
             </div>
           </div>
         <% end %>
         <div class="notification-actions">
-          <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", method: :delete do %>
-            <i class="far fa-trash-alt"></i>
+            <%= link_to "/users/#{current_user.id}/chat_rooms/#{chat_room.id}", method: :delete, data: { confirm: "Are you sure you want to stop chatting with #{chat_room.user.nickname}?" } do %>
+            <i class="fas fa-times-circle cross"></i>
           <% end %>
         </div>
       </div>
