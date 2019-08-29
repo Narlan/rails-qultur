@@ -8,35 +8,29 @@
 
   <% if @score >= 5 %>
     <h2 class="mt-2">Félicitations ! <i class="fas fa-medal"></i></h2>
-    <h3><%= @score %> / 10</h3>
+    <h2><%= @score %> / 10</h2>
     <p class="mb-0">Monument capturé !</p>
   <% else %>
     <h2 class="mt-2">Désolé ! <i class="fas fa-sad-cry"></i></h2>
-    <h3><%= @score %> / 10</h3>
+    <h2><%= @score %> / 10</h2>
     <p class="mb-0">Tu n'as pas réussi à capturer le monument...</p>
   <% end %>
   <hr>
-  <h4>Bonus</h4>
-  <div class="d-flex justify-content-around align-items-end">
+  <div class="d-flex justify-content-around align-items-center">
     <div>
-      <style type="text/css">
-        .ldBar-label:after {
-          content: "";
-        }
-      </style>
-      <em>+ <%= @xp %> XP</em>
-      <div data-preset="fan" data-stroke="data:ldbar/res,gradient(0,1.5,white,$green)" class="ldBar label-center" data-value="<%= @xp %>"></div>
+      <%= image_tag('rocket-loading.svg', width: 80, height: 80) %> <br>
+      <em class="mr-3">+ <%= @xp %> XP</em>
     </div>
     <div>
-      <em>+ <%= @coins %> <%= image_tag("coins.png", width: 30, height: 30, class: 'mb-2  ')%></em>
-      <div data-preset="fan" class="ldBar label-center" data-value="<%= @coins %>"></div>
+      <%= image_tag('coin-loading.svg', width: 80, height: 80) %> <br>
+      <em>+ <%= @coins %> <%= image_tag("coins.png", width: 30, height: 30, class: 'mb-2 ml-1')%></em>
     </div>
   </div>
 
   <%= link_to 'Retour', monuments_path, class: 'btn btn-block btn-green mt-3' %>
 
 
-   <!--  <div id="myModal" class="modal fade" role="dialog">
+    <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
@@ -58,6 +52,6 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
 </div>
