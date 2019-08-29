@@ -28,8 +28,17 @@
 .xp-bar-progress {
   background-color: $green;
   border-radius: 16px;
-  height: 28px;
+  height: 30px;
   position: left;
+  min-width: 8%;
+}
+
+.xp-bar p {
+  color: white;
+  font-weight: bolder;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 4px;
 }
 
 #paraone {

@@ -741,7 +741,7 @@ out$.presets = presets = {
     "stroke": '#f00',
     "fill": 'data:ldbar/res,stripe(#25b,#58e,1)',
     "fill-dir": "ltr",
-    "fill-background": '#ddd',
+    "fill-background": '#808080',
     "fill-background-extrude": 1,
     "bbox": "10 5 80 10"
   },
