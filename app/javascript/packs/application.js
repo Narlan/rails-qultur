@@ -15,3 +15,5 @@ import "./loading-bar.js";
 
 select2InUserIndex();
 initMapbox();
+var Turbolinks = require("turbolinks");
+Turbolinks.start();
