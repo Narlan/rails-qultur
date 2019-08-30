@@ -43,8 +43,8 @@ def create_user(descriptions)
       age: 30,
       email: "rebecca@caramail.com",
       password: "password",
-      level: 2,
-      exp: 60,
+      level: 1,
+      exp: 40,
       description: "J'adore Paris ! <3 Je suis une jeune entrepreneuse en provenance de Berlin.",
       remote_photo_url: "https://static.lexpress.fr/medias_10890/w_960,h_540,c_fill,g_north/v1459781832/selfie-tour-eiffel_5576077.jpg")
 
@@ -91,10 +91,12 @@ def create_hunts_with_random_capture
   monument = Monument.find(3)
   hunt = Hunt.create(progress: 3, monument: monument, user: user)
   hunt.monument.questions.each do |question|
-      choice = Choice.create(hunt: hunt, answer: question.answers.first, success: true)
+    choice = Choice.create(hunt: hunt, answer: question.answers.first, success: TRUE_OR_FALSE.pop)
   end
   print_adaptative_info()
 end
+
+TRUE_OR_FALSE = [true, true, true, true, false, false, false, false, false, false, ]
 
 user_descriptions = fake_user_description()
 
