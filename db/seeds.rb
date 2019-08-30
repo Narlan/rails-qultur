@@ -43,8 +43,8 @@ def create_user(descriptions)
       age: 30,
       email: "rebecca@caramail.com",
       password: "password",
-      level: 1,
-      exp: 0,
+      level: 2,
+      exp: 60,
       description: "J'adore Paris ! <3 Je suis une jeune entrepreneuse en provenance de Berlin.",
       remote_photo_url: "https://static.lexpress.fr/medias_10890/w_960,h_540,c_fill,g_north/v1459781832/selfie-tour-eiffel_5576077.jpg")
 
@@ -85,18 +85,16 @@ def create_datas
   print_adaptative_info()
 end
 
-# def create_hunts_with_random_capture
-#   print_adaptative_info("hunts for active user", "start")
-#   user = User.find(1)
-#   monuments = Monument.all.drop(1)
-#   monuments.each do |monument|
-#     hunt = Hunt.create(progress: 3, monument: monument, user: user)
-#     hunt.monument.questions.each do |question|
-#         choice = Choice.create(hunt: hunt, answer: question.answers.first, success: [true, false].sample)
-#     end
-#   end
-#   print_adaptative_info()
-# end
+def create_hunts_with_random_capture
+  print_adaptative_info("hunts for Rebecca", "start")
+  user = User.find(2)
+  monument = Monument.find(3)
+  hunt = Hunt.create(progress: 3, monument: monument, user: user)
+  hunt.monument.questions.each do |question|
+      choice = Choice.create(hunt: hunt, answer: question.answers.first, success: true)
+  end
+  print_adaptative_info()
+end
 
 user_descriptions = fake_user_description()
 
@@ -104,5 +102,5 @@ clear
 print_the_final_QR
 create_user(user_descriptions)
 create_datas
-# create_hunts_with_random_capture
+create_hunts_with_random_capture
 print_user_informations
