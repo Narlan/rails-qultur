@@ -25,7 +25,7 @@ def create_user(descriptions)
     user = User.create!(
       first_name: "Paul",
       last_name: "Macaron",
-      nickname: "Manu",
+      nickname: "Manudu93",
       age: 30,
       email: "user@example.com",
       password: "password",
@@ -86,7 +86,7 @@ def create_datas
 end
 
 def create_hunts_with_random_capture
-  print_adaptative_info("hunts for Rebecca", "start")
+  print_adaptative_info("hunt for Rebecca", "start")
   user = User.find(2)
   monument = Monument.find(3)
   hunt = Hunt.create(progress: 3, monument: monument, user: user)
@@ -94,9 +94,21 @@ def create_hunts_with_random_capture
     choice = Choice.create(hunt: hunt, answer: question.answers.first, success: TRUE_OR_FALSE.pop)
   end
   print_adaptative_info()
+
+  print_adaptative_info("hunts for manudu93", "start")
+  user = User.find(1)
+  monuments = Monument.all
+  monuments.each do |monument|
+    hunt = Hunt.create(progress: 3, monument: monument, user: user)
+    monument.questions.each do |question|
+      Choice.create(hunt: hunt, answer: question.answers[0], success: true)
+    end
+  end
+  print_adaptative_info()
+
 end
 
-TRUE_OR_FALSE = [true, true, true, true, false, false, false, false, false, false, ]
+TRUE_OR_FALSE = [ true, true, true, true, false, false, false, false, false, false ]
 
 user_descriptions = fake_user_description()
 
