@@ -20,7 +20,7 @@ end
 
 def print_user_informations
   print "\n\n          User                   email                password\n".colorize(:color => :white, :background => :red)
-  print "Grumpy Grandpa".colorize(:color => :black, :background => :white)
+  print "  Paul Macaron".colorize(:color => :black, :background => :white)
   print "        user@example.com                password\n".colorize(:color => :black, :background => :white)
   print " Rebecca Wurst".colorize(:color => :black, :background => :white)
   print "    rebecca@caramail.com                password\n\n".colorize(:color => :black, :background => :white)
