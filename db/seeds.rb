@@ -23,17 +23,17 @@ end
 def create_user(descriptions)
     print_adaptative_info("1 active user", "start")
     user = User.create!(
-      first_name: "Grumpy",
-      last_name: "Grandpa",
-      nickname: Faker::Ancient.god,
+      first_name: "Paul",
+      last_name: "Macaron",
+      nickname: "Manu",
       age: 30,
       email: "user@example.com",
       password: "password",
       level: 8,
       exp: 80,
       coins: 420,
-      description: "J'aime pas Noël ; je déteste les enfants et la joie de vivre me donne envie de vomir !",
-      remote_photo_url: "https://i.imgur.com/g5DBPWB.png")
+      description: "Quand j'étais petit, ma maman m'a dit : mon enfant, le savoir, c'est le pouvoir. Aujourd'hui, je suis président de la République.",
+      remote_photo_url: "app/assets/images/macron.jpg")
     print_adaptative_info()
 
     user = User.create!(
